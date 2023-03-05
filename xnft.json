@@ -1,0 +1,16 @@
+{
+  "name": "Builderz xNFT Starter",
+  "version": "0.0.1",
+  "description": "Builderz xNFT Starter",
+  "website": "builderz.dev",
+  "kind": "app",
+  "icon": {
+    "md": "./assets/icon.png"
+  },
+  "screenshots": ["./assets/screenShot.png"],
+  "entrypoints": {
+    "default": {
+      "web": "./dist/index.html"
+    }
+  }
+}
