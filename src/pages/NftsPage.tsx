@@ -1,15 +1,15 @@
 import { defer } from "react-router-dom";
-import { queryClient } from "../client";
 import { getNfts } from "../utils/nfts";
 import { useLoaderData } from "react-router-dom";
 import { Suspense } from "react";
 import { Await } from "react-router-dom";
 import { PublicKey } from "@solana/web3.js";
+import { QueryClient } from "@tanstack/react-query";
 
 import { Loading } from "../components/Loading";
 import { NftList } from "../components/nfts/NftList";
 
-export async function loader() {  
+export const loader = (queryClient: QueryClient) => {
   return defer({
     nfts: queryClient.fetchQuery({
       queryKey: ["nfts"],
@@ -21,12 +21,12 @@ export async function loader() {
 
 export const NftsPage = () => {
 
-  const data = useLoaderData() as any;
+  const { nfts } = useLoaderData() as any;
 
   return (
     <div className="h-full">
       <Suspense fallback={<Loading />}>
-        <Await resolve={data.nfts}>
+        <Await resolve={nfts}>
           <h1>NFTs</h1>
           <NftList />
         </Await>

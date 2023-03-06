@@ -1,5 +1,5 @@
 import { HTMLProps } from "react";
-import logo from "../assets/logo.svg";
+import logo from "../assets/builderz-logo-transparent.png";
 
 export function Logo({ className, ...props }: HTMLProps<HTMLImageElement>) {
   return (
@@ -7,7 +7,7 @@ export function Logo({ className, ...props }: HTMLProps<HTMLImageElement>) {
       {...props}
       className={`w-full h-full ${className}`}
       src={logo}
-      alt="Dual Finance"
+      alt="Builderz"
     />
   );
 }
