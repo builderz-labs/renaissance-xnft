@@ -7,6 +7,14 @@ export const NftList = () => {
     queryKey: ["nfts"],
   });
 
+  if (nfts && nfts.length === 0) {
+    return (
+      <div>
+        <h2>You don't own any NFTs</h2>
+      </div>
+    )
+  }
+
   return (
     <div className="grid grid-cols-2 gap-4">
       {nfts?.map((nft: any) => {
