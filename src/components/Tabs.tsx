@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
-import { FaHome, FaImage } from "react-icons/fa";
+import { FaHome, FaImage, FaShoppingBag } from "react-icons/fa";
 
 const tabs = [ // TODO: Add more tabs
   { name: "Home", path: "/", icon: FaHome },
   { name: "NFTs", path: "nfts", icon: FaImage },
+  { name: "Mint", path: "mint", icon: FaShoppingBag },
 ];
 
 export function Tabs() {

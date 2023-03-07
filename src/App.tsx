@@ -13,6 +13,7 @@ import "./App.css";
 import ErrorPage from "./pages/ErrorPage";
 import { HomePage } from "./pages/HomePage";
 import { NftsPage, loader as nftsLoader } from "./pages/NftsPage";
+import { MintPage, loader as mintLoader } from "./pages/MintPage";
 
 declare global {
   interface Window {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
             path: "nfts",
             element: <NftsPage />,
             loader: () => nftsLoader(queryClient),
+          },
+          { path: "mint",
+            element: <MintPage />,
+            loader: () => mintLoader(queryClient)
           }
         ],
       },
