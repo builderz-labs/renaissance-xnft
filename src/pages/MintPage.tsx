@@ -1,13 +1,15 @@
 import { defer } from "react-router-dom";
 import { getNfts } from "../utils/nfts";
 import { useLoaderData } from "react-router-dom";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { Await } from "react-router-dom";
 import { PublicKey } from "@solana/web3.js";
 import { QueryClient } from "@tanstack/react-query";
+import { Metaplex } from "@metaplex-foundation/js"
 
 import { Loading } from "../components/Loading";
 import { NftList } from "../components/nfts/NftList";
+import { useConnection } from "@solana/wallet-adapter-react";
 
 export const loader = (queryClient: QueryClient) => {
   return defer({
@@ -22,6 +24,15 @@ export const loader = (queryClient: QueryClient) => {
 export const MintPage = () => {
 
   const { cm } = useLoaderData() as any;
+
+  const { connection } = useConnection()
+
+  useEffect(() => {
+    const metaplex = new Metaplex(connection);
+    
+    console.log(metaplex);
+    
+  }, [])
 
   return (
     <div className="h-full">

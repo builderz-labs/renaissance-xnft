@@ -13,12 +13,15 @@ export default defineConfig(({ command, mode }) => {
     optimizeDeps: {
       esbuildOptions: {
         define: {
-          global: "globalThis",
+          global: "window",
         },
         plugins: [NodeGlobalsPolyfillPlugin({ process: true, buffer: true })],
       },
     },
     build: {
+      commonjsOptions: {
+        ignoreTryCatch: (id) => id !== "stream",
+      },
       rollupOptions: {
         output: {
           manualChunks: (id) => {
@@ -38,6 +41,14 @@ export default defineConfig(({ command, mode }) => {
           },
         },
       },
+    },
+    resolve: {
+      alias: [
+        {
+          find: "stream",
+          replacement: `stream-browserify`,
+        },
+      ],
     },
     server: {
       port: 9933,

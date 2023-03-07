@@ -1,5 +1,6 @@
-import buffer from "buffer";
-globalThis.Buffer = buffer.Buffer;
+import { Buffer } from 'buffer';
+
+globalThis.Buffer = Buffer;
 
 import { ConnectionProvider } from "@solana/wallet-adapter-react";
 import { QueryClientProvider } from "@tanstack/react-query";
