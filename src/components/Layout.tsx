@@ -7,7 +7,7 @@ export function Layout() {
     <div className="h-screen w-screen max-w-[425px] flex flex-col">
       <Header />
       {/* Set background color here */}
-      <main className="flex-1 p-2 bg-[#104664]"> 
+      <main className="flex-1 p-2 bg-gray-100 dark:bg-[#0C0B0B] text-black dark:text-white">
         <Outlet />
       </main>
       <Tabs />
