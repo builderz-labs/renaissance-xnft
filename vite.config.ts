@@ -8,19 +8,18 @@ export default defineConfig(({ command, mode }) => {
   return {
     define: {
       __APP_ENV__: env.APP_ENV,
+      global: "globalThis",
     },
     plugins: [react()],
     optimizeDeps: {
       esbuildOptions: {
-        define: {
-          global: "window",
-        },
         plugins: [NodeGlobalsPolyfillPlugin({ process: true, buffer: true })],
       },
     },
     build: {
       commonjsOptions: {
         ignoreTryCatch: (id) => id !== "stream",
+        transformMixedEsModules: true,
       },
       rollupOptions: {
         output: {
@@ -31,9 +30,6 @@ export default defineConfig(({ command, mode }) => {
             }
             if (isModule && id.includes("@project-serum")) {
               return "vendor_anchor";
-            }
-            if (isModule && id.includes("@metaplex-foundation")) {
-              return "vendor_metaplex";
             }
             if (isModule && id.includes("@tanstack")) {
               return "vendor_tanstack";
