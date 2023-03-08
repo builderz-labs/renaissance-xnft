@@ -42,7 +42,7 @@ export const NftList = () => {
         {nfts && nfts.length > pageSize && (
           <ReactPaginate
             breakLabel="..."
-            nextLabel="next >"
+            nextLabel=">"
             onPageChange={handlePageChange}
             containerClassName="pagination"
             pageClassName="page-item"
@@ -54,9 +54,9 @@ export const NftList = () => {
             activeClassName="active"
             breakClassName="page-item"
             breakLinkClassName="page-link"
-            pageRangeDisplayed={5}
+            pageRangeDisplayed={3}
             pageCount={pageCount}
-            previousLabel="< previous"
+            previousLabel="<"
           />
         )}
       </div>
