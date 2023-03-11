@@ -16,6 +16,12 @@ export function Layout() {
         <Outlet />
       </main>
       <Tabs />
+      <div className="flex flex-row items-center justify-center gap-2 text-[8px] font-light my-2 py-8">
+        <p>Powered by</p>
+        <a href="https://builderz.dev" target='_blank' rel='noreferrer'>
+          <img src="/img/builderz.svg" alt="builderz logo" />
+        </a>
+      </div>
     </div>
   );
 }

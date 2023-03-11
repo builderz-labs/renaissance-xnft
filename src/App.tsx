@@ -14,6 +14,7 @@ import ErrorPage from "./pages/ErrorPage";
 import { HomePage } from "./pages/HomePage";
 import { NftsPage, loader as nftsLoader } from "./pages/NftsPage";
 import ProjectPage from './pages/project';
+import RankingPage from './pages/RankingPage';
 
 declare global {
   interface Window {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
           {
             path: "project/:id",
             element: <ProjectPage />,
+          },
+          {
+            path: "Ranking",
+            element: <RankingPage />,
           },
         ],
       },

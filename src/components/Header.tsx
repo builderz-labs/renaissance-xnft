@@ -18,7 +18,7 @@ export function Header() {
       const segments = pathname.split("/");
       return pathname.split("/")[segments.length - 1];
     }
-    return <p>Re<span className='text-[#FF8A57]'>:</span>naissance</p>;
+    return <p>re<span className='text-[#FF8A57]'>:</span><span className='lowercase'>naissance</span></p>;
   }, [pathname]);
   return (
     <MyHeader className="w-full h-fit ">
@@ -29,7 +29,7 @@ export function Header() {
               <FaChevronLeft />
             </button>
           )}
-          <h1 className="text-left text-3xl inline font-bold">{title}</h1>
+          <h1 className="text-left text-3xl inline capitalize font-bold">{title}</h1>
         </div>
       </div>
     </MyHeader>
