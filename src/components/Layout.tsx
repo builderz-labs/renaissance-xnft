@@ -15,7 +15,7 @@ export function Layout() {
       <main className="flex-1 p-2  text-white">
         <Outlet />
       </main>
-      <div className="fixed bottom-0 left-0 w-full">
+      <div className="fixed bottom-0  w-full max-w-[425px] mx-auto">
         <Tabs />
         <div className="flex flex-row items-center justify-center gap-2 text-[8px] font-light py-2 bg-black">
           <p>Powered by</p>
