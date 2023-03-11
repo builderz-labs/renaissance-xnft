@@ -23,13 +23,13 @@ export function Header() {
   return (
     <MyHeader className="w-full h-fit ">
       <div className="h-14 flex justify-between items-center gap-1 p-2">
-        <div className="flex items-baseline ml-2 gap-2">
+        <div className="flex items-center ml-2 gap-4">
           {!basePaths.some((base) => pathname === base) && (
             <button onClick={() => navigate(-1)}>
               <FaChevronLeft />
             </button>
           )}
-          <h1 className="text-left text-4xl inline font-bold">{title}</h1>
+          <h1 className="text-left text-3xl inline font-bold">{title}</h1>
         </div>
       </div>
     </MyHeader>

@@ -8,8 +8,12 @@ const MySlide = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  max-width: 100%;
-  height: 99px;
+height: 96px;
+width: 100%;
+filter: drop-shadow(1px 1px 8px rgba(0, 0, 0, 0.25));
+
+margin-x: 16px;
+
   `
 const MyDiv = styled.div`
 background: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0) 100%);
@@ -24,6 +28,18 @@ background: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255,
 -webkit-text-fill-color: transparent;
 background-clip: text;
 text-fill-color: transparent;
+`
+
+const ItemCard = styled.div`
+
+background: linear-gradient(206.07deg, #050505 30.45%, #101C26 99.29%);
+border-radius: 12px;
+
+border: 0.5px solid;
+
+border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 138, 87, 0.1) 100%);
+
+
 `
 
 function AllList({ collections, searchQuery }: any) {
@@ -46,14 +62,32 @@ function AllList({ collections, searchQuery }: any) {
 
   return (
     <div className='w-full grid grid-cols-2 px-2 gap-4'>
-      {filteredCollections.map((collection: any) => (
-        <a key={collection.id} href={`/project/${collection.name}`}>
+      {/*    {filteredCollections.map((collection: any) => (
+        <a key={collection.id} href={`/project/${collection.name}`} className='hover:text-renaissance-orange'>
           <div className='w-full relative flex flex-col items-center justify-center my-2' >
             <div className='w-full h-full object-cover'>
               <img src={collection.image} alt={collection.name} className='h-28 w-full object-cover rounded-md' />
             </div>
-            <p className='py-2 absolute bottom-2 left-0 w-full  bg-black bg-opacity-40'>{collection.name}</p>
-          </div>
+            <div className='py-2 absolute bottom-2 left-0 w-full  bg-black bg-opacity-60 blur font-black'>
+            </div>
+            <p className='py-2 absolute bottom-2 left-0 w-full  font-black'>{collection.name}</p>          </div>
+        </a>
+      ))} */}
+      {filteredCollections.map((collection: any) => (
+        <a key={collection.id} href={`/project/${collection.name}`} className='hover:text-renaissance-orange'>
+          <ItemCard className='w-full relative flex flex-row items-center justify-between my-2' >
+            <div className='w-[69px] h-full object-cover'>
+              <img src={collection.image} alt={collection.name} className='h-[69px] w-full object-cover rounded-md' />
+            </div>
+            <div className='flex flex-col gap-2 justify-center items-start text-start flex-grow pl-4'>
+              <p className='w-full  font-black truncate text-sm'>{collection.name}</p>
+              <div className="flex flex-row gap-1 items-center justify-center">
+                <p className='w-full  font-light text-[8px]'>FP: </p>
+                <img src="/img/sol.svg" alt="solana logo" className='w-[7px]' />
+                <p className='w-full  font-light text-[8px]'>{collection.fp}</p>
+              </div>
+            </div>
+          </ItemCard>
         </a>
       ))}
     </div>
@@ -90,31 +124,37 @@ export const HomePage = () => {
       id: 1,
       name: 'LILY',
       image: '/img/clay.webp',
+      fp: 9.6
     },
     {
       id: 2,
       name: 'Claynosaurz',
       image: '/img/lily.webp',
+      fp: 42.0
     },
     {
       id: 3,
       name: 'ABC',
       image: '/img/abc.gif',
+      fp: 69.0
     },
     {
       id: 4,
       name: 'y00ts',
       image: '/img/y00ts.jpg',
+      fp: 125.0
     },
     {
       id: 5,
       name: 'Smyths',
       image: '/img/smyths.jpg',
+      fp: 6.9
     },
     {
       id: 6,
       name: 'FFF',
       image: '/img/fff.webp',
+      fp: 23.6
     },
   ];
 
@@ -130,7 +170,7 @@ export const HomePage = () => {
   return (
     <div className="h-full max-w-full">
       <section className='px-2'>
-        <p className='text-[14px] py-4'>It's Repay Renaissance! Redeem your royalties - your project might reward you!</p>
+        <p className='text-[14px] py-4 text-start max-w-xs'>It's Repay Renaissance! Redeem your royalties - your project might reward you!</p>
         <MySlide>
           <div className="flex flex-col items-center justify-center h-full w-full">
             <div className="flex flex-row items-center justify-between gap-8">
