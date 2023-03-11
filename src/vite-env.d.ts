@@ -2,7 +2,6 @@
 
 interface ImportMetaEnv {
   readonly VITE_HELIUS_RPC_PROXY: string;
-  readonly VITE_HELIUS_API_KEY: string;
   // more env variables...
 }
 

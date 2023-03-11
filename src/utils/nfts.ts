@@ -5,18 +5,18 @@ export const getNfts = async (owner: PublicKey) => {
   const nfts = [];
 
   try {
-    const url = `https://api.helius.xyz/v0/addresses/${owner}/nfts?api-key=${
-      import.meta.env.VITE_HELIUS_API_KEY
-    }&pageNumber=1`;
+    const url = `${
+      import.meta.env.VITE_HELIUS_RPC_PROXY
+    }/v0/addresses/${owner.toBase58()}/nfts?pageNumber=1`;
 
     const { data } = await axios.get(url);
     nfts.push(...data.nfts);
 
     for (let index = 2; index < data.numberOfPages + 1; index++) {
       const { data } = await axios.get(
-        `https://api.helius.xyz/v0/addresses/${owner}/nfts?api-key=${
-          import.meta.env.VITE_HELIUS_API_KEY
-        }&pageNumber=${index}`
+        `${
+          import.meta.env.VITE_HELIUS_RPC_PROXY
+        }/v0/addresses/${owner.toBase58()}/nfts?pageNumber=${index}`
       );
       nfts.push(...data.nfts);
     }
