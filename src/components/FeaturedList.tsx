@@ -2,13 +2,16 @@ import React from 'react'
 
 const FeaturedCollections = [
     {
-        name: 'LILY',
+        id: 1,
+        name: 'Claynosaurz',
         image: '/img/clay.webp',
     },
     {
-        name: 'Claynosaurz',
+        id: 2,
+        name: 'LILY',
         image: '/img/lily.webp',
     },
+
 ]
 
 function FeaturedList() {
