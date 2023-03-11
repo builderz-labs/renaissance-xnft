@@ -18,7 +18,7 @@ export function Header() {
       const segments = pathname.split("/");
       return pathname.split("/")[segments.length - 1];
     }
-    return <p><span className='text-[#FF8A57]'>Re</span>naissance</p>;
+    return <p>Re<span className='text-[#FF8A57]'>:</span>naissance</p>;
   }, [pathname]);
   return (
     <MyHeader className="w-full h-fit ">

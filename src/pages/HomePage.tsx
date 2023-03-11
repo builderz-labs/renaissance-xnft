@@ -97,22 +97,22 @@ export const HomePage = () => {
     {
       id: 3,
       name: 'ABC',
-      image: '/img/clay.webp',
+      image: '/img/abc.gif',
     },
     {
       id: 4,
       name: 'y00ts',
-      image: '/img/lily.webp',
+      image: '/img/y00ts.jpg',
     },
     {
       id: 5,
-      name: 'Cynova',
-      image: '/img/clay.webp',
+      name: 'Smyths',
+      image: '/img/smyths.jpg',
     },
     {
       id: 6,
-      name: 'BLOCKZ',
-      image: '/img/lily.webp',
+      name: 'FFF',
+      image: '/img/fff.webp',
     },
   ];
 
@@ -159,7 +159,7 @@ export const HomePage = () => {
         <h2 className='py-2 px-2 pt-4 font-bold text-xl text-start'>Featured Collections</h2>
         <FeaturedList />
       </section>
-      <section className=''>
+      <section className='mb-10'>
         <h2 className='pt-8 px-2 font-bold text-xl text-start'>All Collections</h2>
         <Search onSearch={handleSearch} />
         <AllList collections={allCollections} searchQuery={searchQuery} />
