@@ -50,23 +50,23 @@ export default function RankingPage() {
                         </div>
                     </div>
                     {leaderBoard.slice(1, 3).map((item) => (
-                        <MySecond className="flex flex-row items-center justify-between gap-10 w-full">
+                        <div className="flex flex-row items-center justify-between gap-10 w-full">
                             <div className="w-4 h-4">
                                 <p>{item.rank}.</p>
                             </div>
-                            <p>{item.name}</p>
+                            <p className='truncate'>{item.name}</p>
                             <div className="flex flex-row gap-1 items-center justify-center">
                                 <p className='w-full  font-light text-[18px]'>{leaderBoard[0].sol}</p>
                                 <img src="/img/sol.svg" alt="solana logo" className='w-[7px]' />
                             </div>
-                        </MySecond>
+                        </div>
                     ))}
 
                 </div>
             </MySlide>
-            <div className="flex flex-col items-between justify-center gap-2 px-12 py-5">
+            <div className="flex flex-col items-between justify-center gap-4 px-12 py-5">
                 {itemsToMap.map((item, index) => (
-                    <div key={item.rank} className="flex flex-row items-center justify-between gap-4">
+                    <div key={item.rank} className="flex flex-row items-center justify-between gap-4 bg-lily-black w-full px-4 py-2 rounded-md">
                         <div className="w-4 h-4">
                             <p>{item.rank}.</p>
                         </div>

@@ -19,7 +19,7 @@ export function Tabs() {
               key={tab.path}
               to={tab.path}
               className={({ isActive }) =>
-                `flex-1 p-3 m-2 hover:text-[#E6813E] rounded-2xl ${isActive ? "text-black bg-[#E6813E] hover:text-white" : "text-gray-500"}`
+                `flex-1 px-2 py-1 m-4 hover:text-[#E6813E] rounded-2xl ${isActive ? "text-black bg-[#E6813E] hover:text-white" : "text-gray-500"}`
               }
             >
               <div role="tab" className="flex flex-col items-center">

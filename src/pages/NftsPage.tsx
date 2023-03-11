@@ -27,7 +27,7 @@ export const NftsPage = () => {
     <div className="h-full">
       <Suspense fallback={<Loading />}>
         <Await resolve={nfts} >
-          <section className='my-5'>
+          <section className='my-5 mb-40'>
 
             <h1 className='text-4xl font-bold mb-10'>NFTs</h1>
             <NftList />

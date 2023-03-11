@@ -33,7 +33,7 @@ function AllList({ collections, searchQuery }: any) {
 
 
     return (
-        <div className='w-full grid grid-cols-2 px-2 gap-4'>
+        <div className='w-full grid grid-cols-2 px-2 gap-4 mb-40'>
             {/*    {filteredCollections.map((collection: any) => (
         <a key={collection.id} href={`/project/${collection.name}`} className='hover:text-renaissance-orange'>
           <div className='w-full relative flex flex-col items-center justify-center my-2' >

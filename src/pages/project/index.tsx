@@ -33,7 +33,7 @@ function ProjectPage() {
     const filteredNfts = nfts.filter((nft: any) => nft.collectionName === collectionName);
 
     return (
-        <div className="h-full">
+        <div className="h-full mb-40">
 
             <Suspense fallback={<Loading />}>
                 <Await resolve={filteredNfts} >
