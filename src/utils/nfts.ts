@@ -21,6 +21,8 @@ export const getNfts = async (owner: PublicKey) => {
       nfts.push(...data.nfts);
     }
 
+    
+
     return nfts;
   } catch (error) {
     throw error;

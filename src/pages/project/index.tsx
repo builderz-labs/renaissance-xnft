@@ -23,18 +23,26 @@ export const loader = (queryClient: QueryClient) => {
 
 function ProjectPage() {
 
-    /*     const { nfts } = useLoaderData() as any;
-     */
+    const { nfts } = useLoaderData() as any;
+
     const { id } = useParams();
     const routerName = "project";
 
     const collectionName = id;
 
-    /*     const filteredNfts = nfts.filter((nft: any) => nft.collectionName === collectionName);
-     */
+    const filteredNfts = nfts.filter((nft: any) => nft.collectionName === collectionName);
+
     return (
         <div className="h-full">
-            <h1>{id}</h1>
+
+            <Suspense fallback={<Loading />}>
+                <Await resolve={filteredNfts} >
+                    <section className='my-5'>
+                        <h1 className='text-4xl font-bold mb-10'>Your {id} NFTs</h1>
+                        <NftList />
+                    </section>
+                </Await>
+            </Suspense>
         </div>
     );
 }
