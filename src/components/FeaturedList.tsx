@@ -18,7 +18,7 @@ function FeaturedList() {
     return (
         <div className='w-full grid grid-cols-2 px-2 gap-4'>
             {FeaturedCollections.map((collection) => (
-                <div className='w-full relative flex flex-col items-center justify-center my-2'>
+                <div key={collection.id} className='w-full relative flex flex-col items-center justify-center my-2'>
                     <div className='w-full h-full object-cover'>
                         <img src={collection.image} alt={collection.name} className='h-28 w-full object-cover rounded-md' />
                     </div>

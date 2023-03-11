@@ -13,6 +13,7 @@ import "./App.css";
 import ErrorPage from "./pages/ErrorPage";
 import { HomePage } from "./pages/HomePage";
 import { NftsPage, loader as nftsLoader } from "./pages/NftsPage";
+import ProjectPage from './pages/project';
 
 declare global {
   interface Window {
@@ -31,17 +32,22 @@ const router = createBrowserRouter([
         children: [
           { index: true, element: <HomePage /> },
           {
-            path: "nfts",
+            path: "NFTs",
             element: <NftsPage />,
             loader: () => nftsLoader(queryClient),
-          }
+          },
+          {
+            path: "project/:id",
+            element: <ProjectPage />,
+          },
         ],
       },
     ],
   },
 ]);
 
-function App() {  
+
+function App() {
   return (
     <ConnectionProvider endpoint={import.meta.env.VITE_HELIUS_RPC_PROXY}>
       <QueryClientProvider client={queryClient}>
