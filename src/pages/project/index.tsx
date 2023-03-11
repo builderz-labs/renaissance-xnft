@@ -16,7 +16,7 @@ export const loader = (queryClient: QueryClient) => {
         nfts: queryClient.fetchQuery({
             queryKey: ["nfts"],
             queryFn: () =>
-                getNfts(window.xnft.solana.publicKey || new PublicKey("PeRXuY1P4cnzDZEPH1ancRVSyQMDpnTF27BwmQ1kkWq")) // Hard coded if in localhost
+                getNfts((window.xnft.solana.publicKey)) // Hard coded if in localhost
         })
     });
 }
@@ -28,17 +28,13 @@ function ProjectPage() {
     const { id } = useParams();
     const routerName = "project";
 
+    const collectionName = id;
+
+    /*     const filteredNfts = nfts.filter((nft: any) => nft.collectionName === collectionName);
+     */
     return (
         <div className="h-full">
-            <p>{id}</p>
-            {/*     <Suspense fallback={<Loading />}>
-                <Await resolve={nfts} >
-                    <section className='my-5'>
-                        <h1 className='text-4xl font-bold mb-10'>Your {id} NFTs</h1>
-                        <NftList />
-                    </section>
-                </Await>
-            </Suspense> */}
+            <h1>{id}</h1>
         </div>
     );
 }

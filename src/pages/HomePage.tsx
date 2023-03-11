@@ -57,7 +57,7 @@ export const HomePage = () => {
               </div>
               <p>{leaderBoard[0].name}</p>
               <div className="flex flex-row gap-1 items-center justify-center">
-                <p className='w-full  font-semibold text-[8px]'>{leaderBoard[0].sol}</p>
+                <p className='w-full  font-semibold text-[12px]'>{leaderBoard[0].sol}</p>
                 <img src="/img/sol.svg" alt="solana logo" className='w-[7px]' />
               </div>
             </div>
@@ -68,7 +68,7 @@ export const HomePage = () => {
                 </div>
                 <p>{item.name}</p>
                 <div className="flex flex-row gap-1 items-center justify-center">
-                  <p className='w-full  font-light text-[8px]'>{item.sol}</p>
+                  <p className='w-full  font-light text-[12px]'>{item.sol}</p>
                   <img src="/img/sol.svg" alt="solana logo" className='w-[7px]' />
                 </div>
               </MySecond>
