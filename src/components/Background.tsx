@@ -6,7 +6,7 @@ export function Background({
   ...props
 }: HTMLProps<HTMLDivElement>) {
   return (
-    <div {...props} className={`bg-gray-900 ${className}`}>
+    <div id='slider' {...props} className={`bg-gray-900 ${className}`}>
       {children}
     </div>
   );

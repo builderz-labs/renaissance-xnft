@@ -3,110 +3,306 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Onest";
-  src: local("Onest"),
-    url("./assets/fonts/OnestRegular1602-hint.woff") format("woff");
-  font-weight: 400;
+    font-family: 'Poppins';
+    src: url('Poppins-Bold.woff2') format('woff2'),
+        url('Poppins-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
 }
+
 @font-face {
-  font-family: "Onest";
-  src: local("Onest"),
-    url("./assets/fonts/OnestThin1602-hint.woff") format("woff");
-  font-weight: 100;
+    font-family: 'Poppins';
+    src: url('Poppins-Black.woff2') format('woff2'),
+        url('Poppins-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
 }
+
 @font-face {
-  font-family: "Onest";
-  src: local("Onest"),
-    url("./assets/fonts/OnestMedium1602-hint.woff") format("woff");
-  font-weight: 500;
+    font-family: 'Poppins';
+    src: url('Poppins-ExtraLight.woff2') format('woff2'),
+        url('Poppins-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
 }
+
 @font-face {
-  font-family: "Onest";
-  src: local("Onest"),
-    url("./assets/fonts/OnestLight1602-hint.woff") format("woff");
-  font-weight: 300;
+    font-family: 'Poppins';
+    src: url('Poppins-ExtraLightItalic.woff2') format('woff2'),
+        url('Poppins-ExtraLightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
 }
+
 @font-face {
-  font-family: "Onest";
-  src: local("Onest"),
-    url("./assets/fonts/OnestExtraBold1602-hint.woff") format("woff");
-  font-weight: 800;
+    font-family: 'Poppins';
+    src: url('Poppins-BoldItalic.woff2') format('woff2'),
+        url('Poppins-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-Italic.woff2') format('woff2'),
+        url('Poppins-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-ExtraBold.woff2') format('woff2'),
+        url('Poppins-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-BlackItalic.woff2') format('woff2'),
+        url('Poppins-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-ExtraBoldItalic.woff2') format('woff2'),
+        url('Poppins-ExtraBoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-Regular.woff2') format('woff2'),
+        url('Poppins-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-Medium.woff2') format('woff2'),
+        url('Poppins-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-Thin.woff2') format('woff2'),
+        url('Poppins-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-LightItalic.woff2') format('woff2'),
+        url('Poppins-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-SemiBoldItalic.woff2') format('woff2'),
+        url('Poppins-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-Light.woff2') format('woff2'),
+        url('Poppins-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-ThinItalic.woff2') format('woff2'),
+        url('Poppins-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-SemiBold.woff2') format('woff2'),
+        url('Poppins-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-MediumItalic.woff2') format('woff2'),
+        url('Poppins-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: none !important;
+  background-color: transparent;
+}
+::-webkit-scrollbar {
+  width: 0 !important;
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+::selection {
+  background: #FF8A57;
+  color: #303030;
+}
+::-moz-selection {
+  background: #FF8A57;
+  color: #303030;
+}
+
+body.scrollbar {
+  scrollbar-width: thin; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+body.scrollbar::-webkit-scrollbar-track {
+  -webkit-box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+body.scrollbar::-webkit-scrollbar {
+  width: 6px !important;
+  height: 16px !important;
+  background-color: transparent;
+}
+
+body.scrollbar::-webkit-scrollbar-thumb {
+  background-color: #555;
 }
 
 :root {
-  font-family: Onest, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    font-family: 'Poppins-Regular', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    overflow-x: hidden;
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+background: linear-gradient(184.1deg, #090F14 2.93%, #050505 53.47%, #090F14 96.23%);
+    background-repeat: repeat;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    max-width: 100%;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    min-width: 320px;
+    max-width: 100%;
+    min-height: 100vh;
+  cursor: url('/img/cursor.svg'), auto;
+  position: relative;
+  height: 100%;
+  width: 100vw;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.css-1hq3ayp {
+    width: 10px;
 }
 
 .pagination {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 48px;
-  margin-bottom: 48px;
-  align-items: center;
-  list-style: none;
-  width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    align-items: center;
+    list-style: none;
+    width: 100%;
 }
 
 .page-previous-item,
 .page-next-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #213547;
-  padding: 8px 16px;
-  border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #213547;
+    padding: 8px 16px;
+    border-radius: 12px;
 }
 
 
 @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  h1 {
-    color: #213547;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+    :root {
+        color: #213547;
+        background-color: #ffffff;
+    }
+
+    h1 {
+        color: #213547;
+    }
+
+    a:hover {
+        color: #747bff;
+    }
+
+    button {
+        background-color: #f9f9f9;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    color: #ffffff;
-    background-color: #242424;
-  }
-  h1 {
-    color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #2d2d2d;
-  }
+    :root {
+        color: #ffffff;
+       background: linear-gradient(184.1deg, #090F14 2.93%, #050505 53.47%, #090F14 96.23%);
+        background-repeat: repeat;
+
+
+    }
+
+    h1 {
+        font-family: 'Poppins-Black', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+        color: #ffffff;
+    }
+
+    a:hover {
+        color: #747bff;
+    }
+
+    button {
+        background-color: #2d2d2d;
+    }
 }
