@@ -1,13 +1,13 @@
 {
-  "name": "Builderz xNFT Starter",
+  "name": "Re:naissance ",
   "version": "0.0.1",
-  "description": "Builderz xNFT Starter",
-  "website": "builderz.dev",
+  "description": "NFT Royalty Redeem Solution for Creators and Communities",
+  "website": "https://builderz.dev",
   "kind": "app",
   "icon": {
-    "md": "./assets/icon.png"
+    "md": "./assets/renaissance.svg"
   },
-  "screenshots": ["./assets/screenShot.png"],
+  "screenshots": ["./assets/screenshot1.png", "./assets/screenshot2.png", "./assets/screenshot3.png"],
   "entrypoints": {
     "default": {
       "web": "./dist/index.html"
