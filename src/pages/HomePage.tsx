@@ -47,8 +47,8 @@ export const HomePage = () => {
 
   return (
     <div className="h-full max-w-full">
-      <section className='px-2'>
-        <p className='text-[14px] py-4 text-start max-w-xs'>It's Repay Renaissance! Redeem your royalties - your project might reward you!</p>
+      <section className=''>
+        <p className='text-[14px] px-2 py-4 text-start max-w-xs'>It's Repay Renaissance! Redeem your royalties - your project might reward you!</p>
         <MySlide>
           <div className="flex flex-col items-center justify-center h-full w-full px-12">
             <div className="flex flex-row items-center justify-between gap-8 w-full">
