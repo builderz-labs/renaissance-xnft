@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { leaderBoard } from '../data/leaderBoard';
+import { allCollections } from '../data/allCollections';
 
 const MySlide = styled.div`
   background-image: url('/img/ren.png');
@@ -36,9 +37,10 @@ export default function RankingPage() {
 
     return (
         <main className='mt-5'>
-            {/*             <h1 className='text-4xl font-bold mb-10'>Ranking</h1>
- */}            <MySlide>
+            <h2 className='text-2xl font-semibold text-start mb-4' >Top Redeemer:</h2>
+            <MySlide>
                 <div className="flex flex-col items-center justify-center h-full w-full px-12">
+
                     <div className="flex flex-row items-center justify-between gap-10 mb-2 w-full">
                         <div className="w-4 h-4">
                             <img src="/img/crown.png" alt="First Place" />
@@ -49,6 +51,7 @@ export default function RankingPage() {
                             <img src="/img/sol.svg" alt="solana logo" className='w-[7px]' />
                         </div>
                     </div>
+
                     {leaderBoard.slice(1, 3).map((item) => (
                         <div className="flex flex-row items-center justify-between gap-10 w-full">
                             <div className="w-4 h-4">
@@ -64,19 +67,25 @@ export default function RankingPage() {
 
                 </div>
             </MySlide>
-            <div className="flex flex-col items-between justify-center gap-4 px-12 py-5">
-                {itemsToMap.map((item, index) => (
-                    <div key={item.rank} className="flex flex-row items-center justify-between gap-4 bg-lily-black w-full px-4 py-2 rounded-md">
-                        <div className="w-4 h-4">
-                            <p>{item.rank}.</p>
+            <div className="flex flex-col items-between justify-center gap-4  py-5 mb-40">
+                <h2 className='text-2xl font-semibold text-start my-2 mb-4'>Top Collections:</h2>
+                <div className="bg-lily-black bg-opacity-40 flex flex-col gap-4 py-5">
+                    {allCollections.map((item, index) => (
+                        <div key={item.id} className="grid grid-cols-8 gap-4 items-center justify-center w-full px-4 py-2 rounded-md">
+                            <div className="w-[20px] col-span-1">
+                                <p>{item.id}.</p>
+                            </div>
+                            <div className="flex flex-row gap-4 col-span-5 w-full text-start items-center justify-start">
+                                <img src={item.image} alt={item.name} className='w-5 h-5 rounded-full' />
+                                <p className='w-full  font-bold text-[18px]'>{item.name}</p>
+                            </div>
+                            <div className="flex flex-row gap-2 col-span-2 items-center justify-start">
+                                <p className=' font-bold text-[18px]'>{item.sol}</p>
+                                <img src="/img/sol.svg" alt="solana logo" className='w-4' />
+                            </div>
                         </div>
-                        <p>{item.name}</p>
-                        <div className="flex flex-row gap-1 items-center justify-center">
-                            <p className='w-full  font-light text-[14px]'>{item.sol}</p>
-                            <img src="/img/sol.svg" alt="solana logo" className='w-[7px]' />
-                        </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
 
         </main>
