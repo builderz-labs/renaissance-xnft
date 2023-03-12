@@ -92,7 +92,6 @@ function ProjectPage() {
                                             )) : <div className='flex flex-col gap-4 px-4 w-full'>
                                                 <p className='text-center'>No NFTs in this collection</p>
                                             </div>}
-
                                         </div>
                                     )}
                                 </Await>
