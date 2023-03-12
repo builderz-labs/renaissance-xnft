@@ -4,14 +4,15 @@ export const allCollections = [
         name: 'LILY',
         image: '/img/lily.webp',
         fp: 9.6,
-        sol: 40.0
+        sol: 40.0,
+
     },
     {
         id: 2,
         name: 'Claynosaurz',
         image: '/img/clay.webp',
         fp: 42.0,
-        sol: 39.20
+        sol: 39.20,
     },
     {
         id: 3,
@@ -25,14 +26,14 @@ export const allCollections = [
         name: 'y00ts',
         image: '/img/y00ts.jpg',
         fp: 125.0,
-        sol: 35.20
+        sol: 35.20,
     },
     {
         id: 5,
         name: 'Smyths',
         image: '/img/smyths.jpg',
         fp: 6.9,
-        sol: 34.20
+        sol: 34.20,
     },
     {
         id: 6,
@@ -41,4 +42,12 @@ export const allCollections = [
         fp: 23.6,
         sol: 33.20
     },
+    {
+        id: 7,
+        name: 'BLOCKZ',
+        image: '/img/builderz.webp',
+        fp: 23.5,
+        sol: 32.10,
+
+    }
 ];

@@ -15,13 +15,6 @@ const MySlide = styled.div`
 height: 96px;
 width: 100%;
 filter: drop-shadow(1px 1px 8px rgba(0, 0, 0, 0.25));
-border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 20%, rgba(255, 138, 87, 0.1) 100%);
-border: 4px solid;
-
-border-image-source: linear-gradient(180deg, #FC9F62 0%, #FF7A00 100%);
-
-margin-x: 16px;
-
   `
 const MyDiv = styled.div`
 background: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 30%, rgba(255, 255, 255, 0) 100%);
