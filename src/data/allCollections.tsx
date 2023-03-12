@@ -2,14 +2,14 @@ export const allCollections = [
     {
         id: 1,
         name: 'LILY',
-        image: '/img/clay.webp',
+        image: '/img/lily.webp',
         fp: 9.6,
         sol: 40.0
     },
     {
         id: 2,
         name: 'Claynosaurz',
-        image: '/img/lily.webp',
+        image: '/img/clay.webp',
         fp: 42.0,
         sol: 39.20
     },

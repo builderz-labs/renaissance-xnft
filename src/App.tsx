@@ -13,7 +13,7 @@ import "./App.css";
 import ErrorPage from "./pages/ErrorPage";
 import { HomePage } from "./pages/HomePage";
 import { NftsPage, loader as nftsLoader } from "./pages/NftsPage";
-import ProjectPage from './pages/project';
+import ProjectPage, { loader } from './pages/project';
 import RankingPage from './pages/RankingPage';
 
 declare global {
@@ -40,6 +40,7 @@ const router = createBrowserRouter([
           {
             path: "project/:id",
             element: <ProjectPage />,
+            loader: ({ params }) => loader(queryClient, { params }),
           },
           {
             path: "Ranking",
@@ -50,6 +51,7 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
 
 
 function App() {

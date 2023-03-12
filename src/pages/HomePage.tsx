@@ -15,6 +15,10 @@ const MySlide = styled.div`
 height: 96px;
 width: 100%;
 filter: drop-shadow(1px 1px 8px rgba(0, 0, 0, 0.25));
+border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 20%, rgba(255, 138, 87, 0.1) 100%);
+border: 4px solid;
+
+border-image-source: linear-gradient(180deg, #FC9F62 0%, #FF7A00 100%);
 
 margin-x: 16px;
 
@@ -34,6 +38,13 @@ background-clip: text;
 text-fill-color: transparent;
 `
 
+const Blur1 = styled.div`
+background: linear-gradient(180deg, #E6813E 0%, #00B2FF 100%);
+filter: blur(50.5px);
+width: 260px;
+height: 260px;
+`
+
 
 export const HomePage = () => {
 
@@ -46,7 +57,9 @@ export const HomePage = () => {
   };
 
   return (
-    <div className="h-full max-w-full">
+    <div className="h-full max-w-full relative">
+      <Blur1 className='absolute -top-40 -right-40 z-0 opacity-20' />
+      <Blur1 className='absolute top-40 right-40 z-0 opacity-20' />
       <section className=''>
         <p className='text-[14px] px-2 py-4 text-start max-w-xs'>It's Repay Renaissance! Redeem your royalties - your project might reward you!</p>
         <MySlide>
@@ -80,6 +93,7 @@ export const HomePage = () => {
         <h2 className='py-2 px-2 pt-4 font-bold text-xl text-start'>Featured Collections</h2>
         <FeaturedList />
       </section>
+      <Blur1 className='absolute top-80 -right-60 z-0 opacity-20' />
       <section className='mb-10'>
         <h2 className='pt-8 px-2 font-bold text-xl text-start'>All Collections</h2>
         <Search onSearch={handleSearch} />
