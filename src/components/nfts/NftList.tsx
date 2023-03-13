@@ -39,6 +39,8 @@ export const NftList = () => {
 
   const pageCount = Math.ceil(nfts!.length / pageSize);
 
+  console.log(nfts)
+
   return (
     <div>
       <div className="grid grid-cols-2 gap-4 relative">
