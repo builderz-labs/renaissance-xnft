@@ -1,11 +1,9 @@
-import { Outlet } from "react-router-dom";
-import { Header } from "./Header";
-import { Tabs } from "./Tabs";
-import styled from "styled-components";
+import { Outlet } from 'react-router-dom';
+import { Header } from './Header';
+import { Tabs } from './Tabs';
+import styled from 'styled-components';
 
-const myMain = styled.main`
-
-`
+const myMain = styled.main``;
 
 export function Layout() {
   return (
@@ -19,7 +17,7 @@ export function Layout() {
         <Tabs />
         <div className="flex flex-row items-center justify-center gap-2 text-[8px] font-light py-2 bg-black">
           <p>Powered by</p>
-          <a href="https://builderz.dev" target='_blank' rel='noreferrer'>
+          <a href="https://builderz.dev" target="_blank" rel="noreferrer">
             <img src="/img/builderz.svg" alt="builderz logo" />
           </a>
         </div>

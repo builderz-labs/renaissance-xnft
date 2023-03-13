@@ -1,19 +1,19 @@
-import buffer from "buffer";
+import buffer from 'buffer';
 globalThis.Buffer = buffer.Buffer;
 
-import { ConnectionProvider } from "@solana/wallet-adapter-react";
-import { QueryClientProvider } from "@tanstack/react-query";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import "tw-elements";
-import { Layout } from "./components/Layout";
-import { queryClient } from "./client";
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import "./App.css";
+import { ConnectionProvider } from '@solana/wallet-adapter-react';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import 'tw-elements';
+import { Layout } from './components/Layout';
+import { queryClient } from './client';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import './App.css';
 
-import ErrorPage from "./pages/ErrorPage";
-import { HomePage } from "./pages/HomePage";
-import { NftsPage, loader as nftsLoader } from "./pages/NftsPage";
-import ProjectPage, { loader } from './pages/project';
+import ErrorPage from './pages/ErrorPage';
+import { HomePage, loader as homeLoader } from './pages/HomePage';
+import { NftsPage, loader as nftsLoader } from './pages/NftsPage';
+import { ProjectPage, loader as projectLoader } from './pages/project';
 import RankingPage from './pages/RankingPage';
 
 declare global {
@@ -24,26 +24,30 @@ declare global {
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
       {
         errorElement: <ErrorPage />,
         children: [
-          { index: true, element: <HomePage /> },
           {
-            path: "NFTs",
+            index: true,
+            element: <HomePage />,
+            loader: () => homeLoader(queryClient),
+          },
+          {
+            path: 'NFTs',
             element: <NftsPage />,
             loader: () => nftsLoader(queryClient),
           },
           {
-            path: "project/:id",
+            path: 'project/:id',
             element: <ProjectPage />,
-            loader: ({ params }) => loader(queryClient, { params }),
+            loader: ({ params }) => projectLoader(queryClient, { params }),
           },
           {
-            path: "Ranking",
+            path: 'Ranking',
             element: <RankingPage />,
           },
         ],
@@ -52,14 +56,12 @@ const router = createBrowserRouter([
   },
 ]);
 
-
-
 function App() {
   return (
     <ConnectionProvider endpoint={import.meta.env.VITE_HELIUS_RPC_PROXY}>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
-        {/*         <ReactQueryDevtools /> */}
+        <ReactQueryDevtools />
       </QueryClientProvider>
     </ConnectionProvider>
   );

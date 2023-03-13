@@ -1,10 +1,10 @@
-import { defineConfig, loadEnv } from "vite";
-import react from "@vitejs/plugin-react";
-import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill";
+import { defineConfig, loadEnv } from 'vite';
+import react from '@vitejs/plugin-react';
+import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
-  const env = loadEnv(mode, process.cwd(), "");
+  const env = loadEnv(mode, process.cwd(), '');
   return {
     define: {
       __APP_ENV__: env.APP_ENV,
@@ -13,7 +13,7 @@ export default defineConfig(({ command, mode }) => {
     optimizeDeps: {
       esbuildOptions: {
         define: {
-          global: "globalThis",
+          global: 'globalThis',
         },
         plugins: [NodeGlobalsPolyfillPlugin({ process: true, buffer: true })],
       },
@@ -21,19 +21,19 @@ export default defineConfig(({ command, mode }) => {
     build: {
       rollupOptions: {
         output: {
-          manualChunks: (id) => {
-            const isModule = id.includes("node_modules");
-            if (isModule && id.includes("@solana")) {
-              return "vendor_solana";
+          manualChunks: id => {
+            const isModule = id.includes('node_modules');
+            if (isModule && id.includes('@solana')) {
+              return 'vendor_solana';
             }
-            if (isModule && id.includes("@project-serum")) {
-              return "vendor_anchor";
+            if (isModule && id.includes('@project-serum')) {
+              return 'vendor_anchor';
             }
-            if (isModule && id.includes("@metaplex-foundation")) {
-              return "vendor_metaplex";
+            if (isModule && id.includes('@metaplex-foundation')) {
+              return 'vendor_metaplex';
             }
-            if (isModule && id.includes("@tanstack")) {
-              return "vendor_tanstack";
+            if (isModule && id.includes('@tanstack')) {
+              return 'vendor_tanstack';
             }
           },
         },

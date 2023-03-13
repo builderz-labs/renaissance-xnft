@@ -1,97 +1,54 @@
 import styled from 'styled-components';
-import FeaturedList from '../components/FeaturedList';
-
-import { useState } from 'react';
-import AllList from '../components/AllList';
-import { allCollections } from '../data/allCollections';
-import Search from '../components/Search';
-import { leaderBoard } from '../data/leaderBoard';
-
-const MySlide = styled.div`
-  background-image: url('/img/ren.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-height: 96px;
-width: 100%;
-filter: drop-shadow(1px 1px 8px rgba(0, 0, 0, 0.25));
-  `
-const MyDiv = styled.div`
-background: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 30%, rgba(255, 255, 255, 0) 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-text-fill-color: transparent;
-  `
-const MySecond = styled.div`
-background: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 40%, rgba(255, 255, 255, 0.22) 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-text-fill-color: transparent;
-`
+import { QueryClient } from '@tanstack/react-query';
+import FeaturedList from '../components/home/FeaturedList';
+import { Suspense } from 'react';
+import { AllCollections } from '../components/home/AllCollections';
+import { Await, defer, useLoaderData } from 'react-router-dom';
+import { Loading } from '../components/Loading';
+import { Leaderboard } from '../components/home/Leaderboard';
 
 const Blur1 = styled.div`
-background: linear-gradient(180deg, #E6813E 0%, #00B2FF 100%);
-filter: blur(50.5px);
-width: 260px;
-height: 260px;
-`
+  background: linear-gradient(180deg, #e6813e 0%, #00b2ff 100%);
+  filter: blur(50.5px);
+  width: 260px;
+  height: 260px;
+`;
 
+export const loader = (queryClient: QueryClient) => {
+  return defer({
+    collections: queryClient.fetchQuery({
+      queryKey: ['collections'],
+      queryFn: () =>
+        fetch('/src/data/collections.json').then(res => res.json()),
+      staleTime: 1000 * 60 * 2,
+    }),
+    leaderboard: queryClient.fetchQuery({
+      queryKey: ['leaderboard'],
+      queryFn: () => ({ test: 'test' }),
+    }),
+  });
+};
 
 export const HomePage = () => {
-
-  // search input for all collections
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const handleSearch = (query: any) => {
-    setSearchQuery(query);
-    console.log(query)
-  };
+  const { collections, leaderboard } = useLoaderData() as any;
 
   return (
     <div className="h-full max-w-full relative">
-      <Blur1 className='absolute -top-40 -right-40 z-0 opacity-20' />
-      <Blur1 className='absolute top-40 right-40 z-0 opacity-20' />
-      <section className=''>
-        <p className='text-[14px] px-2 py-4 text-start max-w-xs'>It's Repay Renaissance! Redeem your royalties - your project might reward you!</p>
-        <MySlide>
-          <div className="flex flex-col items-center justify-center h-full w-full px-12">
-            <div className="flex flex-row items-center justify-between gap-8 w-full">
-              <div className="w-4 h-4">
-                <img src="/img/crown.png" alt="First Place" />
-              </div>
-              <p>{leaderBoard[0].name}</p>
-              <div className="flex flex-row gap-1 items-center justify-center">
-                <p className='w-full  font-semibold text-[12px]'>{leaderBoard[0].sol}</p>
-                <img src="/img/sol.svg" alt="solana logo" className='w-[7px]' />
-              </div>
-            </div>
-            {leaderBoard.slice(1, 3).map((item) => (
-              <MySecond className="flex flex-row items-center justify-between gap-8 w-full">
-                <div className="w-4 h-4">
-                  <p>{item.rank}.</p>
-                </div>
-                <p>{item.name}</p>
-                <div className="flex flex-row gap-1 items-center justify-center">
-                  <p className='w-full  font-light text-[12px]'>{item.sol}</p>
-                  <img src="/img/sol.svg" alt="solana logo" className='w-[7px]' />
-                </div>
-              </MySecond>
-            ))}
-          </div>
-        </MySlide>
-      </section>
-      <section className="">
-        <h2 className='py-2 px-2 pt-4 font-bold text-xl text-start'>Featured Collections</h2>
-        <FeaturedList />
-      </section>
-      <Blur1 className='absolute top-80 -right-60 z-0 opacity-20' />
-      <section className='mb-10'>
-        <h2 className='pt-8 px-2 font-bold text-xl text-start'>All Collections</h2>
-        <Search onSearch={handleSearch} />
-        <AllList collections={allCollections} searchQuery={searchQuery} />
-      </section>
+      <Blur1 className="absolute -top-40 -right-40 z-0 opacity-20" />
+      <Blur1 className="absolute top-40 right-40 z-0 opacity-20" />
+      <Suspense fallback={<Loading />}>
+        <Await resolve={collections}>
+          {/* All Sections in their own components */}
+          <p className="text-[14px] px-2 py-4 text-start max-w-xs">
+            It's Repay Renaissance! Redeem your royalties - your project might
+            reward you!
+          </p>
+          <Leaderboard />
+          <FeaturedList />
+          <Blur1 className="absolute top-80 -right-60 z-0 opacity-20" />
+          <AllCollections />
+        </Await>
+      </Suspense>
     </div>
   );
-}
+};

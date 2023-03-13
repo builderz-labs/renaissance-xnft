@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "name": "LILY",
+    "image": "/img/lily.webp",
+    "collectionAddress": "3NoPerEGS1JpPA6FGYpPfKJ8QUkBjYPngST2pwpQt7ED",
+    "fp": 9.6,
+    "sol": 40.0
+  },
+  {
+    "id": 2,
+    "name": "Claynosaurz",
+    "image": "/img/clay.webp",
+    "collectionAddress": "3NoPerEGS1JpPA6FGYpPfKJ8QUkBjYPngST2pwpQt7ED",
+    "fp": 42.0,
+    "sol": 39.2
+  },
+  {
+    "id": 3,
+    "name": "ABC",
+    "image": "/img/abc.gif",
+    "collectionAddress": "3NoPerEGS1JpPA6FGYpPfKJ8QUkBjYPngST2pwpQt7ED",
+    "fp": 69.0,
+    "sol": 36.2
+  },
+  {
+    "id": 4,
+    "name": "y00ts",
+    "image": "/img/y00ts.jpg",
+    "collectionAddress": "3NoPerEGS1JpPA6FGYpPfKJ8QUkBjYPngST2pwpQt7ED",
+    "fp": 125.0,
+    "sol": 35.2
+  },
+  {
+    "id": 5,
+    "name": "Smyths",
+    "image": "/img/smyths.jpg",
+    "collectionAddress": "3NoPerEGS1JpPA6FGYpPfKJ8QUkBjYPngST2pwpQt7ED",
+    "fp": 6.9,
+    "sol": 34.2
+  },
+  { "id": 6, "name": "FFF", "image": "/img/fff.webp", "fp": 23.6, "sol": 33.2 },
+  {
+    "id": 7,
+    "name": "BLOCKZ",
+    "image": "/img/builderz.webp",
+    "collectionAddress": "3NoPerEGS1JpPA6FGYpPfKJ8QUkBjYPngST2pwpQt7ED",
+    "fp": 23.5,
+    "sol": 32.1
+  }
+]

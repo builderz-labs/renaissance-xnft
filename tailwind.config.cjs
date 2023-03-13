@@ -1,8 +1,8 @@
 module.exports = {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/tw-elements/dist/js/**/*.js",
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/tw-elements/dist/js/**/*.js',
   ],
   theme: {
     extend: {
@@ -18,7 +18,7 @@ module.exports = {
         'lily-tan': '#E9E1D1',
         'lily-black': '#222222',
         'lily-red': '#FF9596',
-        'renaissance-orange': '#FF8A57'
+        'renaissance-orange': '#FF8A57',
       },
       animation: {
         'spin-slow': 'spin 5s linear infinite',
@@ -35,5 +35,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tw-elements/dist/plugin"), require("daisyui")],
+  plugins: [require('tw-elements/dist/plugin'), require('daisyui')],
 };

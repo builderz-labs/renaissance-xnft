@@ -7,7 +7,11 @@
   "icon": {
     "md": "./assets/renaissance.svg"
   },
-  "screenshots": ["./assets/screenshot1.png", "./assets/screenshot2.png", "./assets/screenshot3.png"],
+  "screenshots": [
+    "./assets/screenshot1.png",
+    "./assets/screenshot2.png",
+    "./assets/screenshot3.png"
+  ],
   "entrypoints": {
     "default": {
       "web": "./dist/index.html"

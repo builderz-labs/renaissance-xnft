@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { useConnection, useWallet } from "@solana/wallet-adapter-react";
+import { useEffect, useState } from 'react';
+import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 
-import { getNfts } from "../utils/nfts";
+import { getNfts } from '../utils/nfts';
 
 export default function useNfts() {
   const { connection } = useConnection();
@@ -13,7 +13,7 @@ export default function useNfts() {
 
   useEffect(() => {
     getNfts(publicKey!)
-      .then((data) => {
+      .then(data => {
         if (data) {
           setNfts(data);
         }
