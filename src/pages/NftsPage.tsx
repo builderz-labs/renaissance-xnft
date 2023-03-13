@@ -44,9 +44,6 @@ export const NftsPage = () => {
             <h1 className="text-4xl font-bold mb-10">Your NFTs</h1>
             <NftList />
           </section>
-          <section className='my-10 mb-40'>
-            <h2 className="text-3xl font-semibold mb-10">Other Collections</h2>
-          </section>
         </Await>
       </Suspense>
     </div>

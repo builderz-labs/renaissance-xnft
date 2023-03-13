@@ -103,6 +103,9 @@ export const NftListRedemption = ({
             <button disabled={selectedItems.length === 0} className={'btn btn-buy text-black  pt-0 pb-0 px-[36px] rounded-[120px] bg-[#ff8a57] border-2 border-gray-900 disabled:bg-[#3f3f3f]  disabled:cursor-not-allowed disabled:text-gray-100   hover:bg-[#f5fd9c]' + (loading && " loading")}>Redeem</button>
           </div>
         </div>
+        <section className='my-10 mb-40'>
+          <h2 className="text-3xl font-semibold mb-10">Other Collections</h2>
+        </section>
       </div>
     </div>
   );
