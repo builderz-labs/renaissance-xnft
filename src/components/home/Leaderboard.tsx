@@ -29,6 +29,8 @@ export const Leaderboard = () => {
     queryKey: ['leaderboard'],
   });
 
+  console.log(leaderboard);
+
   return (
     <section className="">
       <MySlide>

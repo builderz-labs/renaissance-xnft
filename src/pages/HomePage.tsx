@@ -6,6 +6,7 @@ import { AllCollections } from '../components/home/AllCollections';
 import { Await, defer, useLoaderData } from 'react-router-dom';
 import { Loading } from '../components/Loading';
 import { Leaderboard } from '../components/home/Leaderboard';
+import { fetchLeaderboard } from '../utils/history';
 
 const Blur1 = styled.div`
   background: linear-gradient(180deg, #e6813e 0%, #00b2ff 100%);
@@ -24,7 +25,7 @@ export const loader = (queryClient: QueryClient) => {
     }),
     leaderboard: queryClient.fetchQuery({
       queryKey: ['leaderboard'],
-      queryFn: () => ({ test: 'test' }),
+      queryFn: () => fetchLeaderboard(),
     }),
   });
 };

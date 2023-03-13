@@ -7,14 +7,22 @@ export const truncate = (wallet: string, startChars: any, endChars: number) => {
   return start + '...' + end;
 };
 
-const fetchTransactionPages = async (amount: number) => {
-  let page = 1;
+const fetchTransactionPages = async (amount?: number, timestamp?: number) => {
   let oldestTransaction = '';
   let transactions: any[] = [];
 
+  let oldestTransactionTimestamp = Infinity;
+  let maxTxAmount = amount || Infinity;
+  let maxTxTimestamp = timestamp || Infinity;
+
   try {
-    while (transactions.length <= amount) {
-      const url = `${process.env.NEXT_PUBLIC_HELIUS_URL}/v0/addresses/9ZskGH9wtdwM9UXjBq1KDwuaLfrZyPChz41Hx7NWhTFf/transactions?before=${oldestTransaction}`;
+    while (
+      transactions.length <= maxTxAmount &&
+      oldestTransactionTimestamp >= maxTxTimestamp
+    ) {
+      const url = `${
+        import.meta.env.VITE_HELIUS_RPC_PROXY
+      }/v0/addresses/9ZskGH9wtdwM9UXjBq1KDwuaLfrZyPChz41Hx7NWhTFf/transactions?before=${oldestTransaction}`;
       const { data } = await axios.get(url);
 
       if (data.length === 0) {
@@ -22,12 +30,22 @@ const fetchTransactionPages = async (amount: number) => {
         return transactions;
       }
 
-      // API data is already sorted in descending order
       oldestTransaction = data[data.length - 1].signature;
-      transactions.push(...data);
-      page += 1;
-      return transactions;
+
+      oldestTransactionTimestamp = data[data.length - 1].timestamp * 1000;
+
+      const timeFilteredData = data.filter(
+        (tx: any) => tx.timestamp * 1000 >= maxTxTimestamp
+      );
+
+      if (timeFilteredData.length === 0) {
+        return transactions;
+      }
+
+      transactions.push(...timeFilteredData);
     }
+
+    return transactions;
   } catch (error) {
     throw error;
   }
@@ -72,6 +90,7 @@ export const fetchHistory = async (nftToFilterBy?: PublicKey) => {
   return filtered;
 };
 
+// History for user
 export const fetchUserHistory = async (user: PublicKey) => {
   const transactions = await fetchTransactionPages(2000);
 
@@ -106,4 +125,48 @@ export const fetchUserHistory = async (user: PublicKey) => {
   });
 
   return { totalAmount: userTotalAmount, transactions: userTransactions };
+};
+
+// Leaderboard
+export const fetchLeaderboard = async () => {
+  const date = Date.now();
+
+  const transactions = await fetchTransactionPages(
+    undefined,
+    date - 7 * 24 * 60 * 60 * 1000
+  );
+
+  const uniqueUsers = [...new Set(transactions.map((tx: any) => tx.feePayer))];
+
+  const leaderboard = uniqueUsers.map((user: any) => {
+    const userTransactions = transactions.filter((tx: any) => {
+      return tx.feePayer === user;
+    });
+
+    let userTotal = 0;
+
+    userTransactions.forEach((tx: any) => {
+      let royaltyAccounts: string[] = [];
+      tx.instructions.forEach((ix: any) => {
+        royaltyAccounts.push(...ix.accounts.slice(6));
+      });
+
+      const royaltyTransfers = tx.nativeTransfers.filter((transfer: any) =>
+        royaltyAccounts.includes(transfer.toUserAccount)
+      );
+
+      const transactionTotalAmount = royaltyTransfers.reduce(
+        (acc: any, curr: any) => {
+          return acc + curr.amount;
+        },
+        0
+      );
+
+      userTotal += transactionTotalAmount;
+    });
+
+    return { user, total: userTotal };
+  });
+
+  return leaderboard.sort((a: any, b: any) => b.total - a.total);
 };
