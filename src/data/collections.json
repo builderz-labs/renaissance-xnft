@@ -4,6 +4,21 @@
     "name": "LILY",
     "image": "/img/lily.webp",
     "collectionAddress": "3NoPerEGS1JpPA6FGYpPfKJ8QUkBjYPngST2pwpQt7ED",
+    "description": "LILY - an expansion of The Lotus brand - aims to become the landing page of the new web pushing the boundaries through innovative technology, art and informed community.",
+    "socials": [
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/THELILYNFT"
+      },
+      {
+        "name": "Discord",
+        "url": "https://discord.gg/2Z7Y4Y2"
+      },
+      {
+        "name": "Website",
+        "url": "https://thelotus.io/"
+      }
+    ],
     "fp": 9.6,
     "sol": 40.0
   },
@@ -12,6 +27,21 @@
     "name": "Claynosaurz",
     "image": "/img/clay.webp",
     "collectionAddress": "3NoPerEGS1JpPA6FGYpPfKJ8QUkBjYPngST2pwpQt7ED",
+        "description": "Travel back to distant lands. Explore the uncharted, discover lost artifacts. Adventure awaits…",
+    "socials": [
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/Claynosa"
+      },
+      {
+        "name": "Discord",
+        "url": "https://discord.gg/2Z7Y4Y2"
+      },
+      {
+        "name": "Website",
+        "url": "https://thelotus.io/"
+      }
+    ],
     "fp": 42.0,
     "sol": 39.2
   },
@@ -20,6 +50,21 @@
     "name": "ABC",
     "image": "/img/abc.gif",
     "collectionAddress": "3NoPerEGS1JpPA6FGYpPfKJ8QUkBjYPngST2pwpQt7ED",
+           "description": "Travel back to distant lands. Explore the uncharted, discover lost artifacts. Adventure awaits…",
+    "socials": [
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/Claynosa"
+      },
+      {
+        "name": "Discord",
+        "url": "https://discord.gg/2Z7Y4Y2"
+      },
+      {
+        "name": "Website",
+        "url": "https://thelotus.io/"
+      }
+    ],
     "fp": 69.0,
     "sol": 36.2
   },
@@ -28,6 +73,21 @@
     "name": "y00ts",
     "image": "/img/y00ts.jpg",
     "collectionAddress": "3NoPerEGS1JpPA6FGYpPfKJ8QUkBjYPngST2pwpQt7ED",
+           "description": "Travel back to distant lands. Explore the uncharted, discover lost artifacts. Adventure awaits…",
+    "socials": [
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/Claynosa"
+      },
+      {
+        "name": "Discord",
+        "url": "https://discord.gg/2Z7Y4Y2"
+      },
+      {
+        "name": "Website",
+        "url": "https://thelotus.io/"
+      }
+    ],
     "fp": 125.0,
     "sol": 35.2
   },
@@ -36,6 +96,21 @@
     "name": "Smyths",
     "image": "/img/smyths.jpg",
     "collectionAddress": "3NoPerEGS1JpPA6FGYpPfKJ8QUkBjYPngST2pwpQt7ED",
+           "description": "Travel back to distant lands. Explore the uncharted, discover lost artifacts. Adventure awaits…",
+    "socials": [
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/Claynosa"
+      },
+      {
+        "name": "Discord",
+        "url": "https://discord.gg/2Z7Y4Y2"
+      },
+      {
+        "name": "Website",
+        "url": "https://thelotus.io/"
+      }
+    ],
     "fp": 6.9,
     "sol": 34.2
   },
@@ -45,6 +120,21 @@
     "name": "BLOCKZ",
     "image": "/img/builderz.webp",
     "collectionAddress": "3NoPerEGS1JpPA6FGYpPfKJ8QUkBjYPngST2pwpQt7ED",
+           "description": "Travel back to distant lands. Explore the uncharted, discover lost artifacts. Adventure awaits…",
+    "socials": [
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/Claynosa"
+      },
+      {
+        "name": "Discord",
+        "url": "https://discord.gg/2Z7Y4Y2"
+      },
+      {
+        "name": "Website",
+        "url": "https://thelotus.io/"
+      }
+    ],
     "fp": 23.5,
     "sol": 32.1
   }

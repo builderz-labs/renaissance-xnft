@@ -24,7 +24,7 @@ export const loader = (queryClient: QueryClient) => {
       queryFn: () =>
         getNfts(
           window.xnft.solana.publicKey ||
-            new PublicKey('PeRXuY1P4cnzDZEPH1ancRVSyQMDpnTF27BwmQ1kkWq')
+          new PublicKey('PeRXuY1P4cnzDZEPH1ancRVSyQMDpnTF27BwmQ1kkWq')
         ), // Hard coded if in localhost
     }),
   });
@@ -39,10 +39,13 @@ export const NftsPage = () => {
       <Blur1 className="absolute top-40 right-40 z-0 opacity-10" />
       <Suspense fallback={<Loading />}>
         <Await resolve={nfts}>
-          <section className="my-5 mb-40">
+          <section className="my-5 ">
             <Blur1 className="absolute top-80 -right-60 z-0 opacity-20" />
             <h1 className="text-4xl font-bold mb-10">Your NFTs</h1>
             <NftList />
+          </section>
+          <section className='my-10 mb-40'>
+            <h2 className="text-3xl font-semibold mb-10">Other Collections</h2>
           </section>
         </Await>
       </Suspense>

@@ -3,6 +3,14 @@ import { useQuery } from '@tanstack/react-query';
 import ReactPaginate from 'react-paginate';
 
 import { NftItem } from './NftItem';
+import styled from 'styled-components';
+
+const Blur1 = styled.div`
+  background: linear-gradient(180deg, #e6813e 0%, #00b2ff 100%);
+  filter: blur(50.5px);
+  width: 260px;
+  height: 260px;
+`;
 
 export const NftList = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -33,7 +41,9 @@ export const NftList = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-4 relative">
+        <Blur1 className="absolute top-[480px] -left-60 z-0 opacity-20" />
+
         {currentNfts?.map((nft: any) => {
           return <NftItem key={nft.tokenAddress} nft={nft} />;
         })}

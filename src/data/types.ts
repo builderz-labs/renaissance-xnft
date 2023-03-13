@@ -1,4 +1,5 @@
 export type Collection = {
+  description: string;
   id: number;
   name: string;
   image: string;
