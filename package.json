@@ -11,6 +11,7 @@
     "bundle": "yarn build && npx xnft bundle"
   },
   "dependencies": {
+    "@builderz/royalty-solution": "^1.0.5",
     "@dual-finance/gso": "^0.0.11",
     "@dual-finance/staking-options": "^0.0.17",
     "@headlessui/react": "^1.7.11",

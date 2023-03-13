@@ -6,3 +6,17 @@ export type Collection = {
   fp: number;
   sol: number;
 };
+
+export type NftType = {
+  name: string;
+  tokenAddress: string;
+  collectionAddress: string;
+  collectionName: string;
+  imageUrl: string;
+  traits: {
+    trait_type: string;
+    value: string;
+  }[];
+  royaltiesPaid: boolean;
+  royaltiesToPay: number;
+};
