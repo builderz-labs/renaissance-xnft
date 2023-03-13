@@ -9,6 +9,7 @@ import { QueryClient } from '@tanstack/react-query';
 import { Loading } from '../components/Loading';
 import { NftList } from '../components/nfts/NftList';
 import styled from 'styled-components';
+import { NftListRedemption } from '../components/project/NftListRedemption';
 
 const Blur1 = styled.div`
   background: linear-gradient(180deg, #e6813e 0%, #00b2ff 100%);
@@ -37,12 +38,12 @@ export const NftsPage = () => {
     <div className="h-full mb-40 relative">
       <Blur1 className="absolute -top-40 -right-40 z-0 opacity-20" />
       <Blur1 className="absolute top-40 right-40 z-0 opacity-10" />
+      <Blur1 className="absolute top-80 -right-60 z-0 opacity-20" />
       <Suspense fallback={<Loading />}>
         <Await resolve={nfts}>
           <section className="my-5 ">
-            <Blur1 className="absolute top-80 -right-60 z-0 opacity-20" />
             <h1 className="text-4xl font-bold mb-10">Your NFTs</h1>
-            <NftList />
+            <NftListRedemption collectionAddress={[]} />
           </section>
         </Await>
       </Suspense>

@@ -60,14 +60,14 @@ export const checkNfts = async (mintList: string[]) => {
 
 export const getCheckedNftsForCollection = async (
   owner: PublicKey,
-  allowedCollections?: string[]
+  allowedCollections: string[]
 ) => {
   let nfts = [];
 
   try {
     nfts = await getNfts(owner);
 
-    if (allowedCollections) {
+    if (allowedCollections.length) {
       nfts = nfts.filter(nft =>
         allowedCollections.includes(nft.collectionAddress)
       );

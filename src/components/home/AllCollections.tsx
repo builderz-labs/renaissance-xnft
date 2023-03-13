@@ -65,19 +65,19 @@ export const AllCollections = () => {
                 />
               </div>
               <div className="flex flex-col gap-2 justify-center items-start text-start flex-grow pl-4">
-                <p className="w-full  font-black truncate text-sm">
+                <p className="w-full  font-black truncate max-w-[70px] text-sm">
                   {collection.name}
                 </p>
                 <div className="flex flex-row gap-1 items-center justify-center">
-                  <p className="w-full  font-light text-[8px]">FP: </p>
+                  <p className="w-full  font-light text-[12px]">
+                    {collection.fp}
+                  </p>
                   <img
                     src="/img/sol.svg"
                     alt="solana logo"
-                    className="w-[7px]"
+                    className="w-[12px]"
                   />
-                  <p className="w-full  font-light text-[8px]">
-                    {collection.fp}
-                  </p>
+
                 </div>
               </div>
             </ItemCard>

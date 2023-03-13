@@ -46,6 +46,7 @@ export const loader = (queryClient: QueryClient, { params }: any) => {
 export const ProjectPage = () => {
   const data = useLoaderData() as any;
 
+
   return (
     <div className="mt-5 h-full relative">
       <Blur1 className="absolute -top-40 -right-40 z-0 opacity-20" />
@@ -62,6 +63,9 @@ export const ProjectPage = () => {
 
 export const ProjectDetails = () => {
   const { id } = useParams();
+
+
+  const [selectedItems, setSelectedItems] = useState<any[]>([]);
 
   // Get Collection
   const { data: collections } = useQuery<Collection[]>({
@@ -234,7 +238,7 @@ actual_royalties / expected_royalties"
             <section className="my-4 text-start px-2 text-2xl font-bold flex flex-col gap-4 mt-20">
               <h1>Your {id} NFTs</h1>
               <NftListRedemption
-                collectionAddress={pageCollection.collectionAddress}
+                collectionAddress={[pageCollection.collectionAddress]}
               />
             </section>
           </>

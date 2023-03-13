@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { SetStateAction, useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import ReactPaginate from 'react-paginate';
-import { PublicKey } from '@solana/web3.js';
+import { LAMPORTS_PER_SOL, PublicKey } from '@solana/web3.js';
 import { useWallet } from '../../hooks/useWallet';
 
 import { NftItem } from '../nfts/NftItem';
@@ -11,7 +11,7 @@ import { Loading } from '../Loading';
 export const NftListRedemption = ({
   collectionAddress,
 }: {
-  collectionAddress: string;
+  collectionAddress: string[];
 }) => {
   const wallet = useWallet();
 
@@ -25,7 +25,7 @@ export const NftListRedemption = ({
       getCheckedNftsForCollection(
         wallet.publicKey ||
         new PublicKey('63Kaxzs8BxXh7sPZHDnAy9HwvkeLwJ3mF33EcXKSjpT9'),
-        [collectionAddress]
+        collectionAddress
       ),
   });
 
@@ -41,6 +41,36 @@ export const NftListRedemption = ({
   };
 
   const pageCount = checkedNfts ? Math.ceil(checkedNfts.length / pageSize) : 0;
+  const [showUnpaidRoyaltiesOnly, setShowUnpaidRoyaltiesOnly] = useState(false);
+  const [selectAllUnpaid, setSelectAllUnpaid] = useState(false);
+  const [filteredNfts, setFilteredNfts] = useState<any[]>([]);
+
+  /*   useEffect(() => {
+      let filteredNfts = currentNfts;
+      if (showUnpaidRoyaltiesOnly) {
+        filteredNfts = currentNfts!.filter((nft) => !nft.royaltiesPaid && nft.status !== "error");
+      }
+      setFilteredNfts(filteredNfts);
+      setCurrentNfts(filteredNfts.slice(startIndex, endIndex));
+    }, [currentNfts, endIndex, startIndex, showUnpaidRoyaltiesOnly]); */
+
+  // Set Total to Repay
+  useEffect(() => {
+    const total = selectedItems.reduce((acc: any, item: any) => {
+      return acc + item.royaltiesToPay;
+    }, 0)
+    setTotalToRepay(total / LAMPORTS_PER_SOL);
+  }, [selectedItems])
+
+  // Set Select All Unpaid
+  useEffect(() => {
+    if (selectAllUnpaid) {
+      const filteredNfts = currentNfts!.filter((nft) => !nft.royaltiesPaid && nft.status !== "error");
+      setSelectedItems(filteredNfts)
+    } else if (!selectAllUnpaid) {
+      setSelectedItems([]);
+    }
+  }, [selectAllUnpaid, currentNfts])
 
   // While loading return Loader
   if (isLoading) {
@@ -60,7 +90,7 @@ export const NftListRedemption = ({
     <div>
       <div className="grid grid-cols-2 gap-4">
         {currentNfts?.map((nft: any) => {
-          return <NftItem key={nft.tokenAddress} nft={nft} />;
+          return <NftItem key={nft.tokenAddress} nft={nft} selectedItems={selectedItems} setSelectedItems={(items: any) => setSelectedItems(items)} />;
         })}
       </div>
       <div>
@@ -85,20 +115,20 @@ export const NftListRedemption = ({
             previousLabel="<"
           />
         )}
-        <div className='my-5  flex flex-col md:flex-row  items-end md:items-center justify-end md:justify-center w-full gap-8'>
+        <div className='my-5  flex flex-col   items-end  justify-end  w-full gap-8'>
           <div className='w-full flex flex-row items-start justify-between gap-8 '>
-            <div /* onClick={() => setSelectAllUnpaid(!selectAllUnpaid)} */ className='flex items-center justify-end gap-2 text-[10px]  '>
-              <input type='checkbox' /* checked={selectAllUnpaid}  */ />
+            <div onClick={() => setSelectAllUnpaid(!selectAllUnpaid)} className='flex items-center justify-end gap-2 text-[13px]  '>
+              <input type='checkbox' checked={selectAllUnpaid} />
               <p>Select all unpaid royalties</p>
             </div>
             <div className='flex justify-end'>
-              <label className='flex items-center gap-2 text-[10px]  '>
+              <label className='flex items-center gap-2 text-[13px]  '>
                 <input type='checkbox' />
                 Show unpaid royalties only
               </label>
             </div>
           </div>
-          <div className='flex flex-row md:flex-col-reverse lg:flex-row gap-4 items-start md:items-center justify-end w-full my-10 md:my-0  lg:w-[50%]'>
+          <div className='flex flex-row gap-4 items-center justify-end w-full my-10  '>
             {selectedItems.length > 0 && <p className=' '>{selectedItems.length} NFT{selectedItems.length > 1 && "s"} selected ({selectedItems.length > 0 && (totalToRepay.toFixed(2))} SOL) </p>}
             <button disabled={selectedItems.length === 0} className={'btn btn-buy text-black  pt-0 pb-0 px-[36px] rounded-[120px] bg-[#ff8a57] border-2 border-gray-900 disabled:bg-[#3f3f3f]  disabled:cursor-not-allowed disabled:text-gray-100   hover:bg-[#f5fd9c]' + (loading && " loading")}>Redeem</button>
           </div>
