@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useQuery } from '@tanstack/react-query';
-import { leaderBoard } from '../../data/leaderBoard';
+import { truncate } from '../../utils/history';
 
 const MySlide = styled.div`
   background-image: url('/img/ren.png');
@@ -25,39 +25,39 @@ const MySecond = styled.div`
 `;
 
 export const Leaderboard = () => {
-  const { data: leaderboard } = useQuery<any[]>({
+  const { data: leaderboard } = useQuery<{ user: string, total: number }[]>({
     queryKey: ['leaderboard'],
   });
-
-  console.log(leaderboard);
 
   return (
     <section className="">
       <MySlide>
         <div className="flex flex-col items-center justify-center h-full w-full px-12">
+          {/* First Place */}
           <div className="flex flex-row items-center justify-between gap-8 w-full">
             <div className="w-4 h-4">
               <img src="/img/crown.png" alt="First Place" />
             </div>
-            <p>{leaderBoard[0].name}</p>
+            <p>{leaderboard && truncate(leaderboard[0].user, 4, 4)}</p>
             <div className="flex flex-row gap-1 items-center justify-center">
               <p className="w-full  font-semibold text-[12px]">
-                {leaderBoard[0].sol}
+                {leaderboard && leaderboard[0].total.toFixed(2)}
               </p>
               <img src="/img/sol.svg" alt="solana logo" className="w-[7px]" />
             </div>
           </div>
-          {leaderBoard.slice(1, 3).map(item => (
+          {/* Oder 2 */}
+          {leaderboard && leaderboard.slice(1, 3).map((item, i) => (
             <MySecond
-              key={item.rank}
+              key={i}
               className="flex flex-row items-center justify-between gap-8 w-full"
             >
               <div className="w-4 h-4">
-                <p>{item.rank}.</p>
+                <p>{i + 2}.</p>
               </div>
-              <p>{item.name}</p>
+              <p>{truncate(item.user, 4, 4)}</p>
               <div className="flex flex-row gap-1 items-center justify-center">
-                <p className="w-full  font-light text-[12px]">{item.sol}</p>
+                <p className="w-full  font-light text-[12px]">{item.total.toFixed(2)}</p>
                 <img src="/img/sol.svg" alt="solana logo" className="w-[7px]" />
               </div>
             </MySecond>

@@ -165,6 +165,8 @@ export const fetchLeaderboard = async () => {
       userTotal += transactionTotalAmount;
     });
 
+    userTotal = userTotal / LAMPORTS_PER_SOL;
+
     return { user, total: userTotal };
   });
 
