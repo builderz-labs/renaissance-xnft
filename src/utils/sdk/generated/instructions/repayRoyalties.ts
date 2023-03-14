@@ -5,8 +5,8 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as beet from '@metaplex-foundation/beet'
-import * as web3 from '@solana/web3.js'
+import * as beet from "@metaplex-foundation/beet";
+import * as web3 from "@solana/web3.js";
 
 /**
  * @category Instructions
@@ -14,8 +14,8 @@ import * as web3 from '@solana/web3.js'
  * @category generated
  */
 export type RepayRoyaltiesInstructionArgs = {
-  royaltiesToPay: beet.bignum
-}
+  royaltiesToPay: beet.bignum;
+};
 /**
  * @category Instructions
  * @category RepayRoyalties
@@ -23,15 +23,15 @@ export type RepayRoyaltiesInstructionArgs = {
  */
 export const repayRoyaltiesStruct = new beet.BeetArgsStruct<
   RepayRoyaltiesInstructionArgs & {
-    instructionDiscriminator: number[] /* size: 8 */
+    instructionDiscriminator: number[] /* size: 8 */;
   }
 >(
   [
-    ['instructionDiscriminator', beet.uniformFixedSizeArray(beet.u8, 8)],
-    ['royaltiesToPay', beet.u64],
+    ["instructionDiscriminator", beet.uniformFixedSizeArray(beet.u8, 8)],
+    ["royaltiesToPay", beet.u64],
   ],
-  'RepayRoyaltiesInstructionArgs'
-)
+  "RepayRoyaltiesInstructionArgs"
+);
 /**
  * Accounts required by the _repayRoyalties_ instruction
  *
@@ -44,17 +44,17 @@ export const repayRoyaltiesStruct = new beet.BeetArgsStruct<
  * @category generated
  */
 export type RepayRoyaltiesInstructionAccounts = {
-  nftState: web3.PublicKey
-  nftMint: web3.PublicKey
-  nftMintMetadata: web3.PublicKey
-  user: web3.PublicKey
-  systemProgram?: web3.PublicKey
-  anchorRemainingAccounts?: web3.AccountMeta[]
-}
+  nftState: web3.PublicKey;
+  nftMint: web3.PublicKey;
+  nftMintMetadata: web3.PublicKey;
+  user: web3.PublicKey;
+  systemProgram?: web3.PublicKey;
+  anchorRemainingAccounts?: web3.AccountMeta[];
+};
 
 export const repayRoyaltiesInstructionDiscriminator = [
   185, 83, 105, 192, 240, 198, 109, 21,
-]
+];
 
 /**
  * Creates a _RepayRoyalties_ instruction.
@@ -69,12 +69,17 @@ export const repayRoyaltiesInstructionDiscriminator = [
 export function createRepayRoyaltiesInstruction(
   accounts: RepayRoyaltiesInstructionAccounts,
   args: RepayRoyaltiesInstructionArgs,
-  programId = new web3.PublicKey('9ZskGH9wtdwM9UXjBq1KDwuaLfrZyPChz41Hx7NWhTFf')
+  programId = new web3.PublicKey("9ZskGH9wtdwM9UXjBq1KDwuaLfrZyPChz41Hx7NWhTFf")
 ) {
+  console.log("HERE5");
+
   const [data] = repayRoyaltiesStruct.serialize({
     instructionDiscriminator: repayRoyaltiesInstructionDiscriminator,
     ...args,
-  })
+  });
+
+  console.log("HERE6");
+
   const keys: web3.AccountMeta[] = [
     {
       pubkey: accounts.nftState,
@@ -101,11 +106,11 @@ export function createRepayRoyaltiesInstruction(
       isWritable: false,
       isSigner: false,
     },
-  ]
+  ];
 
   if (accounts.anchorRemainingAccounts != null) {
     for (const acc of accounts.anchorRemainingAccounts) {
-      keys.push(acc)
+      keys.push(acc);
     }
   }
 
@@ -113,6 +118,6 @@ export function createRepayRoyaltiesInstruction(
     programId,
     keys,
     data,
-  })
-  return ix
+  });
+  return ix;
 }

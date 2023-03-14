@@ -33,29 +33,21 @@ export default defineConfig(({ command, mode }) => {
             if (isModule && id.includes("@project-serum")) {
               return "vendor_anchor";
             }
-            // if (isModule && id.includes("@tanstack")) {
-            //   return "vendor_tanstack";
-            // }
+            if (isModule && id.includes("@tanstack")) {
+              return "vendor_tanstack";
+            }
           },
         },
       },
     },
-    resolve: {
-      alias: [
-        {
-          find: "stream",
-          replacement: `stream-browserify`,
-        },
-        // {
-        //   find: "assert",
-        //   replacement: "rollup-plugin-node-polyfills/polyfills/assert",
-        // },
-        // {
-        //   find: "util",
-        //   replacement: "rollup-plugin-node-polyfills/polyfills/util",
-        // },
-      ],
-    },
+    // resolve: {
+    //   alias: [
+    //     {
+    //       find: "stream",
+    //       replacement: `stream-browserify`,
+    //     },
+    //   ],
+    // },
     server: {
       port: 9933,
     },

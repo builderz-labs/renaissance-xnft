@@ -271,6 +271,14 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
+"@builderz/royalty-solution@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@builderz/royalty-solution/-/royalty-solution-1.0.5.tgz#ac2e91d0e551b086472de7934cb7f7d3f8599f4b"
+  integrity sha512-/aR/Evr3t3yRXV71ZY1ZntgDm8dTtbBNQEVRIdqMUxzjHMOI6QNN3iZ4+Ujp5ocVzOix8rLS6Ufn0PVcH4NIMg==
+  dependencies:
+    "@metaplex-foundation/js" "^0.18.3"
+    "@solana/web3.js" "^1.73.3"
+
 "@bundlr-network/client@^0.8.8":
   version "0.8.9"
   resolved "https://registry.yarnpkg.com/@bundlr-network/client/-/client-0.8.9.tgz#58e969a5d80f8d25d212d46bb7a060730a3c1736"
@@ -1433,7 +1441,7 @@
     "@wallet-standard/app" "^1.0.1"
     "@wallet-standard/base" "^1.0.1"
 
-"@solana/web3.js@^1.32.0", "@solana/web3.js@^1.36.0", "@solana/web3.js@^1.56.2", "@solana/web3.js@^1.63.1", "@solana/web3.js@^1.66.2", "@solana/web3.js@^1.68.0", "@solana/web3.js@^1.73.2":
+"@solana/web3.js@^1.32.0", "@solana/web3.js@^1.36.0", "@solana/web3.js@^1.56.2", "@solana/web3.js@^1.63.1", "@solana/web3.js@^1.66.2", "@solana/web3.js@^1.68.0", "@solana/web3.js@^1.73.2", "@solana/web3.js@^1.73.3":
   version "1.73.3"
   resolved "https://registry.yarnpkg.com/@solana/web3.js/-/web3.js-1.73.3.tgz#60e6bd68f6f364d4be360b1e0a03a0a68468a029"
   integrity sha512-vHRMo589XEIpoujpE2sZZ1aMZvfA1ImKfNxobzEFyMb+H5j6mRRUXfdgWD0qJ0sm11e5BcBC7HPeRXJB+7f3Lg==

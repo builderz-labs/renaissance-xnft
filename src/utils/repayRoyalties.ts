@@ -1,4 +1,7 @@
-import { PROGRAM_ID, createRepayRoyaltiesInstruction } from "../utils/sdk";
+import {
+  PROGRAM_ID,
+  createRepayRoyaltiesInstruction,
+} from "@builderz/royalty-solution";
 import { Connection, PublicKey, Transaction } from "@solana/web3.js";
 import { WalletContextState } from "@solana/wallet-adapter-react";
 import axios from "axios";
