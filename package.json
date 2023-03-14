@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@builderz/royalty-solution": "^1.0.5",
+    "@coral-xyz/xnft-cli": "^0.5.2-latest.4143",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@metaplex-foundation/js": "^0.18.3",

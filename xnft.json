@@ -1,11 +1,14 @@
 {
-  "name": "Re:naissance ",
+  "name": "Re:naissance",
   "version": "0.0.1",
   "description": "NFT Royalty Redeem Solution for Creators and Communities",
   "website": "https://builderz.dev",
   "kind": "app",
   "icon": {
     "md": "./assets/renaissance.svg"
+  },
+  "contact": {
+    "repository": "https://github.com/builderz-labs/renaissance-xnft"
   },
   "screenshots": [
     "./assets/screenshot1.png",
