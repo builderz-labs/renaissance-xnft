@@ -216,7 +216,7 @@ actual_royalties / expected_royalties"
                           <p className='text-start  font-light text-[12px]'>Total Paid:</p>
                         </Tooltip>
                       </div>                    <div className='flex flex-row gap-2 items-center justify-center pr-2'>
-                        <p className="w-full  font-light text-md">
+                        <p className="w-full  font-light text-xs">
                           {(royaltiesPaid / LAMPORTS_PER_SOL).toFixed(2)} SOL
                         </p>
                         {/*   <img
