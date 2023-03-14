@@ -129,7 +129,7 @@ export const ProjectDetails = () => {
 
   return (
     <div>
-      <div className="mt-5 h-full relative mb-40">
+      <div className="mt-5 h-full relative">
         {pageCollection ? (
           <>
             <div className="w-full flex flex-col items-center justify-center my-5 rounded-lg shadow-lg">

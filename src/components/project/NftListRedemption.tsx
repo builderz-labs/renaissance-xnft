@@ -136,7 +136,7 @@ export const NftListRedemption = ({
 
   return (
     <div>
-      <div className="grid grid-cols-2 gap-4 mb-40">
+      <div className="grid grid-cols-2 gap-4 ">
         {currentNfts?.map((nft: any) => {
           return (
             <NftItem
