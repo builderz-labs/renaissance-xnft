@@ -32,7 +32,7 @@ export const Leaderboard = () => {
   return (
     <section className="">
       <h2 className="py-2 px-2 pt-4 font-bold text-xl text-start mb-2">
-        Top Re<span className='text-renaissance-orange'>:</span>deemer <span className='text-[8px] text-gray-400'>(7D)</span>
+        Top Re<span className='text-renaissance-orange'>:</span>demptions <span className='text-[8px] text-gray-400'>(7D)</span>
       </h2>
       <MySlide>
         <div className="flex flex-col items-center justify-center h-full w-full px-12">

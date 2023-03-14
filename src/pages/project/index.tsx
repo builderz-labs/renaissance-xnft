@@ -13,7 +13,7 @@ import { Tooltip } from "@mui/material";
 import { LAMPORTS_PER_SOL, PublicKey } from "@solana/web3.js";
 import { getCheckedNftsForCollection } from "../../utils/nfts";
 import { useWallet } from "../../hooks/useWallet";
-import { SmallLoading } from '../../components/SmallLoading';
+import { SmallLoading } from "../../components/SmallLoading";
 
 const Blur1 = styled.div`
   background: linear-gradient(180deg, #e6813e 0%, #00b2ff 100%);
@@ -125,7 +125,7 @@ export const ProjectDetails = () => {
     }
   }, [checkedNfts]);
 
-  console.log(isLoading)
+  console.log(isLoading);
 
   return (
     <div>
@@ -170,15 +170,21 @@ export const ProjectDetails = () => {
                         <div className="flex flex-col gap-2 items-center justify-center py-2">
                           <div className="flex flex-row gap-2 items-center justify-center">
                             <p className="w-full text-center  font-bold text-sm">
-                              {isLoading === true ? <SmallLoading /> : (
-                                outstandingRoyalties / LAMPORTS_PER_SOL
-                              ).toFixed(2)}
+                              {isLoading === true ? (
+                                <SmallLoading />
+                              ) : (
+                                (
+                                  outstandingRoyalties / LAMPORTS_PER_SOL
+                                ).toFixed(2)
+                              )}
                             </p>
-                            <img
-                              src="/img/sol.svg"
-                              alt="solana logo"
-                              className="w-4 h-4"
-                            />
+                            {!isLoading && (
+                              <img
+                                src="/img/sol.svg"
+                                alt="solana logo"
+                                className="w-4 h-4"
+                              />
+                            )}
                           </div>
                           <p className="text-[8px]">
                             In Outstanding Royalties:
@@ -203,7 +209,13 @@ export const ProjectDetails = () => {
 
                       <div className="flex flex-row gap-2 items-center justify-center pr-2">
                         <p className="w-full  font-light text-xs">
-                          {isLoading ? <SmallLoading /> : (<p className='font-light text-xs'>{nftsPaid} of {checkedNfts?.length}</p>)}
+                          {isLoading ? (
+                            <SmallLoading />
+                          ) : (
+                            <p className="font-light text-xs">
+                              {nftsPaid} of {checkedNfts?.length}
+                            </p>
+                          )}
                         </p>
                       </div>
                     </div>
@@ -223,13 +235,21 @@ export const ProjectDetails = () => {
                       </div>{" "}
                       <div className="flex flex-row gap-2 items-center justify-center pr-2">
                         <p className="w-full  font-light text-xs">
-                          {isLoading ? <SmallLoading /> : (<p className="font-light text-xs">{(royaltiesPaid / LAMPORTS_PER_SOL).toFixed(2)}</p>)}
+                          {isLoading ? (
+                            <SmallLoading />
+                          ) : (
+                            <p className="font-light text-xs">
+                              {(royaltiesPaid / LAMPORTS_PER_SOL).toFixed(2)}
+                            </p>
+                          )}
                         </p>
-                        <img
-                          src="/img/sol.svg"
-                          alt="solana logo"
-                          className="w-4 h-4"
-                        />
+                        {!isLoading && (
+                          <img
+                            src="/img/sol.svg"
+                            alt="solana logo"
+                            className="w-4 h-4"
+                          />
+                        )}
                       </div>
                     </div>
                   </div>
@@ -237,7 +257,6 @@ export const ProjectDetails = () => {
                 {outstandingRoyalties > 0 && checkedNfts && (
                   <div className="flex flex-row items-center justify-between mb-5">
                     <div className="w-full flex items-start justify-end mx-4">
-
                       <button
                         disabled={outstandingRoyalties === 0}
                         className={
@@ -246,7 +265,6 @@ export const ProjectDetails = () => {
                       >
                         Redeem All
                       </button>
-
                     </div>
                   </div>
                 )}

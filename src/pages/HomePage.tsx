@@ -54,7 +54,7 @@ export const HomePage = () => {
             {/* Banner */}
             <div className="w-full flex flex-row justify-between items-center py-2 bg-renaissance-orange bg-opacity-40 rounded-md ">
               <div className=" flex items-center justify-center h-full">
-                <p className=" px-2 font-medium text-xs">
+                <p className="px-2 text-[10px] font-semibold">
                   Submit the <a href="" className='underline'>form</a> to get your Collection whitelisted!
                 </p>
               </div>

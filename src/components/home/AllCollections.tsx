@@ -88,7 +88,7 @@ export const AllCollections = () => {
           </h2>
         </div>
         <div className="max-w-xs flex items-center justify-center text-white">
-          <FormControl sx={{ m: 1, minWidth: 120, color: 'white' }} size="small" className='select select-ghost'>
+          <FormControl sx={{ m: 1, minWidth: 120, color: 'white' }} size="small" className='select select-ghost relative z-0'>
             <InputLabel id="sort-label">Sort</InputLabel>
             <Select
               labelId="sort-label"
