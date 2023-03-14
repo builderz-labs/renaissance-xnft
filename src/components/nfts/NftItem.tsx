@@ -82,7 +82,7 @@ export const NftItem = ({ nft, selectedItems, setSelectedItems }: any) => {
       )}
       <div className={`w-70 h-70 object-cover rounded-lg ${nft.royaltiesPaid ? ' ' : 'border-[#FF5557]'} `}>
         {(!nft.royaltiesPaid && nft.status !== "error") && (
-          <div className="absolute top-2 right-2 rounded-md shadow-sm ">
+          <div className="absolute top-2 right-2 rounded-md ">
             <Checkbox
               {...label}
               checked={isSelected} readOnly
