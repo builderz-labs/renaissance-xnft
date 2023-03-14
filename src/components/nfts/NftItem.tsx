@@ -1,11 +1,9 @@
 import styled from 'styled-components';
-import { Popover } from 'antd';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import WarningIcon from '@mui/icons-material/Warning';
 import DiamondIcon from '@mui/icons-material/Diamond';
 import AssistantPhotoIcon from '@mui/icons-material/AssistantPhoto';
-import BeenhereIcon from '@mui/icons-material/Beenhere';
 import { Checkbox, Tooltip } from '@mui/material';
 import { LAMPORTS_PER_SOL } from '@solana/web3.js';
 
@@ -23,8 +21,7 @@ const ItemCard = styled.div`
 `;
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
-
-export const NftItem = ({ nft, selectedItems, setSelectedItems, setTotalToRepay, total }: any) => {
+export const NftItem = ({ nft, selectedItems, setSelectedItems }: any) => {
 
   const handleCheck = (nft: any) => {
     if (nft.royaltiesPaid || nft.status === "error") {
@@ -36,7 +33,6 @@ export const NftItem = ({ nft, selectedItems, setSelectedItems, setTotalToRepay,
     } else {
       setSelectedItems([...selectedItems, nft]);
     }
-    setTotalToRepay(total / LAMPORTS_PER_SOL);
   };
 
   const isSelected = selectedItems.includes(nft);
@@ -84,13 +80,6 @@ export const NftItem = ({ nft, selectedItems, setSelectedItems, setTotalToRepay,
           </Tooltip>
         </div>
       )}
-      {/*       {nft.royaltiesPaid && (
-        <div className="absolute bottom-11 right-2 w-6 h-6 rounded-sm  ">
-          <Popover content='Royalties Paid' title="Chad">
-            <BeenhereIcon className='text-green-500' />
-          </Popover>
-        </div>
-      )} */}
       <div className={`w-70 h-70 object-cover rounded-lg ${nft.royaltiesPaid ? ' ' : 'border-[#FF5557]'} `}>
         {(!nft.royaltiesPaid && nft.status !== "error") && (
           <div className="absolute top-2 right-2 rounded-md shadow-sm ">
@@ -117,10 +106,7 @@ export const NftItem = ({ nft, selectedItems, setSelectedItems, setTotalToRepay,
       <p className="font-medium my-2 px-2  text-start w-36 text-xl truncate hover:text-[#FF8A57]">
         {nft.name}
       </p>
-      {isUnpaid && <p className="text-red-500 text-start text-[8px] ml-2">Outstanding: {nft.royaltiesToPay / LAMPORTS_PER_SOL} SOL</p>}
-      {/*    {nft.royaltiesPaid ? (
-        <p className="text-[#FF8A57] font-medium px-2 text-start  text-[14px]">Redeemed</p>
-      ) : <p className='text-[#FF5557] font-medium px-2 text-start text-[14px]'>Outstanding</p>} */}
+      {isUnpaid && <p className="text-red-500 text-start text-[8px] ml-2">Outstanding: {(nft.royaltiesToPay / LAMPORTS_PER_SOL).toFixed(2)} SOL</p>}
     </ItemCard>
   );
 };
