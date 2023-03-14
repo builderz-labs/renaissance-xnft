@@ -105,17 +105,20 @@ export const NftListRedemption = ({
   return (
     <div>
       <div className='absolute top-0 right-0'>
-        <Select
-          id="sort"
-          className='select select-ghost'
-          value={sortOrder}
-          onChange={(e) => setSortOrder(e.target.value)}
-        >
-          <MenuItem value="">None</MenuItem>
-          <MenuItem value="Name">Name</MenuItem>
-          <MenuItem value="Paid">Paid</MenuItem>
-          <MenuItem value="Unpaid">Unpaid</MenuItem>
-        </Select>
+        <div className="max-w-xs flex items-center justify-center text-white">
+          <Select
+            id="sort"
+            className='select select-ghost'
+            value={sortOrder}
+            onChange={(e) => setSortOrder(e.target.value)}
+          >
+            <MenuItem value="">None</MenuItem>
+            <MenuItem value="Name">Name</MenuItem>
+            <MenuItem value="Paid">Paid</MenuItem>
+            <MenuItem value="Unpaid">Unpaid</MenuItem>
+          </Select>
+        </div>
+
 
       </div>
       <div className="grid grid-cols-2 gap-4">

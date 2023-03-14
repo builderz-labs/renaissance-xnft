@@ -82,8 +82,13 @@ export const ProjectDetails = () => {
 
   console.log(collections)
 
+  function closeBanner() {
+
+  }
+
   return (
     <div>
+
       <div className="mt-5 h-full relative mb-40">
         {pageCollection ? (
           <>
@@ -143,94 +148,104 @@ actual_royalties / expected_royalties"
                 </div>
 
               </ItemCard>
-              <ItemCard className='w-full flex justify-end'>
-                <div className="w-1/2 h-full p-5 flex flex-col items-center justify-center gap-1">
-                  <div className='w-full flex flex-row justify-center gap-4 items-start'>
-                    <a href="">
-                      <TwitterIcon />
-                    </a>
-                    <a href="" >
-                      <HeadsetMicIcon />
-                    </a>
-                    <a href="">
-                      <LanguageIcon />
-                    </a>
+              <ItemCard className='w-full'>
+                <div className="w-full flex justify-end">
+                  <div className="w-1/2 h-full p-5 flex flex-col items-center justify-center gap-1">
+                    <div className='w-full flex flex-row justify-center gap-4 items-start'>
+                      <a href="">
+                        <TwitterIcon />
+                      </a>
+                      <a href="" >
+                        <HeadsetMicIcon />
+                      </a>
+                      <a href="">
+                        <LanguageIcon />
+                      </a>
+                    </div>
                   </div>
-                  <ItemCard className="h-full w-full my-6">
-                    <div className="flex flex-row gap-2 items-center justify-center w-full h-full">
-                      <div className='flex flex-row gap-1 items-center justify-center py-2'>
-                        <p className="w-full text-center  font-light text-sm">0.89</p>
-                        <img
-                          src="/img/sol.svg"
-                          alt="solana logo"
-                          className="w-4 h-4"
-                        />
+                  <div className="w-1/2 h-full p-5 flex flex-col items-start justify-start gap-1">
+                    <div className="flex flex-row gap-2 items-center justify-between w-full">
+                      <div className="">
+                        <Tooltip title="Actual royalties rate received. total_royalties / total_sales"
+                          placement="top"
+                          className='cursor-help'>
+                          <p className='text-start  font-light text-[12px]'>Effective Rate:</p>
+                        </Tooltip>
+                      </div>
+
+                      <div className='flex flex-row gap-2 items-center justify-center pr-2'>
+                        <p className="w-full  font-light text-md">
+                          0.78%
+                        </p>
+                        {/*     <img
+                        src="/img/sol.svg"
+                        alt="solana logo"
+                        className="w-4 h-4"
+                      /> */}
+                      </div>
+                    </div>
+                    <div className="border-b border-b-gray-500 w-full my-2"></div>
+
+                    <div className="flex flex-row gap-2 items-center justify-between w-full">
+                      <div className="">
+                        <Tooltip title="Creators' royalty rate as per on-chain metadata"
+                          placement="top"
+                          className='cursor-help'>
+                          <p className='text-start  font-light text-[12px]'>Expected Rate:</p>
+                        </Tooltip>
+                      </div>                    <div className='flex flex-row gap-2 items-center justify-center pr-2'>
+                        <p className="w-full  font-light text-md">
+                          5.00%
+                        </p>
+                        {/*   <img
+                        src="/img/sol.svg"
+                        alt="solana logo"
+                        className="w-4 h-4"
+                      /> */}
+                      </div>
+                    </div>
+                    <div className="border-b border-b-gray-500 w-full my-2"></div>
+
+                    <div className="flex flex-row gap-2 items-center justify-between w-full">
+                      <div className="">
+                        <Tooltip title="Percent of royalties paid vs expected actual_royalties / expected_royalties"
+                          placement="top"
+                          className='cursor-help'>
+                          <p className='text-start  font-light text-[12px]'>Percent Paid:</p>
+                        </Tooltip>
+                      </div>
+                      <div className='flex flex-row gap-2 items-center justify-center pr-2'>
+                        <p className="w-full  font-light text-md">
+                          15.6%
+                        </p>
+                        {/*   <img
+                        src="/img/sol.svg"
+                        alt="solana logo"
+                        className="w-4 h-4"
+                      /> */}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-row items-center justify-between my-5">
+                  <ItemCard className="h-full w-1/2 mx-4 flex items-center justify-center">
+                    <div className="flex flex-row gap-2 my-2 items-center justify-center w-full h-full">
+                      <div className='flex flex-col gap-2 items-center justify-center py-2'>
+                        <div className="flex flex-row gap-2 items-center justify-center">
+                          <p className="w-full text-center  font-bold text-sm">0.89</p>
+                          <img
+                            src="/img/sol.svg"
+                            alt="solana logo"
+                            className="w-4 h-4"
+                          />
+                        </div>
+                        <p className='text-[8px]'>In Outstanding Royalties:</p>
                       </div>
                     </div>
                   </ItemCard>
-                  <button /* disabled={selectedItems.length === 0} */ className={'btn btn-buy text-black  pt-0 pb-0 px-[24px] w-full rounded-[120px] bg-[#ff8a57] border-2 border-gray-900 disabled:bg-[#3f3f3f]  disabled:cursor-not-allowed disabled:text-gray-100   hover:bg-[#f5fd9c] break-keep' /* + (loading && " loading") */}>Redeem All</button>
-                </div>
-                <div className="w-1/2 h-full p-5 flex flex-col items-start justify-start gap-1">
-                  <div className="flex flex-row gap-2 items-center justify-center">
-                    <div className="">
-                      <Tooltip title="Actual royalties rate received. total_royalties / total_sales"
-                        placement="top"
-                        className='cursor-help'>
-                        <p className='text-start  font-light text-sm'>Effective Rate:</p>
-                      </Tooltip>
-                    </div>
+                  <div className="w-1/2 flex items-start justify-end mx-4">
+                    <button /* disabled={selectedItems.length === 0} */ className={'btn  text-black  pt-0 pb-0 w-full  rounded-[120px] bg-[#ff8a57] border-2 border-gray-900 disabled:bg-[#3f3f3f]  disabled:cursor-not-allowed disabled:text-gray-100   hover:bg-[#f5fd9c] break-keep' /* + (loading && " loading") */}>Redeem All</button>
 
-                    <div className='flex flex-row gap-2 items-center justify-center pr-2'>
-                      <p className="w-full  font-light text-xl">
-                        0.78%
-                      </p>
-                      <img
-                        src="/img/sol.svg"
-                        alt="solana logo"
-                        className="w-4 h-4"
-                      />
-                    </div>
-                  </div>
-                  <div className="border-b border-b-gray-500 w-full my-2"></div>
-
-                  <div className="flex flex-row gap-2 items-center justify-between w-full">
-                    <div className="">
-                      <Tooltip title="Creators' royalty rate as per on-chain metadata"
-                        placement="top"
-                        className='cursor-help'>
-                        <p className='text-start  font-light text-sm'>Expected Rate:</p>
-                      </Tooltip>
-                    </div>                    <div className='flex flex-row gap-2 items-center justify-center pr-2'>
-                      <p className="w-full  font-light text-xl">
-                        5.00%
-                      </p>
-                      <img
-                        src="/img/sol.svg"
-                        alt="solana logo"
-                        className="w-4 h-4"
-                      />
-                    </div>
-                  </div>
-                  <div className="border-b border-b-gray-500 w-full my-2"></div>
-
-                  <div className="flex flex-row gap-2 items-center justify-between w-full">
-                    <div className="">
-                      <Tooltip title="Percent of royalties paid vs expected actual_royalties / expected_royalties"
-                        placement="top"
-                        className='cursor-help'>
-                        <p className='text-start  font-light text-sm'>Percent Paid:</p>
-                      </Tooltip>
-                    </div>
-                    <div className='flex flex-row gap-2 items-center justify-center pr-2'>
-                      <p className="w-full  font-light text-xl">
-                        15.6%
-                      </p>
-                      <img
-                        src="/img/sol.svg"
-                        alt="solana logo"
-                        className="w-4 h-4"
-                      />
-                    </div>
                   </div>
                 </div>
               </ItemCard>

@@ -285,6 +285,30 @@ body {
   color: #ff8a57 !important;
 }
 
+.banner {
+  background-color: #f7d9c4;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.close-button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.close-button:hover {
+  background-color: #555;
+}
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #ffffff;
