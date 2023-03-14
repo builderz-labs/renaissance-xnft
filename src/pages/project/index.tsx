@@ -11,6 +11,7 @@ import { NftListRedemption } from '../../components/project/NftListRedemption';
 import styled from 'styled-components';
 import { Button, Tooltip } from '@mui/material';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import { LAMPORTS_PER_SOL } from '@solana/web3.js';
 const Blur1 = styled.div`
   background: linear-gradient(180deg, #e6813e 0%, #00b2ff 100%);
   filter: blur(50.5px);
@@ -80,11 +81,16 @@ export const ProjectDetails = () => {
     }
   }, [collections, id]);
 
-  console.log(collections)
 
   function closeBanner() {
 
   }
+
+  const [outstandingRoyalties, setOutstandingRoyalties] = useState(0);
+  const [nftsPaid, setNftsPaid] = useState(0);
+  const [royaltiesPaid, setRoyaltiesPaid] = useState(0);
+
+
 
   return (
     <div>
@@ -109,7 +115,8 @@ export const ProjectDetails = () => {
                   <p className="text-sm w-36 truncate flex-wrap ">
                     {pageCollection.description}
                   </p>
-                  {/*  <div className='w-full flex flex-row justify-start gap-4 items-center'>
+                  <div className="border-b border-b-gray-500 w-full"></div>
+                  <div className='w-full flex flex-row justify-start gap-4 items-center'>
 
                     <a href="">
                       <TwitterIcon />
@@ -121,9 +128,9 @@ export const ProjectDetails = () => {
                       <LanguageIcon />
                     </a>
 
-                  </div> */}
-                  <div className="border-b border-b-gray-500 w-full"></div>
-                  <div className="flex flex-row gap-2 items-center justify-between w-full">
+                  </div>
+
+                  {/*  <div className="flex flex-row gap-2 items-center justify-between w-full">
                     <div className='flex flex-row gap-2 items-center justify-center pr-2'>
                       <p className="font-light text-xl">
                         {pageCollection.fp}
@@ -144,14 +151,14 @@ actual_royalties / expected_royalties"
 
                       </Tooltip>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
               </ItemCard>
               <ItemCard className='w-full'>
                 <div className="w-full flex justify-end">
                   <div className="w-1/2 h-full p-5 flex flex-col items-center justify-center gap-1">
-                    <div className='w-full flex flex-row justify-center gap-4 items-start'>
+                    {/*  <div className='w-full flex flex-row justify-center gap-4 items-start'>
                       <a href="">
                         <TwitterIcon />
                       </a>
@@ -161,7 +168,22 @@ actual_royalties / expected_royalties"
                       <a href="">
                         <LanguageIcon />
                       </a>
-                    </div>
+                    </div> */}
+                    <ItemCard className="h-full w-full mx-4 flex items-center justify-center">
+                      <div className="flex flex-row gap-2 my-2 items-center justify-center w-full h-full">
+                        <div className='flex flex-col gap-2 items-center justify-center py-2'>
+                          <div className="flex flex-row gap-2 items-center justify-center">
+                            <p className="w-full text-center  font-bold text-sm">{(outstandingRoyalties / LAMPORTS_PER_SOL).toFixed(2)}</p>
+                            <img
+                              src="/img/sol.svg"
+                              alt="solana logo"
+                              className="w-4 h-4"
+                            />
+                          </div>
+                          <p className='text-[8px]'>In Outstanding Royalties:</p>
+                        </div>
+                      </div>
+                    </ItemCard>
                   </div>
                   <div className="w-1/2 h-full p-5 flex flex-col items-start justify-start gap-1">
                     <div className="flex flex-row gap-2 items-center justify-between w-full">
@@ -169,13 +191,13 @@ actual_royalties / expected_royalties"
                         <Tooltip title="Actual royalties rate received. total_royalties / total_sales"
                           placement="top"
                           className='cursor-help'>
-                          <p className='text-start  font-light text-[12px]'>Effective Rate:</p>
+                          <p className='text-start  font-light text-[12px]'>Redeemed:</p>
                         </Tooltip>
                       </div>
 
                       <div className='flex flex-row gap-2 items-center justify-center pr-2'>
                         <p className="w-full  font-light text-md">
-                          0.78%
+                          {/*    {nftsPaid} of {pageCollection.length} */}
                         </p>
                         {/*     <img
                         src="/img/sol.svg"
@@ -191,11 +213,11 @@ actual_royalties / expected_royalties"
                         <Tooltip title="Creators' royalty rate as per on-chain metadata"
                           placement="top"
                           className='cursor-help'>
-                          <p className='text-start  font-light text-[12px]'>Expected Rate:</p>
+                          <p className='text-start  font-light text-[12px]'>Total Paid:</p>
                         </Tooltip>
                       </div>                    <div className='flex flex-row gap-2 items-center justify-center pr-2'>
                         <p className="w-full  font-light text-md">
-                          5.00%
+                          {(royaltiesPaid / LAMPORTS_PER_SOL).toFixed(2)} SOL
                         </p>
                         {/*   <img
                         src="/img/sol.svg"
@@ -204,31 +226,31 @@ actual_royalties / expected_royalties"
                       /> */}
                       </div>
                     </div>
-                    <div className="border-b border-b-gray-500 w-full my-2"></div>
-
-                    <div className="flex flex-row gap-2 items-center justify-between w-full">
+                    {/*                     <div className="border-b border-b-gray-500 w-full my-2"></div>
+ */}
+                    {/*     <div className="flex flex-row gap-2 items-center justify-between w-full">
                       <div className="">
                         <Tooltip title="Percent of royalties paid vs expected actual_royalties / expected_royalties"
                           placement="top"
                           className='cursor-help'>
-                          <p className='text-start  font-light text-[12px]'>Percent Paid:</p>
+                          <p className='text-start  font-light text-[12px]'>Outstanding:</p>
                         </Tooltip>
                       </div>
                       <div className='flex flex-row gap-2 items-center justify-center pr-2'>
                         <p className="w-full  font-light text-md">
-                          15.6%
+                          {(outstandingRoyalties / LAMPORTS_PER_SOL).toFixed(2)}
                         </p>
-                        {/*   <img
+                          <img
                         src="/img/sol.svg"
                         alt="solana logo"
                         className="w-4 h-4"
-                      /> */}
+                      /> 
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <div className="flex flex-row items-center justify-between my-5">
-                  <ItemCard className="h-full w-1/2 mx-4 flex items-center justify-center">
+                  {/*     <ItemCard className="h-full w-1/2 mx-4 flex items-center justify-center">
                     <div className="flex flex-row gap-2 my-2 items-center justify-center w-full h-full">
                       <div className='flex flex-col gap-2 items-center justify-center py-2'>
                         <div className="flex flex-row gap-2 items-center justify-center">
@@ -242,8 +264,8 @@ actual_royalties / expected_royalties"
                         <p className='text-[8px]'>In Outstanding Royalties:</p>
                       </div>
                     </div>
-                  </ItemCard>
-                  <div className="w-1/2 flex items-start justify-end mx-4">
+                  </ItemCard> */}
+                  <div className="w-full flex items-start justify-end mx-4">
                     <button /* disabled={selectedItems.length === 0} */ className={'btn  text-black  pt-0 pb-0 w-full  rounded-[120px] bg-[#ff8a57] border-2 border-gray-900 disabled:bg-[#3f3f3f]  disabled:cursor-not-allowed disabled:text-gray-100   hover:bg-[#f5fd9c] break-keep' /* + (loading && " loading") */}>Redeem All</button>
 
                   </div>
