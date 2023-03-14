@@ -47,31 +47,11 @@ export const NftListRedemption = ({
   const pageCount = checkedNfts ? Math.ceil(checkedNfts.length / pageSize) : 0;
   const [showUnpaidRoyaltiesOnly, setShowUnpaidRoyaltiesOnly] = useState(false);
   const [selectAllUnpaid, setSelectAllUnpaid] = useState(false);
-  const [filteredNfts, setFilteredNfts] = useState<any[]>([]);
 
   const currentNfts = checkedNfts?.slice(startIndex, endIndex);
-
-  // Set Filtered Nfts
-  useEffect(() => {
-    let filteredNfts = currentNfts;
-
-
-    if (showUnpaidRoyaltiesOnly) {
-      filteredNfts = filteredNfts!.filter((nft) => !nft.royaltiesPaid && nft.status !== "error");
-    }
-
-    if (sortOrder === 'Name') {
-      filteredNfts!.sort((a, b) => a.name.localeCompare(b.name));
-    } else if (sortOrder === 'Paid') {
-      filteredNfts = filteredNfts?.filter((nft) => nft.royaltiesPaid);
-    } else if (sortOrder === 'Unpaid') {
-      filteredNfts = filteredNfts?.filter((nft) => !nft.royaltiesPaid);
-    }
-
-    setFilteredNfts(filteredNfts!);
-    /*  setCurrentNfts(filteredNfts?.slice(startIndex, endIndex)); */
-  }, [currentNfts, endIndex, startIndex, showUnpaidRoyaltiesOnly, sortOrder]);
-
+  const total = selectedItems.reduce((acc: any, item: any) => {
+    return acc + item.royaltiesToPay;
+  }, 0)
 
   // Set Total to Repay
   useEffect(() => {
@@ -81,6 +61,9 @@ export const NftListRedemption = ({
     setTotalToRepay(total / LAMPORTS_PER_SOL);
   }, [selectedItems])
 
+
+
+
   // Set Select All Unpaid
   useEffect(() => {
     if (selectAllUnpaid) {
@@ -89,21 +72,21 @@ export const NftListRedemption = ({
     } else if (!selectAllUnpaid) {
       setSelectedItems([]);
     }
-  }, [selectAllUnpaid, currentNfts])
+  }, [selectAllUnpaid])
 
-  const handleRepay = async() => {
+  const handleRepay = async () => {
     setLoading(true)
 
     let itemsToRepay = [...selectedItems];
     if (selectAllUnpaid) {
-        itemsToRepay = checkedNfts!.filter((nft) => nft.royaltiesToPay > 0);
+      itemsToRepay = checkedNfts!.filter((nft) => nft.royaltiesToPay > 0);
     }
-        try {
-            const res = await repayRoyalties(itemsToRepay, connection, wallet);
-            setLoading(false);
-        } catch (error) {
-            setLoading(false);
-        }
+    try {
+      const res = await repayRoyalties(itemsToRepay, connection, wallet);
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+    }
   }
 
   // While loading return Loader
@@ -124,25 +107,12 @@ export const NftListRedemption = ({
   return (
     <div>
       <div className='absolute top-0 right-0'>
-        <div className="max-w-xs flex items-center justify-center text-white">
-          <Select
-            id="sort"
-            className='select select-ghost'
-            value={sortOrder}
-            onChange={(e) => setSortOrder(e.target.value)}
-          >
-            <MenuItem value="">None</MenuItem>
-            <MenuItem value="Name">Name</MenuItem>
-            <MenuItem value="Paid">Paid</MenuItem>
-            <MenuItem value="Unpaid">Unpaid</MenuItem>
-          </Select>
-        </div>
 
 
       </div>
       <div className="grid grid-cols-2 gap-4">
         {currentNfts?.map((nft: any) => {
-          return <NftItem key={nft.tokenAddress} nft={nft} selectedItems={selectedItems} setSelectedItems={(items: any) => setSelectedItems(items)} />;
+          return <NftItem key={nft.tokenAddress} nft={nft} selectedItems={selectedItems} setSelectedItems={(items: any) => setSelectedItems(items)} setTotalToRepay={(items: any) => setTotalToRepay(items)} total={total} />;
         })}
       </div>
       <div>
@@ -170,14 +140,24 @@ export const NftListRedemption = ({
         <div className='my-5  flex flex-col   items-end  justify-end  w-full gap-8'>
           <div className='w-full flex flex-row items-start justify-between gap-8 '>
             <div className='flex items-center justify-end gap-2 text-xs  '>
-              <input type='checkbox' checked={selectAllUnpaid} onClick={() => setSelectAllUnpaid(!selectAllUnpaid)}/>
-              <p>Select all unpaid royalties</p>
+              <input type='checkbox' checked={selectAllUnpaid} onClick={() => setSelectAllUnpaid(!selectAllUnpaid)} />
+              <label>Select All Unpaid</label>
             </div>
-            <div className='flex justify-end'>
-              <label className='flex items-center gap-2 text-xs  '>
-                <input type='checkbox' />
-                Show unpaid royalties only
-              </label>
+            <div className='flex items-center justify-end gap-2 text-xs '>
+              {/*  <FormControl variant="standard" sx={{ minWidth: 120 }}>
+                <InputLabel>Sort</InputLabel>
+                <Select
+                  value={sortOrder}
+                  onChange={(e) => setSortOrder(e.target.value as SetStateAction<string>)}
+                >
+                  <MenuItem value={'asc'}>Price: Low to High</MenuItem>
+                  <MenuItem value={'desc'}>Price: High to Low</MenuItem>
+                </Select>
+              </FormControl> */}
+              <div className='flex items-center justify-end gap-2 text-xs '>
+                <input type='checkbox' checked={showUnpaidRoyaltiesOnly} onClick={() => setShowUnpaidRoyaltiesOnly(!showUnpaidRoyaltiesOnly)} />
+                <label>Show Unpaid Royalties Only</label>
+              </div>
             </div>
           </div>
           <div className='flex flex-row gap-4 items-center justify-end w-full my-10  '>
