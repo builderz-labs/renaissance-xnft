@@ -8,6 +8,8 @@ import { NftItem } from '../nfts/NftItem';
 import { getCheckedNftsForCollection } from '../../utils/nfts';
 import { Loading } from '../Loading';
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
+import { repayRoyalties } from '../../utils/repayRoyalties';
+import { useConnection } from '@solana/wallet-adapter-react';
 
 export const NftListRedemption = ({
   collectionAddress,
@@ -15,6 +17,7 @@ export const NftListRedemption = ({
   collectionAddress: string[];
 }) => {
   const wallet = useWallet();
+  const { connection } = useConnection()
   const [sortOrder, setSortOrder] = useState('');
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -22,7 +25,7 @@ export const NftListRedemption = ({
 
   // Get checked NFTs
   const { data: checkedNfts, isLoading } = useQuery<any[]>({
-    queryKey: ['checked', collectionAddress, wallet.publicKey],
+    queryKey: ['checkedNfts', collectionAddress, wallet.publicKey],
     queryFn: () =>
       getCheckedNftsForCollection(
         wallet.publicKey ||
@@ -48,6 +51,7 @@ export const NftListRedemption = ({
 
   const currentNfts = checkedNfts?.slice(startIndex, endIndex);
 
+  // Set Filtered Nfts
   useEffect(() => {
     let filteredNfts = currentNfts;
 
@@ -65,8 +69,8 @@ export const NftListRedemption = ({
     }
 
     setFilteredNfts(filteredNfts!);
-/*     setCurrentNfts(filteredNfts?.slice(startIndex, endIndex));
- */  }, [currentNfts, endIndex, startIndex, showUnpaidRoyaltiesOnly, sortOrder]);
+    /*  setCurrentNfts(filteredNfts?.slice(startIndex, endIndex)); */
+  }, [currentNfts, endIndex, startIndex, showUnpaidRoyaltiesOnly, sortOrder]);
 
 
   // Set Total to Repay
@@ -86,6 +90,21 @@ export const NftListRedemption = ({
       setSelectedItems([]);
     }
   }, [selectAllUnpaid, currentNfts])
+
+  const handleRepay = async() => {
+    setLoading(true)
+
+    let itemsToRepay = [...selectedItems];
+    if (selectAllUnpaid) {
+        itemsToRepay = checkedNfts!.filter((nft) => nft.royaltiesToPay > 0);
+    }
+        try {
+            const res = await repayRoyalties(itemsToRepay, connection, wallet);
+            setLoading(false);
+        } catch (error) {
+            setLoading(false);
+        }
+  }
 
   // While loading return Loader
   if (isLoading) {
@@ -150,8 +169,8 @@ export const NftListRedemption = ({
         )}
         <div className='my-5  flex flex-col   items-end  justify-end  w-full gap-8'>
           <div className='w-full flex flex-row items-start justify-between gap-8 '>
-            <div onClick={() => setSelectAllUnpaid(!selectAllUnpaid)} className='flex items-center justify-end gap-2 text-xs  '>
-              <input type='checkbox' checked={selectAllUnpaid} />
+            <div className='flex items-center justify-end gap-2 text-xs  '>
+              <input type='checkbox' checked={selectAllUnpaid} onClick={() => setSelectAllUnpaid(!selectAllUnpaid)}/>
               <p>Select all unpaid royalties</p>
             </div>
             <div className='flex justify-end'>
@@ -163,7 +182,7 @@ export const NftListRedemption = ({
           </div>
           <div className='flex flex-row gap-4 items-center justify-end w-full my-10  '>
             {selectedItems.length > 0 && <p className=' text-xs'>{selectedItems.length} NFT{selectedItems.length > 1 && "s"} selected</p>}
-            <button disabled={selectedItems.length === 0} className={'btn btn-buy text-black  pt-0 pb-0 px-[36px] rounded-[120px] bg-[#ff8a57] border-2 border-gray-900 disabled:bg-[#3f3f3f]  disabled:cursor-not-allowed disabled:text-gray-100   hover:bg-[#fda680]' + (loading && " loading")}>Redeem {totalToRepay.toFixed(2)} SOL</button>
+            <button onClick={handleRepay} disabled={selectedItems.length === 0} className={'btn btn-buy text-black  pt-0 pb-0 px-[36px] rounded-[120px] bg-[#ff8a57] border-2 border-gray-900 disabled:bg-[#3f3f3f]  disabled:cursor-not-allowed disabled:text-gray-100   hover:bg-[#fda680]' + (loading && " loading")}>Redeem {totalToRepay.toFixed(2)} SOL</button>
           </div>
         </div>
         <section className='my-10 mb-40'>
