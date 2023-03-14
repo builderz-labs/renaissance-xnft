@@ -1,6 +1,8 @@
 import styled from 'styled-components';
-import { leaderBoard } from '../data/leaderBoard';
 import allCollections from '../data/collections.json';
+import { useQuery } from '@tanstack/react-query';
+import { truncate } from '../utils/history';
+
 
 const MySlide = styled.div`
   background-image: url('/img/ren.png');
@@ -24,6 +26,11 @@ const Blur1 = styled.div`
 `;
 
 export default function RankingPage() {
+
+  const { data: leaderboard } = useQuery<{ user: string, total: number }[]>({
+    queryKey: ['leaderboard'],
+  });
+
   return (
     <main className="mt-5 mb-40 relative">
       <Blur1 className="absolute -top-40 -right-40 z-0 opacity-20" />
@@ -37,25 +44,26 @@ export default function RankingPage() {
             </div>
             <div className="flex flex-row gap-4 col-span-5 w-full text-start items-center justify-start">
               <p className="text-[18px]  col-span-5  font-black">
-                {leaderBoard[0].name}
+                {leaderboard && truncate(leaderboard[0].user, 4, 4)}
               </p>
             </div>
             <div className="flex flex-row gap-2 col-span-2 items-center justify-end">
-              <p className="font-bold text-[18px]">{leaderBoard[0].sol}</p>
+              <p className="font-bold text-[18px]">{leaderboard && leaderboard[0].total.toFixed(2)}
+              </p>
               <img src="/img/sol.svg" alt="solana logo" className="w-[12px]" />
             </div>
           </div>
           <Blur1 className="absolute top-60 -right-60 z-0 opacity-20" />
-          {leaderBoard.slice(1, 3).map(item => (
-            <div key={item.name} className="grid grid-cols-8 gap-4 items-center justify-center w-full px-4 py-2 rounded-md">
+          {leaderboard && leaderboard.slice(1, 3).map((item, i) => (
+            <div key={item.user} className="grid grid-cols-8 gap-4 items-center justify-center w-full px-4 py-2 rounded-md">
               <div className="w-4 col-span-1 h-4">
-                <p className='font-bold'>{item.rank}.</p>
+                <p className='font-bold'>{i + 2}</p>
               </div>
               <p className="truncate col-span-5 text-start font-medium items-center justify-start">
-                {item.name}
+                {truncate(item.user, 4, 4)}
               </p>
               <div className="flex flex-row gap-2 col-span-2 items-center justify-end">
-                <p className="font-bold text-[18px]">{leaderBoard[0].sol}</p>
+                <p className="font-bold text-[18px]">{item.total.toFixed(2)}</p>
                 <img src="/img/sol.svg" alt="solana logo" className="w-[12px]" />
               </div>
             </div>

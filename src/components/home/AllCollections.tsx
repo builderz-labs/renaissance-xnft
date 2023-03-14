@@ -78,6 +78,7 @@ export const AllCollections = () => {
   }, [searchQuery, sortOption, data]);
 
 
+
   return (
     <section className="my-10">
       <div className="w-full flex flex-row justify-between items-center py-4">
@@ -100,7 +101,7 @@ export const AllCollections = () => {
               <MenuItem value="">
                 <em>None</em>
               </MenuItem>
-              <MenuItem value="Ranking">Ranking</MenuItem>
+              <MenuItem value="Ranking">Top Redeemed</MenuItem>
               <MenuItem value="Name">Name</MenuItem>
             </Select>
           </FormControl>

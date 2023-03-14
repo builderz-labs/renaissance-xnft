@@ -41,8 +41,7 @@ export const HomePage = () => {
         <Await resolve={collections}>
           {/* All Sections in their own components */}
           <p className="text-[14px] px-2 py-4 text-start max-w-xs">
-            It's Repay Renaissance! Redeem your royalties - your project might
-            reward you!
+            It's Re<span className='text-renaissance-orange'>:</span>naissance Royalty Redemption! Redeem your royalties - your project might reward you!
           </p>
           <section className="">
             <Leaderboard />
