@@ -90,7 +90,7 @@ export const ProjectDetails = () => {
     ],
     queryFn: () =>
       getCheckedNftsForCollection(
-        wallet.publicKey ||
+        /*       wallet.publicKey || */
         new PublicKey("63Kaxzs8BxXh7sPZHDnAy9HwvkeLwJ3mF33EcXKSjpT9"),
         [pageCollection?.collectionAddress!]
       ),
@@ -223,7 +223,7 @@ export const ProjectDetails = () => {
                       </div>{" "}
                       <div className="flex flex-row gap-2 items-center justify-center pr-2">
                         <p className="w-full  font-light text-xs">
-                          {(royaltiesPaid / LAMPORTS_PER_SOL).toFixed(2)}
+                          {isLoading ? <SmallLoading /> : (<p className="font-light text-xs">{(royaltiesPaid / LAMPORTS_PER_SOL).toFixed(2)}</p>)}
                         </p>
                         <img
                           src="/img/sol.svg"

@@ -32,7 +32,7 @@ export const NftList = () => {
   if (nfts && nfts.length === 0) {
     return (
       <div>
-        <h2>You don't own any NFTs</h2>
+        <h2 className='text-xs'>You don't own any NFTs</h2>
       </div>
     );
   }

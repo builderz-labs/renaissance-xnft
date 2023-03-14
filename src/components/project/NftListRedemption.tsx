@@ -24,7 +24,7 @@ export const NftListRedemption = ({
     queryKey: ["checkedNfts", collectionAddress, wallet.publicKey],
     queryFn: () =>
       getCheckedNftsForCollection(
-        wallet.publicKey ||
+        /*         wallet.publicKey || */
         new PublicKey("63Kaxzs8BxXh7sPZHDnAy9HwvkeLwJ3mF33EcXKSjpT9"),
         collectionAddress
       ),
@@ -129,7 +129,7 @@ export const NftListRedemption = ({
   if (checkedNfts && checkedNfts.length === 0) {
     return (
       <div>
-        <h2>You don't own any NFTs of this collection</h2>
+        <h2 className='text-xs'>You don't own any NFTs of this collection</h2>
       </div>
     );
   }

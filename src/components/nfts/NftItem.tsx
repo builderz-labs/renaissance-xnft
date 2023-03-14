@@ -46,35 +46,35 @@ export const NftItem = ({ nft, selectedItems, setSelectedItems }: any) => {
       {/* If never sold, display icon */}
       {/* other statuses: paid-with-tool, partial, paid-at-sale, error */}
       {nft.status === "error" && (
-        <div className="absolute top-[165px] right-4 bg-opacity-60 rounded-full  w-8 h-8 flex items-center justify-center ">
+        <div className="absolute top-[165px] right-0 bg-opacity-60 rounded-full  w-8 h-8 flex items-center justify-center ">
           <Tooltip placement="top-end" title="Error">
             <WarningIcon className='text-red-500' />
           </Tooltip>
         </div>
       )}
       {nft.status === "never-sold" && (
-        <div className="absolute top-[165px] pt-1 right-4 bg-opacity-60 rounded-full  w-8 h-8 flex items-center justify-center ">
+        <div className="absolute top-[165px] pt-1 right-0 bg-opacity-60 rounded-full  w-8 h-8 flex items-center justify-center ">
           <Tooltip placement="top-end" title="Diamond Hand - Never Sold">
             <DiamondIcon className='text-orange-500' />
           </Tooltip>
         </div>
       )}
       {nft.status === "paid-with-tool" && (
-        <div className="absolute top-[165px] right-4 bg-opacity-60 rounded-full  w-8 h-8 flex items-center justify-center ">
+        <div className="absolute top-[165px] right-0 bg-opacity-60 rounded-full  w-8 h-8 flex items-center justify-center ">
           <Tooltip placement="top-end" title="Paid with Tool">
             <VerifiedUserIcon className='text-purple-500' />
           </Tooltip>
         </div>
       )}
       {nft.status === "partial" && (
-        <div className="absolute top-[165px] right-4 bg-opacity-60 rounded-full  w-8 h-8 flex items-center justify-center ">
+        <div className="absolute top-[165px] right-0 bg-opacity-60 rounded-full  w-8 h-8 flex items-center justify-center ">
           <Tooltip placement="top-end" title="Partially Paid">
             <AssistantPhotoIcon className='text-orange-500' />
           </Tooltip>
         </div>
       )}
       {nft.status === "paid-at-sale" && (
-        <div className="absolute top-[165px] right-4 bg-opacity-60 rounded-full  w-8 h-8 flex items-center justify-center ">
+        <div className="absolute top-[165px] right-0 bg-opacity-60 rounded-full  w-8 h-8 flex items-center justify-center ">
           <Tooltip title="Paid at Sale" placement="top">
             <VerifiedIcon className='text-orange-500' />
           </Tooltip>
@@ -103,10 +103,10 @@ export const NftItem = ({ nft, selectedItems, setSelectedItems }: any) => {
           className={`p-2 w-full h-40 object-cover rounded-lg  ${nft.royaltiesPaid ? '' : ' border-2 border-opacity-40  border-[#FF5557]'} ${isSelected ? 'border-opacity-100' : 'border-opacity-40'}}`}
         />
       </div>
-      <p className="font-medium my-2 px-2  text-start w-36 text-xl truncate hover:text-[#FF8A57]">
+      <p className="font-medium my-2 px-2  text-start w-32 text-lg truncate hover:text-[#FF8A57]">
         {nft.name}
       </p>
-      {isUnpaid && <p className="text-red-500 text-start text-xs ml-2">Outstanding: {(nft.royaltiesToPay / LAMPORTS_PER_SOL).toFixed(2)} SOL</p>}
+      {isUnpaid && <p className="text-red-500 text-start text-[10px] ml-2">Outstanding: {(nft.royaltiesToPay / LAMPORTS_PER_SOL).toFixed(2)} SOL</p>}
     </ItemCard>
   );
 };
