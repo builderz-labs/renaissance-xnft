@@ -9,11 +9,11 @@ import { Loading } from "../../components/Loading";
 import { Collection } from "../../data/types";
 import { NftListRedemption } from "../../components/project/NftListRedemption";
 import styled from "styled-components";
-import { Button, Tooltip } from "@mui/material";
-import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import { Tooltip } from "@mui/material";
 import { LAMPORTS_PER_SOL, PublicKey } from "@solana/web3.js";
 import { getCheckedNftsForCollection } from "../../utils/nfts";
 import { useWallet } from "../../hooks/useWallet";
+import { SmallLoading } from '../../components/SmallLoading';
 
 const Blur1 = styled.div`
   background: linear-gradient(180deg, #e6813e 0%, #00b2ff 100%);
@@ -82,7 +82,7 @@ export const ProjectDetails = () => {
     }
   }, [collections, id]);
 
-  const { data: checkedNfts } = useQuery<any[]>({
+  const { data: checkedNfts, isLoading } = useQuery<any[]>({
     queryKey: [
       "checkedNfts",
       [pageCollection?.collectionAddress],
@@ -91,7 +91,7 @@ export const ProjectDetails = () => {
     queryFn: () =>
       getCheckedNftsForCollection(
         wallet.publicKey ||
-          new PublicKey("63Kaxzs8BxXh7sPZHDnAy9HwvkeLwJ3mF33EcXKSjpT9"),
+        new PublicKey("63Kaxzs8BxXh7sPZHDnAy9HwvkeLwJ3mF33EcXKSjpT9"),
         [pageCollection?.collectionAddress!]
       ),
     enabled: !!pageCollection && !!wallet.publicKey,
@@ -124,6 +124,8 @@ export const ProjectDetails = () => {
       setRoyaltiesPaid(royaltiesPaid);
     }
   }, [checkedNfts]);
+
+  console.log(isLoading)
 
   return (
     <div>
@@ -168,7 +170,7 @@ export const ProjectDetails = () => {
                         <div className="flex flex-col gap-2 items-center justify-center py-2">
                           <div className="flex flex-row gap-2 items-center justify-center">
                             <p className="w-full text-center  font-bold text-sm">
-                              {(
+                              {isLoading === true ? <SmallLoading /> : (
                                 outstandingRoyalties / LAMPORTS_PER_SOL
                               ).toFixed(2)}
                             </p>
@@ -193,15 +195,15 @@ export const ProjectDetails = () => {
                           placement="top"
                           className="cursor-help"
                         >
-                          <p className="text-start  font-light text-[12px]">
+                          <p className="text-start  font-light text-xs">
                             Redeemed:
                           </p>
                         </Tooltip>
                       </div>
 
                       <div className="flex flex-row gap-2 items-center justify-center pr-2">
-                        <p className="w-full  font-light text-md">
-                          {nftsPaid} of {checkedNfts?.length}
+                        <p className="w-full  font-light text-xs">
+                          {isLoading ? <SmallLoading /> : (<p className='font-light text-xs'>{nftsPaid} of {checkedNfts?.length}</p>)}
                         </p>
                       </div>
                     </div>
@@ -221,26 +223,33 @@ export const ProjectDetails = () => {
                       </div>{" "}
                       <div className="flex flex-row gap-2 items-center justify-center pr-2">
                         <p className="w-full  font-light text-xs">
-                          {(royaltiesPaid / LAMPORTS_PER_SOL).toFixed(2)} SOL
+                          {(royaltiesPaid / LAMPORTS_PER_SOL).toFixed(2)}
                         </p>
+                        <img
+                          src="/img/sol.svg"
+                          alt="solana logo"
+                          className="w-4 h-4"
+                        />
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-row items-center justify-between my-5">
-                  <div className="w-full flex items-start justify-end mx-4">
-                    {outstandingRoyalties > 0 && checkedNfts && (
+                {outstandingRoyalties > 0 && checkedNfts && (
+                  <div className="flex flex-row items-center justify-between my-5">
+                    <div className="w-full flex items-start justify-end mx-4">
+
                       <button
                         disabled={outstandingRoyalties === 0}
                         className={
-                          "btn  text-black  pt-0 pb-0 w-full  rounded-[120px] bg-[#ff8a57] border-2 border-gray-900 disabled:bg-[#3f3f3f]  disabled:cursor-not-allowed disabled:text-gray-100 hover:bg-[#f5fd9c] break-keep" /* + (loading && " loading") */
+                          "btn  text-black  pt-0 pb-0 w-full  rounded-[120px] bg-[#ff8a57] border-2 border-gray-900 disabled:bg-[#3f3f3f]  disabled:cursor-not-allowed disabled:text-gray-100 hover:bg-[#ffd19d] break-keep" /* + (loading && " loading") */
                         }
                       >
                         Redeem All
                       </button>
-                    )}
+
+                    </div>
                   </div>
-                </div>
+                )}
               </ItemCard>
             </div>
             <section className="my-4 text-start px-2 text-2xl font-bold flex flex-col gap-4 mt-10 relative">

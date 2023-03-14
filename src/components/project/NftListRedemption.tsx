@@ -25,7 +25,7 @@ export const NftListRedemption = ({
     queryFn: () =>
       getCheckedNftsForCollection(
         wallet.publicKey ||
-          new PublicKey("63Kaxzs8BxXh7sPZHDnAy9HwvkeLwJ3mF33EcXKSjpT9"),
+        new PublicKey("63Kaxzs8BxXh7sPZHDnAy9HwvkeLwJ3mF33EcXKSjpT9"),
         collectionAddress
       ),
   });
@@ -203,7 +203,7 @@ export const NftListRedemption = ({
               onClick={handleRepay}
               disabled={selectedItems.length === 0}
               className={
-                "btn btn-buy text-black  pt-0 pb-0 px-[36px] rounded-[120px] bg-[#ff8a57] border-2 border-gray-900 disabled:bg-[#3f3f3f]  disabled:cursor-not-allowed disabled:text-gray-100   hover:bg-[#fda680]" +
+                "btn btn-buy text-black  pt-0 pb-0 px-[36px] rounded-[120px] bg-[#ff8a57] border-2 border-gray-900 disabled:bg-[#3f3f3f]  disabled:cursor-not-allowed disabled:text-gray-100 hover:bg-[#ffd19d]  " +
                 (loading && " loading")
               }
             >
