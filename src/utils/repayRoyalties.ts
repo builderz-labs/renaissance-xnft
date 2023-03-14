@@ -1,11 +1,8 @@
-import {
-  PROGRAM_ID,
-  createRepayRoyaltiesInstruction,
-} from '@builderz/royalty-solution';
-import { Connection, PublicKey, Transaction } from '@solana/web3.js';
-import { WalletContextState } from '@solana/wallet-adapter-react';
-import axios from 'axios';
-import { NftType } from '../data/types';
+import { PROGRAM_ID, createRepayRoyaltiesInstruction } from "../utils/sdk";
+import { Connection, PublicKey, Transaction } from "@solana/web3.js";
+import { WalletContextState } from "@solana/wallet-adapter-react";
+import axios from "axios";
+import { NftType } from "../data/types";
 
 export const tryFn = async (fn: any) => {
   try {
@@ -23,7 +20,7 @@ export const repayRoyalties = async (
   const txInstructions = [];
   const readyTransactions: Transaction[] = [];
 
-  const mintAddresses = nfts.map(nft => nft.tokenAddress);
+  const mintAddresses = nfts.map((nft) => nft.tokenAddress);
 
   const url = `${import.meta.env.VITE_HELIUS_RPC_PROXY}/v0/token-metadata`;
 
@@ -58,21 +55,25 @@ export const repayRoyalties = async (
       });
     });
 
+    console.log("HERE");
+
     // Program action
     const [metadataAddress] = PublicKey.findProgramAddressSync(
       [
-        Buffer.from('metadata'),
-        new PublicKey('metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s').toBuffer(),
+        Buffer.from("metadata"),
+        new PublicKey("metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s").toBuffer(),
         new PublicKey(nft.mint).toBuffer(),
       ],
-      new PublicKey('metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s')
+      new PublicKey("metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s")
     );
 
     const [nftStateAddress] = PublicKey.findProgramAddressSync(
       // @ts-ignore
-      [Buffer.from('nft-state'), new PublicKey(nft.mint).toBuffer()],
+      [Buffer.from("nft-state"), new PublicKey(nft.mint).toBuffer()],
       PROGRAM_ID
     );
+
+    console.log("HERE2");
 
     txInstructions.push(
       createRepayRoyaltiesInstruction(
@@ -90,6 +91,8 @@ export const repayRoyalties = async (
       )
     );
   }
+
+  console.log("HERE3");
 
   const batchSize = 4;
   const numTransactions = Math.ceil(txInstructions.length / batchSize); // How many instructions can fit?
@@ -116,7 +119,7 @@ export const repayRoyalties = async (
   try {
     const blockhash = await connection.getLatestBlockhash();
 
-    readyTransactions.forEach(tx => {
+    readyTransactions.forEach((tx) => {
       tx.feePayer = wallet.publicKey!;
       tx.recentBlockhash = blockhash.blockhash;
     });
@@ -125,7 +128,7 @@ export const repayRoyalties = async (
       readyTransactions
     );
 
-    const promises = transactionsToSend.map(async tx => {
+    const promises = transactionsToSend.map(async (tx) => {
       console.log(tx);
 
       return await connection.sendRawTransaction(tx.serialize());
@@ -133,7 +136,7 @@ export const repayRoyalties = async (
 
     const sigs = await Promise.all(promises);
 
-    const promises2 = sigs.map(async sig => {
+    const promises2 = sigs.map(async (sig) => {
       return await connection.confirmTransaction({
         signature: sig,
         blockhash: blockhash.blockhash,

@@ -115,6 +115,7 @@ export const NftListRedemption = ({
       const res = await repayRoyalties(itemsToRepay, connection, wallet);
       setLoading(false);
     } catch (error) {
+      console.log(error);
       setLoading(false);
     }
   };

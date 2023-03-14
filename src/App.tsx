@@ -1,4 +1,4 @@
-import buffer from 'buffer';
+import buffer from "buffer";
 globalThis.Buffer = buffer.Buffer;
 
 import { ConnectionProvider } from '@solana/wallet-adapter-react';
