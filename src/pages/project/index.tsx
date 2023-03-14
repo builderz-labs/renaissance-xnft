@@ -235,7 +235,7 @@ export const ProjectDetails = () => {
                   </div>
                 </div>
                 {outstandingRoyalties > 0 && checkedNfts && (
-                  <div className="flex flex-row items-center justify-between my-5">
+                  <div className="flex flex-row items-center justify-between mb-5">
                     <div className="w-full flex items-start justify-end mx-4">
 
                       <button
