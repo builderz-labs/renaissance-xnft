@@ -44,8 +44,12 @@ export const HomePage = () => {
             It's Repay Renaissance! Redeem your royalties - your project might
             reward you!
           </p>
-          <Leaderboard />
-          <FeaturedList />
+          <section className="">
+            <Leaderboard />
+          </section>
+          <section className="mt-5">
+            <FeaturedList />
+          </section>
           <Blur1 className="absolute top-80 -right-60 z-0 opacity-20" />
           <AllCollections />
         </Await>

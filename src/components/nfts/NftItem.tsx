@@ -7,6 +7,7 @@ import DiamondIcon from '@mui/icons-material/Diamond';
 import AssistantPhotoIcon from '@mui/icons-material/AssistantPhoto';
 import BeenhereIcon from '@mui/icons-material/Beenhere';
 import { Checkbox, Tooltip } from '@mui/material';
+import { LAMPORTS_PER_SOL } from '@solana/web3.js';
 
 const ItemCard = styled.div`
   background: linear-gradient(206.07deg, #050505 30.45%, #101c26 99.29%);
@@ -38,6 +39,7 @@ export const NftItem = ({ nft, selectedItems, setSelectedItems }: any) => {
   };
 
   const isSelected = selectedItems.includes(nft);
+  const isUnpaid = !nft.royaltiesPaid && nft.status !== "error";
 
 
   return (
@@ -114,6 +116,7 @@ export const NftItem = ({ nft, selectedItems, setSelectedItems }: any) => {
       <p className="font-medium my-2 px-2  text-start w-36 text-xl truncate hover:text-[#FF8A57]">
         {nft.name}
       </p>
+      {isUnpaid && <p className="text-red-500 text-[8px] ml-2">Outstanding: {nft.royaltiesToPay / LAMPORTS_PER_SOL} SOL</p>}
       {/*    {nft.royaltiesPaid ? (
         <p className="text-[#FF8A57] font-medium px-2 text-start  text-[14px]">Redeemed</p>
       ) : <p className='text-[#FF5557] font-medium px-2 text-start text-[14px]'>Outstanding</p>} */}

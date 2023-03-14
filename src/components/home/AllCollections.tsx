@@ -4,6 +4,8 @@ import { useQuery } from '@tanstack/react-query';
 import { Collection } from '../../data/types';
 import Search from '../Search';
 import { useNavigate } from 'react-router-dom';
+import { Box, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import React from 'react';
 
 const ItemCard = styled.div`
   background: linear-gradient(206.07deg, #050505 30.45%, #101c26 99.29%);
@@ -28,6 +30,8 @@ export const AllCollections = () => {
   );
   const [searchQuery, setSearchQuery] = useState('');
 
+  const [sortOption, setSortOption] = useState('');
+
   const handleSearch = (query: any) => {
     setSearchQuery(query);
   };
@@ -42,11 +46,67 @@ export const AllCollections = () => {
     }
   }, [searchQuery]);
 
+  const handleSortChange = (
+    event: SelectChangeEvent<typeof sortOption>
+  ) => {
+    setSortOption(event.target.value);
+  };
+
+  useEffect(() => {
+    if (data) {
+      let sortedCollections = [...data];
+      switch (sortOption) {
+        case 'Ranking':
+          sortedCollections = sortedCollections.sort(
+            (a, b) => b.fp - a.fp
+          );
+          break;
+        case 'Name':
+          sortedCollections = sortedCollections.sort((a, b) =>
+            a.name.localeCompare(b.name)
+          );
+          break;
+        default:
+          break;
+      }
+      const filteredCollections = sortedCollections.filter(
+        (collection: { name: string }) =>
+          collection.name.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setFilteredCollections(filteredCollections);
+    }
+  }, [searchQuery, sortOption, data]);
+
+
   return (
-    <section className="mb-10">
-      <h2 className="pt-8 px-2 font-bold text-xl text-start">
-        All Collections
-      </h2>
+    <section className="my-10">
+      <div className="w-full flex flex-row justify-between items-center py-4">
+        <div className=" flex items-center justify-center h-full">
+          <h2 className=" px-2 font-bold text-xl">
+            All Collections
+          </h2>
+        </div>
+        <div className="max-w-xs flex items-center justify-center text-white">
+          <FormControl sx={{ m: 1, minWidth: 120, color: 'white' }} size="small" className='select select-ghost'>
+            <InputLabel id="sort-label">Sort</InputLabel>
+            <Select
+              labelId="sort-label"
+              id="sort"
+              value={sortOption}
+              label="Sort"
+              onChange={handleSortChange}
+              className='select select-ghost'
+            >
+              <MenuItem value="">
+                <em>None</em>
+              </MenuItem>
+              <MenuItem value="Ranking">Ranking</MenuItem>
+              <MenuItem value="Name">Name</MenuItem>
+            </Select>
+          </FormControl>
+        </div>
+
+      </div>
       <Search onSearch={handleSearch} />
 
       <div className="w-full grid grid-cols-2 px-2 gap-4 mb-40">

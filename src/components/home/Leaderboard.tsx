@@ -31,8 +31,12 @@ export const Leaderboard = () => {
 
   return (
     <section className="">
+      <h2 className="py-2 px-2 pt-4 font-bold text-xl text-start mb-2">
+        Top Redeemer
+      </h2>
       <MySlide>
         <div className="flex flex-col items-center justify-center h-full w-full px-12">
+
           {/* First Place */}
           <div className="flex flex-row items-center justify-between gap-8 w-full">
             <div className="w-4 h-4">

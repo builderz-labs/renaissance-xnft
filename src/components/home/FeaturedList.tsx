@@ -12,7 +12,7 @@ export const FeaturedList = () => {
   return (
     <section className="">
       <h2 className="py-2 px-2 pt-4 font-bold text-xl text-start">
-        Featured Collections
+        Top Collections
       </h2>
       <div className="w-full grid grid-cols-2 px-2 gap-4">
         {data &&

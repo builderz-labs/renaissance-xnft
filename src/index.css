@@ -270,6 +270,21 @@ body {
   border-radius: 12px;
 }
 
+.MuiControl-root, .css-19fcgwo-MuiFormControl-root {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.css-1pysi21-MuiFormLabel-root-MuiInputLabel-root, .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root, .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root,
+.MuiInputLabel-root, .MuiInputBase-root, .MuiSelect-root {
+  color: #ffffff !important;
+  padding: 0px !important;
+}
+
+.active {
+  color: #ff8a57 !important;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #ffffff;
