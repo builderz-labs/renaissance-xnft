@@ -35,14 +35,14 @@ export const NftsPage = () => {
   const { nfts } = useLoaderData() as any;
 
   return (
-    <div className="h-full mb-40 relative">
+    <div className="h-full relative mb-40">
       <Blur1 className="absolute -top-40 -right-40 z-0 opacity-20" />
       <Blur1 className="absolute top-40 right-40 z-0 opacity-10" />
       <Blur1 className="absolute top-80 -right-60 z-0 opacity-20" />
       <Suspense fallback={<Loading />}>
         <Await resolve={nfts}>
           <section className="my-5 ">
-            <h1 className="text-4xl font-bold mb-10">Your NFTs</h1>
+            <h1 className="text-4xl font-bold mb-10 mb-40">Your NFTs</h1>
             <NftListRedemption collectionAddress={[]} />
           </section>
         </Await>
