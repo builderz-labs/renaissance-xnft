@@ -1,6 +1,10 @@
-# XRAY
+# Re:naissance
 
-A human-readable Solana transaction explorer powered by Helius.
+A seamless Royalty Solution for NFT communities to track and redeem royalties 👑
+
+Built on Backpack 🎒
+
+![Renaissance](/public/preview.png)
 
 🔗 **Link**: <https://builderz.dev>
 
@@ -12,7 +16,7 @@ A human-readable Solana transaction explorer powered by Helius.
 
 ## 🤝 Contribute
 
-- Fork Rennaisance onto your own GitHub
+- Fork Renaissance onto your own GitHub
 - Clone it and checkout the dev branch (`git checkout dev`)
 - Create a new branch named `[initials]/[feature]` off of `dev`. Example `q/added-a-cool-thing`.
 - When ready for us to review your changes, create a PR with your new branch to be merged into the `dev` branch on the official xNFT.
@@ -35,14 +39,25 @@ A human-readable Solana transaction explorer powered by Helius.
 
 ### Setup Environment
 
-In the root of the project, create a `.env` file with the values mentioned in `.env.template`.
+To work with our project you need to pass in a Helius API and RPC Proxy URL in the .env file In the root of the project, create a `.env` file with the following values:
+
+```
+VITE_HELIUS_RPC_PROXY=<PROXY_URL>
+```
+
+---
+
+> **Note**
+> You can learn how to create a proxy for your HELIUS Plan [HERE](https://docs.helius.xyz/reference/how-to-stop-your-api-key-from-leaking)
+
+---
 
 ### Install
 
 Run the install command from the root of the project to install dependencies for all apps and packages.
 
 ```sh
-npm install
+yarn install
 ```
 
 ### Dev
