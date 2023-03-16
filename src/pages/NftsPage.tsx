@@ -42,7 +42,7 @@ export const NftsPage = () => {
       <Suspense fallback={<Loading />}>
         <Await resolve={nfts}>
           <section className="my-5 ">
-            <h1 className="text-4xl font-bold mb-10 mb-40">Your NFTs</h1>
+            <h1 className="text-4xl font-bold mb-40">Your NFTs</h1>
             <NftListRedemption collectionAddress={[]} />
           </section>
         </Await>

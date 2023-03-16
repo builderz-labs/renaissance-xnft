@@ -7,6 +7,7 @@ import { Await, defer, useLoaderData } from 'react-router-dom';
 import { Loading } from '../components/Loading';
 import { Leaderboard } from '../components/home/Leaderboard';
 import { fetchLeaderboard } from '../utils/history';
+import FormBanner from '../components/FormBanner/FormBanner';
 
 const Blur1 = styled.div`
   background: linear-gradient(180deg, #e6813e 0%, #00b2ff 100%);
@@ -50,23 +51,7 @@ export const HomePage = () => {
       <Suspense fallback={<Loading />}>
         <Await resolve={collections}>
           {/* All Sections in their own components */}
-          <section>
-            {/* Banner */}
-            <div className="w-full flex flex-row justify-between items-center py-2 bg-renaissance-orange bg-opacity-40 rounded-md ">
-              <div className=" flex items-center justify-center h-full">
-                <p className="px-2 text-[10px] font-semibold">
-                  Submit the <a href="" className='underline'>form</a> to get your Collection whitelisted!
-                </p>
-              </div>
-              <div className='flex items-center justify-center w-1/6'>
-                x
-              </div>
-            </div>
-            <p className="text-[14px] px-2 py-4 text-start max-w-xs">
-              It's Re<span className='text-renaissance-orange'>:</span>naissance Royalty Redemption! Redeem your royalties - your project might reward you!
-            </p>
-
-          </section>
+          <FormBanner />
           <section className="">
             <Leaderboard />
           </section>

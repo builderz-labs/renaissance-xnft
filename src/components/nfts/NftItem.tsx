@@ -19,6 +19,7 @@ const ItemCard = styled.div`
     rgba(255, 138, 87, 0.1) 100%
   );
 `;
+
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 export const NftItem = ({ nft, selectedItems, setSelectedItems }: any) => {
