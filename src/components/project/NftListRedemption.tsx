@@ -169,22 +169,24 @@ export const NftListRedemption = ({
             previousLabel="<"
           />
         )}
-        <div className="my-5  flex flex-col   items-end  justify-end  w-full gap-8">
+        <div
+          className="my-5  flex flex-col   items-end  justify-end  w-full gap-8">
           <div className="w-full flex flex-row items-start justify-between gap-8 ">
             <div className="flex items-center justify-end gap-2 text-xs  ">
               <input
                 type="checkbox"
                 checked={selectAllUnpaid}
-                onClick={() => setSelectAllUnpaid(!selectAllUnpaid)}
+                onChange={() => setSelectAllUnpaid(!selectAllUnpaid)}
               />
               <label>Select All Unpaid</label>
             </div>
-            <div className="flex items-center justify-end gap-2 text-xs ">
+            <div
+              className="flex items-center justify-end gap-2 text-xs ">
               <div className="flex items-center justify-end gap-2 text-xs ">
                 <input
                   type="checkbox"
                   checked={showUnpaidRoyaltiesOnly}
-                  onClick={() =>
+                  onChange={() =>
                     setShowUnpaidRoyaltiesOnly(!showUnpaidRoyaltiesOnly)
                   }
                 />
