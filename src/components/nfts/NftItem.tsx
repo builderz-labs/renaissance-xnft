@@ -22,7 +22,7 @@ const ItemCard = styled.div`
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
-export const NftItem = ({ nft, selectedItems, setSelectedItems }: any) => {
+export const NftItem = ({ nft, selectedItems, setSelectedItems, fee }: any) => {
 
   const handleCheck = (nft: any) => {
     if (nft.royaltiesPaid || nft.status === "error") {
@@ -107,7 +107,7 @@ export const NftItem = ({ nft, selectedItems, setSelectedItems }: any) => {
       <p className="font-medium my-2 px-2  text-start w-32 text-lg truncate hover:text-[#FF8A57]">
         {nft.name}
       </p>
-      {isUnpaid && <p className="text-red-500 text-start text-[10px] ml-2">Outstanding: {(nft.royaltiesToPay / LAMPORTS_PER_SOL * 1.2).toFixed(2)} SOL</p>}
+      {isUnpaid && <p className="text-red-500 text-start text-[10px] ml-2">Outstanding: {((nft.royaltiesToPay + (nft.royaltiesToPay * fee || 0)) / LAMPORTS_PER_SOL).toFixed(2)} SOL</p>} 
     </ItemCard>
   );
 };

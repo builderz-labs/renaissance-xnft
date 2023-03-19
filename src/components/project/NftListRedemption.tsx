@@ -160,6 +160,7 @@ export const NftListRedemption = ({
               nft={nft}
               selectedItems={selectedItems}
               setSelectedItems={(items: any) => setSelectedItems(items)}
+              fee={pageCollection?.fee}
             />
           );
         })}
