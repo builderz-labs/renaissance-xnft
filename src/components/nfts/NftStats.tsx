@@ -42,16 +42,16 @@ export const NftStats = ({
     ],
     queryFn: pageCollection
       ? () =>
-          getCheckedNftsForCollection(
-            // wallet.publicKey ||
-            new PublicKey("63Kaxzs8BxXh7sPZHDnAy9HwvkeLwJ3mF33EcXKSjpT9"),
-            [pageCollection?.collectionAddress!]
-          )
+        getCheckedNftsForCollection(
+          // wallet.publicKey ||
+          new PublicKey("63Kaxzs8BxXh7sPZHDnAy9HwvkeLwJ3mF33EcXKSjpT9"),
+          [pageCollection?.collectionAddress!]
+        )
       : () =>
-          getCheckedNftsForCollection(
-            // wallet.publicKey ||
-            new PublicKey("63Kaxzs8BxXh7sPZHDnAy9HwvkeLwJ3mF33EcXKSjpT9")
-          ),
+        getCheckedNftsForCollection(
+          // wallet.publicKey ||
+          new PublicKey("63Kaxzs8BxXh7sPZHDnAy9HwvkeLwJ3mF33EcXKSjpT9")
+        ),
   });
 
   // States
@@ -108,10 +108,14 @@ export const NftStats = ({
       <ItemCard className="w-full">
         <div className="w-full flex justify-end">
           <div className="w-1/2 h-full p-5 flex flex-col items-center justify-center gap-1">
+            <p className="text-[12px]">Outstanding Royalties:</p>
+
             <ItemCard className="h-full w-full mx-4 flex items-center justify-center">
               <div className="flex flex-row gap-2 my-2 items-center justify-center w-full h-full">
                 <div className="flex flex-col gap-2 items-center justify-center py-2">
+
                   <div className="flex flex-row gap-2 items-center justify-center">
+
                     <div className="w-full text-center font-bold text-sm">
                       {isLoading === true ? (
                         <SmallLoading />
@@ -132,7 +136,6 @@ export const NftStats = ({
                       />
                     )}
                   </div>
-                  <p className="text-[8px]">In Outstanding Royalties:</p>
                 </div>
               </div>
             </ItemCard>
