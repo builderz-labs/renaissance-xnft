@@ -19,7 +19,7 @@ const ItemCard = styled.div`
 `;
 
 export const AllCollections = () => {
-  const { data, isLoading, isError, error, refetch } = useQuery<Collection[]>({
+  const { data } = useQuery<Collection[]>({
     queryKey: ['collections'],
   });
 

@@ -16,16 +16,6 @@ const Blur1 = styled.div`
   height: 260px;
 `;
 
-const MySlide = styled.div`
-  background-image: url('/img/ren.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 96px;
-  width: 100%;
-  filter: drop-shadow(1px 1px 8px rgba(0, 0, 0, 0.25));
-`;
-
 export const loader = (queryClient: QueryClient) => {
   return defer({
     collections: queryClient.fetchQuery({

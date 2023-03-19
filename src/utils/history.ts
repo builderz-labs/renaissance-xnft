@@ -1,14 +1,14 @@
-import { LAMPORTS_PER_SOL, PublicKey } from '@solana/web3.js';
-import axios from 'axios';
+import { LAMPORTS_PER_SOL, PublicKey } from "@solana/web3.js";
+import axios from "axios";
 
 export const truncate = (wallet: string, startChars: any, endChars: number) => {
   var start = wallet.substring(0, startChars);
   var end = wallet.substring(wallet.length - endChars, wallet.length);
-  return start + '...' + end;
+  return start + "..." + end;
 };
 
 const fetchTransactionPages = async (amount?: number, timestamp?: number) => {
-  let oldestTransaction = '';
+  let oldestTransaction = "";
   let transactions: any[] = [];
 
   let oldestTransactionTimestamp = Infinity;
@@ -51,81 +51,106 @@ const fetchTransactionPages = async (amount?: number, timestamp?: number) => {
   }
 };
 
-export const fetchHistory = async (nftToFilterBy?: PublicKey) => {
-  const data = await fetchTransactionPages(2000);
+// TODO: Figure out how to create Collections Leaderboard
 
-  const filtered: Array<any> = [];
+// export const getCollectionLeaderboard = async (collections: string[]) => {
+//   const date = Date.now();
 
-  data &&
-    data.forEach((tx: any) => {
-      // Filter each instruction
-      const filteredInstructions = tx.instructions.filter((ix: any) => {
-        if (true) {
-          // nftList.includes(ix.accounts[1])
-          return ix;
-        }
-      });
+//   const transactions = await fetchTransactionPages(
+//     undefined,
+//     date - 30 * 24 * 60 * 60 * 1000
+//   );
 
-      const royaltyAccounts = filteredInstructions[0].accounts.slice(6);
-      const royaltyTransfers = tx.nativeTransfers.filter((transfer: any) =>
-        royaltyAccounts.includes(transfer.toUserAccount)
-      );
-      let amount = 0;
-      royaltyTransfers.forEach((transfer: any) => {
-        amount += transfer.amount;
-      });
+//   const readingMints = transactions.map((tx: any) => {
+//     console.log(tx);
 
-      filtered.push({
-        nft:
-          truncate(filteredInstructions[0].accounts[1], 4, 4) +
-          ` (${filteredInstructions.length})`,
-        wallet: truncate(tx.feePayer, 4, 4),
-        amount: amount / LAMPORTS_PER_SOL,
-        date: tx.timestamp * 1000,
-        signature: tx.signature,
-        key: tx.signature,
-      });
-    });
+//     tx.instructions.forEach((ix: any) => {
+//       return { ...ix.accounts.slice(1) };
+//     });
+//   });
 
-  return filtered;
-};
+//   console.log(readingMints);
 
-// History for user
-export const fetchUserHistory = async (user: PublicKey) => {
-  const transactions = await fetchTransactionPages(2000);
+//   const filtered: Array<any> = [];
 
-  const userTransactions = transactions?.filter((tx: any) => {
-    return tx.feePayer === user.toBase58();
-  });
+//   return [];
+// };
 
-  // TODO: return more detailed with collection info
+// export const fetchHistory = async (nftToFilterBy?: PublicKey) => {
+//   const data = await fetchTransactionPages(2000);
 
-  let userTotalAmount = 0;
+//   const filtered: Array<any> = [];
 
-  userTransactions?.forEach((tx: any) => {
-    const filteredInstructions = tx.instructions.filter((ix: any) => {
-      if (true) {
-        // nftList.includes(ix.accounts[1])
-        // More filters
-        return ix;
-      }
-    });
-    const royaltyAccounts = filteredInstructions[0].accounts.slice(6);
-    const royaltyTransfers = tx.nativeTransfers.filter((transfer: any) =>
-      royaltyAccounts.includes(transfer.toUserAccount)
-    );
+//   data &&
+//     data.forEach((tx: any) => {
+//       // Filter each instruction
+//       const filteredInstructions = tx.instructions.filter((ix: any) => {
+//         if (true) {
+//           // nftList.includes(ix.accounts[1])
+//           return ix;
+//         }
+//       });
 
-    const transactionTotalAmount = royaltyTransfers.reduce(
-      (acc: any, curr: any) => {
-        return acc + curr.amount;
-      }
-    );
+//       const royaltyAccounts = filteredInstructions[0].accounts.slice(6);
+//       const royaltyTransfers = tx.nativeTransfers.filter((transfer: any) =>
+//         royaltyAccounts.includes(transfer.toUserAccount)
+//       );
+//       let amount = 0;
+//       royaltyTransfers.forEach((transfer: any) => {
+//         amount += transfer.amount;
+//       });
 
-    userTotalAmount += transactionTotalAmount;
-  });
+//       filtered.push({
+//         nft:
+//           truncate(filteredInstructions[0].accounts[1], 4, 4) +
+//           ` (${filteredInstructions.length})`,
+//         wallet: truncate(tx.feePayer, 4, 4),
+//         amount: amount / LAMPORTS_PER_SOL,
+//         date: tx.timestamp * 1000,
+//         signature: tx.signature,
+//         key: tx.signature,
+//       });
+//     });
 
-  return { totalAmount: userTotalAmount, transactions: userTransactions };
-};
+//   return filtered;
+// };
+
+// // History for user
+// export const fetchUserHistory = async (user: PublicKey) => {
+//   const transactions = await fetchTransactionPages(2000);
+
+//   const userTransactions = transactions?.filter((tx: any) => {
+//     return tx.feePayer === user.toBase58();
+//   });
+
+//   // TODO: return more detailed with collection info
+
+//   let userTotalAmount = 0;
+
+//   userTransactions?.forEach((tx: any) => {
+//     const filteredInstructions = tx.instructions.filter((ix: any) => {
+//       if (true) {
+//         // nftList.includes(ix.accounts[1])
+//         // More filters
+//         return ix;
+//       }
+//     });
+//     const royaltyAccounts = filteredInstructions[0].accounts.slice(6);
+//     const royaltyTransfers = tx.nativeTransfers.filter((transfer: any) =>
+//       royaltyAccounts.includes(transfer.toUserAccount)
+//     );
+
+//     const transactionTotalAmount = royaltyTransfers.reduce(
+//       (acc: any, curr: any) => {
+//         return acc + curr.amount;
+//       }
+//     );
+
+//     userTotalAmount += transactionTotalAmount;
+//   });
+
+//   return { totalAmount: userTotalAmount, transactions: userTransactions };
+// };
 
 // Leaderboard
 export const fetchLeaderboard = async () => {
