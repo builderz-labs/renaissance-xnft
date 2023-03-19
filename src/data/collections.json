@@ -19,19 +19,19 @@
         "url": "https://thelotus.io/"
       }
     ],
-    "fp": 9.6,
+    "symbol": "lily",
     "sol": 40.0
   },
   {
     "id": 2,
-    "name": "Claynosaurz",
-    "image": "/img/clay.webp",
-    "collectionAddress": "3NoPerEGS1JpPA6FGYpPfKJ8QUkBjYPngST2pwpQt7ED",
-        "description": "Travel back to distant lands. Explore the uncharted, discover lost artifacts. Adventure awaits…",
+    "name": "y00ts",
+    "image": "/img/yoots.webp",
+    "collectionAddress": "4mKSoDDqApmF1DqXvVTSL6tu2zixrSSNjqMxUnwvVzy2",
+    "description": "y00ts is a generative art project of 15,000 NFTs. y00topia is a curated community of builders and creators. Each y00t was designed by De Labs in Los Angeles, CA",
     "socials": [
       {
         "name": "Twitter",
-        "url": "https://twitter.com/Claynosa"
+        "url": "https://twitter.com/y00tsNFT"
       },
       {
         "name": "Discord",
@@ -39,10 +39,33 @@
       },
       {
         "name": "Website",
-        "url": "https://thelotus.io/"
+        "url": "https://www.y00ts.com/"
       }
     ],
-    "fp": 42.0,
+    "symbol": "yoots",
+    "sol": 40.0
+  },
+  {
+    "id": 3,
+    "name": "Claynosaurz",
+    "image": "/img/clay.webp",
+    "collectionAddress": "3NoPerEGS1JpPA6FGYpPfKJ8QUkBjYPngST2pwpQt7ED",
+        "description": "Travel back to distant lands. Explore the uncharted, discover lost artifacts. Adventure awaits…",
+    "socials": [
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/Claynosaurz"
+      },
+      {
+        "name": "Discord",
+        "url": "https://discord.com/invite/claynosaurz"
+      },
+      {
+        "name": "Website",
+        "url": "https://claynosaurz.com/"
+      }
+    ],
+    "symbol": "claynosaurz",
     "sol": 39.2
   },
   {
@@ -54,69 +77,66 @@
     "socials": [
       {
         "name": "Twitter",
-        "url": "https://twitter.com/Claynosa"
+        "url": "https://twitter.com/ABC123Community"
       },
       {
         "name": "Discord",
-        "url": "https://discord.gg/2Z7Y4Y2"
+        "url": "https://discord.com/invite/ABCCommunity"
       },
       {
         "name": "Website",
-        "url": "https://thelotus.io/"
+        "url": "https://t.co/XIxqXitOlJ"
       }
     ],
-    "fp": 69.0,
+    "symbol": "abc",
     "sol": 36.2
   },
   {
     "id": 4,
-    "name": "y00ts",
-    "image": "/img/y00ts.jpg",
-    "collectionAddress": "3NoPerEGS1JpPA6FGYpPfKJ8QUkBjYPngST2pwpQt7ED",
-           "description": "Travel back to distant lands. Explore the uncharted, discover lost artifacts. Adventure awaits…",
+    "name": "Wolf Capital",
+    "image": "/img/lotus.webp",
+    "collectionAddress": "5ucdKHbPfmsWowXSNfHoiYEJ55kfFmvEdHii5RtjHpiH",
+           "description": "Wolf Capital brings elements of capital preservation to ensure longevity, Lending analytics and aggregation, as well as an all star team of pixel artists under one roof.",
     "socials": [
       {
         "name": "Twitter",
-        "url": "https://twitter.com/Claynosa"
+        "url": "https://twitter.com/WolfCapital_"
       },
       {
         "name": "Discord",
-        "url": "https://discord.gg/2Z7Y4Y2"
+        "url": "https://t.co/ECEW2u9symbolI"
       },
-      {
-        "name": "Website",
-        "url": "https://thelotus.io/"
-      }
+      {"name": "Website",
+      "url": "https://thelotus.io/"}
     ],
-    "fp": 125.0,
-    "sol": 35.2
+    "symbol": "",
+    "sol": 34.2
   },
   {
     "id": 5,
     "name": "Smyths",
     "image": "/img/smyths.jpg",
-    "collectionAddress": "3NoPerEGS1JpPA6FGYpPfKJ8QUkBjYPngST2pwpQt7ED",
-           "description": "Travel back to distant lands. Explore the uncharted, discover lost artifacts. Adventure awaits…",
+    "collectionAddress": "CLBrjmoDCFvrW8ukxXtDrBXWkL7Yx8PKspKaBPFxhpmL",
+           "description": "Smyths is a collection of 4444 noble beings forged through sacred flames. Visit smyths.io to stake and get $FORGE.",
     "socials": [
       {
         "name": "Twitter",
-        "url": "https://twitter.com/Claynosa"
+        "url": "https://twitter.com/SmythsNFT"
       },
       {
         "name": "Discord",
-        "url": "https://discord.gg/2Z7Y4Y2"
+        "url": "https://discord.gg/smyths"
       },
       {
         "name": "Website",
-        "url": "https://thelotus.io/"
+        "url": "https://smyths.io/"
       }
     ],
-    "fp": 6.9,
+    "symbol": "smyths",
     "sol": 34.2
   },
-  { "id": 6, "name": "FFF", "image": "/img/fff.webp", "fp": 23.6, "sol": 33.2 },
   {
-    "id": 7,
+    "id": 6,
     "name": "BLOCKZ",
     "image": "/img/builderz.webp",
     "collectionAddress": "PeRXuY1P4cnzDZEPH1ancRVSyQMDpnTF27BwmQ1kkWq",
@@ -135,7 +155,169 @@
         "url": "https://thelotus.io/"
       }
     ],
-    "fp": 23.5,
+    "symbol": "blockz",
+    "sol": 32.1
+  },
+  {
+    "id": 7,
+    "name": "The Bastards",
+    "image": "/img/bastards.png",
+    "collectionAddress": "2UN3GTc5rRzfK4ghU6GTgu4i8Ds3GoV9kyxZTAcvJ8iX",
+           "description": "Sensual animation, scuffed storytelling, and deranged universe-building.",
+    "socials": [
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/TheBastards_xyz"
+      },
+      {
+        "name": "Discord",
+        "url": "https://discord.gg/thebastards"
+      },
+      {
+        "name": "Website",
+        "url": "https://www.thebastards.xyz/"
+      }
+    ],
+    "symbol": "bastards",
+    "sol": 32.1
+  },
+  {
+    "id": 8,
+    "name": "SHARX",
+    "image": "/img/sharx.webp",
+    "collectionAddress": "5f2PvbmKd9pRLjKdMr8nrK8fNisLi7irjB6X5gopnKpB",
+           "description": "Sharx is the official NFT collection of Sharky, the #1 NFT lending platform on Solana. They are your newest frens ready to take over the NFT world. Feed $FISHY → grow into whale sharx. Earn, trade, celebrate! ❤",
+    "socials": [
+      {
+        "name": "Twitter",
+        "url": "https://www.twitter.com/SharkyFi"
+      },
+      {
+        "name": "Discord",
+        "url": "https://www.discord.gg/sharkyfi"
+      },
+      {
+        "name": "Website",
+        "url": "https://sharky.fi/"
+      }
+    ],
+    "symbol": "sharx",
+    "sol": 32.1
+  },
+  {
+    "id": 10,
+    "name": "Taiyo Pilots",
+    "image": "/img/pilots.webp",
+    "collectionAddress": "rLNTGqK3VmEapEgcV7qL3oboBzvVTmNehYMXMLYtCRK",
+           "description": "Sharx is the official NFT collection of Sharky, the #1 NFT lending platform on Solana. They are your newest frens ready to take over the NFT world. Feed $FISHY → grow into whale sharx. Earn, trade, celebrate! ❤",
+    "socials": [
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/TaiyoRobotics"
+      },
+      {
+        "name": "Discord",
+        "url": "https://discord.gg/66MQBHMn4n"
+      },
+      {
+        "name": "Website",
+        "url": "https://taiyorobotics.com/"
+      }
+    ],
+    "symbol": "taiyopilots",
+    "sol": 32.1
+  },
+  {
+    "id": 11,
+    "name": "Famous Fox Federation",
+    "image": "/img/fff.webp",
+    "collectionAddress": "BUjZjAS2vbbb65g7Z1Ca9ZRVYoJscURG5L3AkVvHP9ac",
+           "description": "The Famous Fox Federation, an independent organization of the most fabulously famous foxes on the Blockchain.",
+    "socials": [
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/famousfoxfed"
+      },
+      {
+        "name": "Discord",
+        "url": "https://discord.gg/famousfoxes"
+      },
+      {
+        "name": "Website",
+        "url": "https://famousfoxes.com/"
+      }
+    ],
+    "symbol": "fff",
+    "sol": 32.1
+  },
+  {
+    "id": 12,
+    "name": "oogy pods",
+    "image": "/img/oogy.png",
+    "collectionAddress": "cZ9SPzdWz3f1MC63nyDpoZaS8Kjp3NHuorK3cD6Sb4m",
+           "description": "Each pod is exchangeable for one oogy... or more. Which one is it?",
+    "socials": [
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/oogyNFT"
+      },
+      {
+        "name": "Discord",
+        "url": "https://www.discord.gg/oogy"
+      },
+      {
+        "name": "Website",
+        "url": "https://www.oogy.io/"
+      }
+    ],
+    "symbol": "oogy",
+    "sol": 32.1
+  },
+  {
+    "id": 13,
+    "name": "Elixir: Ovols",
+    "image": "/img/fff.webp",
+    "collectionAddress": "9jnJWH9F9t1xAgw5RGwswVKY4GvY2RXhzLSJgpBAhoaR",
+           "description": "Battle-tested citizens ready to protect and serve the City of Elixir. Ovols sit at the center of the Elixir ecosystem.",
+    "socials": [
+      {
+        "name": "Twitter",
+        "url": "https://www.twitter.com/ElixirNFT"
+      },
+      {
+        "name": "Discord",
+        "url": "https://www.discord.gg/elixirnft"
+      },
+      {
+        "name": "Website",
+        "url": "https://www.elixirnft.io/"
+      }
+    ],
+    "symbol": "ovols",
+    "sol": 32.1
+  },
+  {
+    "id": 15,
+    "name": "OKay Bears",
+    "image": "/img/fff.webp",
+    "collectionAddress": "SMBH3wF6baUj6JWtzYvqcKuj2XCKWDqQxzspY12xPND",
+           "description": "SMB is a collection of 5000 unique randomly generated SolanaMonkeys stored on the blockchain. With their accessibility-oriented design, the monkeys' goal is to invade the Solana blockchain with as many individuals as possible, building a large community around them, supported by owner-exclusive advantages, a community wallet and a future voting system. Reject humanity, return to monke.",
+    "socials": [
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/SolanaMBS"
+      },
+      {
+        "name": "Discord",
+        "url": "https://discord.gg/8rkJVVFNCh"
+      },
+      {
+        "name": "Website",
+        "url": "https://www.okaybears.com/"
+      }
+    ],
+    "symbol": "okb",
     "sol": 32.1
   }
+
 ]
