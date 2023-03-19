@@ -16,7 +16,7 @@ import ErrorPage from './pages/ErrorPage';
 import { HomePage, loader as homeLoader } from './pages/HomePage';
 import { NftsPage } from './pages/NftsPage';
 import { ProjectPage, loader as projectLoader } from './pages/project';
-import { RankingPage, loader as rankingLoader} from './pages/RankingPage';
+import { RankingPage, loader as rankingLoader } from './pages/RankingPage';
 
 declare global {
   interface Window {
@@ -63,19 +63,19 @@ function App() {
     <ConnectionProvider endpoint={import.meta.env.VITE_HELIUS_RPC_PROXY}>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
-        <ReactQueryDevtools />
-        <ToastContainer
-              position="top-center"
-              autoClose={5000}
-              hideProgressBar
-              newestOnTop
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-              theme="dark"
-            />
+        {/*         <ReactQueryDevtools />
+ */}        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
       </QueryClientProvider>
     </ConnectionProvider>
   );

@@ -10,7 +10,7 @@ export function Layout() {
     <div className="h-screen w-screen max-w-[425px] flex flex-col px-2">
       <Header />
       {/* Set background color here */}
-      <main className="flex-1 p-2  text-white">
+      <main className="flex-1  text-white">
         <Outlet />
       </main>
       <div className="fixed bottom-0  w-full max-w-[425px] mx-auto">
