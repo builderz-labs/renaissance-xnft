@@ -478,5 +478,28 @@
     ],
     "helloMoonCollectionId": "f31c7e033659971ef602af6f704fb64d",
     "sol": 32.1
+  },
+  {
+    "id": 20,
+    "name": "Liberty Square",
+    "image": "/img/liberty.webp",
+    "collectionAddress": "8d8CYjuy79LUtUow8UeToUs4Xo35LokYRkeukhJ6uriA",
+    "description": "Liberty Square is not just a PFP project. Liberty Square is a project based in art, lore, and character development with a focus on pushing beyond the walls of web3 and integration into the physical world. #gitrekt anon",
+    "socials": [
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/LibertySquareHQ"
+      },
+      {
+        "name": "Discord",
+        "url": "https://discord.com/invite/libertysquare"
+      },
+      {
+        "name": "Website",
+        "url": "https://libertysquare.io/"
+      }
+    ],
+    "helloMoonCollectionId": "12556d60b7fcbd8cac0857f9812ee788",
+    "sol": 32.1
   }
 ]
