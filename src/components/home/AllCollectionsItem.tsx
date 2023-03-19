@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import styled from 'styled-components';
 import { useQuery } from "@tanstack/react-query";
 import { Collection } from "../../data/types";
-import axios from "axios";
 import { RestClient, CollectionFloorpriceRequest } from "@hellomoon/api"
 import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 
@@ -28,7 +27,7 @@ export const AllCollectionsItem = ({ collection }: { collection: Collection }) =
     queryFn: () => client.send(new CollectionFloorpriceRequest({
       helloMoonCollectionId: collection.helloMoonCollectionId
     }))
-  });
+  });    
 
   return (
     <div
@@ -51,7 +50,7 @@ export const AllCollectionsItem = ({ collection }: { collection: Collection }) =
         <div className="flex flex-row gap-1 items-center justify-center">
           <p className="w-full  font-light text-[12px]">
             {/* @ts-ignore */}
-            {(marketplaceData?.data[0].floorPriceLamports / LAMPORTS_PER_SOL).toFixed(2)}
+            FP: {marketplaceData?.data[0]?.floorPriceLamports ? (parseFloat(marketplaceData?.data[0]?.floorPriceLamports!) / LAMPORTS_PER_SOL).toFixed(2) : "0.00"}
           </p>
           <img
             src="/img/sol.svg"
