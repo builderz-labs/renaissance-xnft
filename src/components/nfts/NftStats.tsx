@@ -1,9 +1,5 @@
 import { Collection } from "../../data/types";
 import styled from "styled-components";
-import { useParams } from "react-router-dom";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import LanguageIcon from "@mui/icons-material/Language";
-import HeadsetMicIcon from "@mui/icons-material/HeadsetMic";
 import { useState, useEffect } from "react";
 import { SmallLoading } from "../../components/SmallLoading";
 import { LAMPORTS_PER_SOL, PublicKey } from "@solana/web3.js";
@@ -57,10 +53,7 @@ export const NftStats = ({
             new PublicKey("63Kaxzs8BxXh7sPZHDnAy9HwvkeLwJ3mF33EcXKSjpT9"),
             ),
     enabled: !!wallet.publicKey,
-  });
-
-  console.log(checkedNfts);
-  
+  });  
 
   // States
   const [loading, setLoading] = useState(false);
@@ -120,13 +113,15 @@ export const NftStats = ({
               <div className="flex flex-row gap-2 my-2 items-center justify-center w-full h-full">
                 <div className="flex flex-col gap-2 items-center justify-center py-2">
                   <div className="flex flex-row gap-2 items-center justify-center">
-                    <p className="w-full text-center  font-bold text-sm">
+                    <div className="w-full text-center font-bold text-sm">
                       {isLoading === true ? (
                         <SmallLoading />
                       ) : (
-                        (outstandingRoyalties / LAMPORTS_PER_SOL).toFixed(2)
+                        <p className="font-light text-xs">
+                          {(outstandingRoyalties / LAMPORTS_PER_SOL).toFixed(2)}
+                        </p>
                       )}
-                    </p>
+                    </div>
                     {!isLoading && (
                       <img
                         src="/img/sol.svg"
@@ -153,7 +148,7 @@ export const NftStats = ({
               </div>
 
               <div className="flex flex-row gap-2 items-center justify-center pr-2">
-                <p className="w-full  font-light text-xs">
+                <div className="w-full font-light text-xs">
                   {isLoading ? (
                     <SmallLoading />
                   ) : (
@@ -161,7 +156,7 @@ export const NftStats = ({
                       {nftsPaid} of {checkedNfts?.length}
                     </p>
                   )}
-                </p>
+                </div>
               </div>
             </div>
             <div className="border-b border-b-gray-500 w-full my-2"></div>
@@ -179,7 +174,7 @@ export const NftStats = ({
                 </Tooltip>
               </div>{" "}
               <div className="flex flex-row gap-2 items-center justify-center pr-2">
-                <p className="w-full  font-light text-xs">
+                <div className="w-full  font-light text-xs">
                   {isLoading ? (
                     <SmallLoading />
                   ) : (
@@ -187,7 +182,7 @@ export const NftStats = ({
                       {(royaltiesPaid / LAMPORTS_PER_SOL).toFixed(2)}
                     </p>
                   )}
-                </p>
+                </div>
                 {!isLoading && (
                   <img
                     src="/img/sol.svg"

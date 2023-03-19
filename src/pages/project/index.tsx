@@ -9,14 +9,6 @@ import { Loading } from "../../components/Loading";
 import { Collection } from "../../data/types";
 import { NftListRedemption } from "../../components/project/NftListRedemption";
 import styled from "styled-components";
-import { Tooltip } from "@mui/material";
-import { LAMPORTS_PER_SOL, PublicKey } from "@solana/web3.js";
-import { getCheckedNftsForCollection } from "../../utils/nfts";
-import { useWallet } from "../../hooks/useWallet";
-import { SmallLoading } from "../../components/SmallLoading";
-import { repayRoyalties } from "../../utils/repayRoyalties";
-import { useConnection } from "@solana/wallet-adapter-react";
-import { toast } from "react-toastify";
 import { NftStats } from "../../components/nfts/NftStats";
 
 const Blur1 = styled.div`
@@ -71,9 +63,6 @@ export const ProjectPage = () => {
 export const ProjectDetails = () => {
   const { id } = useParams();
 
-  const wallet = useWallet();
-  const { connection } = useConnection()
-
   // Get Collection
   const { data: collections } = useQuery<Collection[]>({
     queryKey: ["collections"],
@@ -86,70 +75,6 @@ export const ProjectDetails = () => {
       setPageCollection(collection);
     }
   }, [collections, id]);
-
-  const { data: checkedNfts, isLoading, refetch } = useQuery<any[]>({
-    queryKey: [
-      "checkedNfts",
-      [pageCollection?.collectionAddress],
-      wallet.publicKey,
-    ],
-    queryFn: () =>
-      getCheckedNftsForCollection(
-        /*       wallet.publicKey || */
-        new PublicKey("63Kaxzs8BxXh7sPZHDnAy9HwvkeLwJ3mF33EcXKSjpT9"),
-        [pageCollection?.collectionAddress!]
-      ),
-    enabled: !!pageCollection && !!wallet.publicKey,
-  });
-
-  // States
-  const [loading, setLoading] = useState(false);
-  const [outstandingRoyalties, setOutstandingRoyalties] = useState(0);
-  const [nftsPaid, setNftsPaid] = useState(0);
-  const [royaltiesPaid, setRoyaltiesPaid] = useState(0);
-
-  useEffect(() => {
-    if (checkedNfts) {
-      const outstandingRoyalties = checkedNfts.reduce(
-        (acc: number, nft: any) => acc + nft.royaltiesToPay,
-        0
-      );
-
-      const nftsPaid = checkedNfts.filter(
-        (nft: any) => nft.royaltiesPaid
-      ).length;
-
-      const royaltiesPaid = checkedNfts.reduce(
-        (acc: number, nft: any) => acc + nft.royaltiesPaidAmount,
-        0
-      );
-
-      setOutstandingRoyalties(outstandingRoyalties);
-      setNftsPaid(nftsPaid);
-      setRoyaltiesPaid(royaltiesPaid);
-    }
-  }, [checkedNfts]);
-
-  // Repay Royalties
-  const handleRepay = async () => {
-    setLoading(true);
-
-    let itemsToRepay = checkedNfts!.filter((nft) => nft.royaltiesToPay > 0);
-
-    try {
-      const res = await repayRoyalties(itemsToRepay, connection, wallet);
-      if (res) {
-        await refetch();
-        toast.success("Royalties Repaid");
-      } else {
-        toast.error("Error Repaying Royalties");
-      }
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-      setLoading(false);
-    }
-  };
 
   return (
     <div>

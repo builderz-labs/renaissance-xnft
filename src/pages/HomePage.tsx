@@ -42,7 +42,7 @@ export const loader = (queryClient: QueryClient) => {
 };
 
 export const HomePage = () => {
-  const { collections, leaderboard } = useLoaderData() as any;
+  const { collections } = useLoaderData() as any;
 
   return (
     <div className="h-full max-w-full relative">
