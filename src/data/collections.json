@@ -338,13 +338,13 @@
         "url": "https://www.datboinft.com/"
       }
     ],
-    "helloMoonCollectionId": "datbois",
+    "helloMoonCollectionId": "778eab992eabfad5e80708b21ba98f07",
     "sol": 32.1
   },
   {
     "id": 16,
     "name": "WOOFers",
-    "image": "/img/fff.webp",
+    "image": "/img/woofers.png",
     "collectionAddress": "2RGgEVqYWMXCNs2VwXhLYeNr6S76fmDdTv7DcrFYBXVn",
     "description": "A collection of 5,555 WOOFers woofing on the Solana Blockchain. Each WOOFer NFT gives access to the WOOF DAO which will be used to govern the future of the project.",
     "socials": [
@@ -367,9 +367,9 @@
   {
     "id": 17,
     "name": "OKay Bears",
-    "image": "/img/fff.webp",
+    "image": "/img/okayb.webp",
     "collectionAddress": "SMBH3wF6baUj6JWtzYvqcKuj2XCKWDqQxzspY12xPND",
-    "description": "SMB is a collection of 5000 unique randomly generated SolanaMonkeys stored on the blockchain. With their accessibility-oriented design, the monkeys' goal is to invade the Solana blockchain with as many individuals as possible, building a large community around them, supported by owner-exclusive advantages, a community wallet and a future voting system. Reject humanity, return to monke.",
+    "description": "Okay Bears is a culture shift. A clean collection of 10,000 diverse bears building a virtuous community that will transcend the internet into the real world.",
     "socials": [
       {
         "name": "Twitter",
@@ -384,27 +384,27 @@
         "url": "https://www.okaybears.com/"
       }
     ],
-    "helloMoonCollectionId": "okb",
+    "helloMoonCollectionId": "b39fcb65aae14fc33eefce63af1ead89",
     "sol": 32.1
   },
   {
     "id": 18,
-    "name": "OKay Bears",
+    "name": "Cets on Creck",
     "image": "/img/fff.webp",
     "collectionAddress": "SMBH3wF6baUj6JWtzYvqcKuj2XCKWDqQxzspY12xPND",
-    "description": "SMB is a collection of 5000 unique randomly generated SolanaMonkeys stored on the blockchain. With their accessibility-oriented design, the monkeys' goal is to invade the Solana blockchain with as many individuals as possible, building a large community around them, supported by owner-exclusive advantages, a community wallet and a future voting system. Reject humanity, return to monke.",
+    "description": "It’s just a bunch of crecked cets, who’re upto a whole of rat shit that are livin’, and chillin’ and vibin’ together. They’re picking bullshit catfights, posting their own mugshots, cat calling the cops and stirring whatever they can to keep the high going",
     "socials": [
       {
         "name": "Twitter",
-        "url": "https://twitter.com/SolanaMBS"
+        "url": "https://www.twitter.com/CetsOnCreck"
       },
       {
         "name": "Discord",
-        "url": "https://discord.gg/8rkJVVFNCh"
+        "url": "https://discord.gg/nY43gd7gMD"
       },
       {
         "name": "Website",
-        "url": "https://www.okaybears.com/"
+        "url": "https://cetsoncreck.com/"
       }
     ],
     "helloMoonCollectionId": "okb",
@@ -435,25 +435,48 @@
   },
   {
     "id": 20,
-    "name": "OKay Bears",
-    "image": "/img/fff.webp",
-    "collectionAddress": "SMBH3wF6baUj6JWtzYvqcKuj2XCKWDqQxzspY12xPND",
-    "description": "SMB is a collection of 5000 unique randomly generated SolanaMonkeys stored on the blockchain. With their accessibility-oriented design, the monkeys' goal is to invade the Solana blockchain with as many individuals as possible, building a large community around them, supported by owner-exclusive advantages, a community wallet and a future voting system. Reject humanity, return to monke.",
+    "name": "Bet3",
+    "image": "/img/bet3.png",
+    "collectionAddress": "25jvdnuCAzihgapoVivebhyuxCsYpGmKHKEtY82Qq5xU",
+    "description": "Sports Betting with Solana ⬇️ Football 🏈 Baseball ⚾️ Basketball 🏀 UFC 🥊 ⚽️Totals, Picks, ParlaysWeb3️⃣ Sports Media",
     "socials": [
       {
         "name": "Twitter",
-        "url": "https://twitter.com/SolanaMBS"
+        "url": "https://www.twitter.com/Bet3NFT"
       },
       {
         "name": "Discord",
-        "url": "https://discord.gg/8rkJVVFNCh"
+        "url": "https://www.discord.gg/bet3"
       },
       {
         "name": "Website",
-        "url": "https://www.okaybears.com/"
+        "url": "https://bet3.games/"
       }
     ],
     "helloMoonCollectionId": "okb",
+    "sol": 32.1
+  },
+  {
+    "id": 20,
+    "name": "Thugbirdz",
+    "image": "/img/thugs.webp",
+    "collectionAddress": "8d8CYjuy79LUtUow8UeToUs4Xo35LokYRkeukhJ6uriA",
+    "description": "A collection of 3,333 uniquely generated, tough and collectible thugbirdz. Please go to https://swap.thugbirdz.com/ to reload your bird if not verified. Rebirth of an OG.",
+    "socials": [
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/thugbirdz"
+      },
+      {
+        "name": "Discord",
+        "url": "https://discord.gg/thugdao"
+      },
+      {
+        "name": "Website",
+        "url": "https://swap.thugbirdz.com/"
+      }
+    ],
+    "helloMoonCollectionId": "f31c7e033659971ef602af6f704fb64d",
     "sol": 32.1
   }
 ]
