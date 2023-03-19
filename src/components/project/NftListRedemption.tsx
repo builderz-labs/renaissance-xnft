@@ -9,6 +9,7 @@ import { getCheckedNftsForCollection } from "../../utils/nfts";
 import { Loading } from "../Loading";
 import { repayRoyalties } from "../../utils/repayRoyalties";
 import { useConnection } from "@solana/wallet-adapter-react";
+import { toast } from "react-toastify";
 
 export const NftListRedemption = ({
   collectionAddress,
@@ -20,7 +21,11 @@ export const NftListRedemption = ({
   const { connection } = useConnection();
 
   // Get checked NFTs
-  const { data: checkedNfts, isLoading } = useQuery<any[]>({
+  const {
+    data: checkedNfts,
+    isLoading,
+    refetch,
+  } = useQuery<any[]>({
     queryKey: ["checkedNfts", collectionAddress, wallet.publicKey],
     queryFn: () =>
       getCheckedNftsForCollection(
@@ -39,7 +44,7 @@ export const NftListRedemption = ({
       setCurrentNfts(checkedNfts.slice(startIndex, endIndex));
       setFilteredNfts(checkedNfts);
     }
-  }, [checkedNfts])
+  }, [checkedNfts]);
 
   // Pagination
   const [pageCount, setPageCount] = useState(0);
@@ -54,7 +59,7 @@ export const NftListRedemption = ({
       const pageCount = Math.ceil(filteredNfts.length / pageSize);
       setPageCount(pageCount);
     }
-  }, [filteredNfts])
+  }, [filteredNfts]);
 
   const handlePageChange = (newPage: { selected: number }) => {
     setCurrentPage(newPage.selected + 1);
@@ -113,9 +118,17 @@ export const NftListRedemption = ({
     }
     try {
       const res = await repayRoyalties(itemsToRepay, connection, wallet);
+      if (res) {
+        await refetch();
+        toast.success("Royalties Repaid");
+      } else {
+        toast.error("Error Repaying Royalties");
+      }
+      setSelectedItems([]);
       setLoading(false);
     } catch (error) {
       console.log(error);
+      setSelectedItems([]);
       setLoading(false);
     }
   };
@@ -129,7 +142,7 @@ export const NftListRedemption = ({
   if (checkedNfts && checkedNfts.length === 0) {
     return (
       <div>
-        <h2 className='text-xs'>You don't own any NFTs of this collection</h2>
+        <h2 className="text-xs">You don't own any NFTs of this collection</h2>
       </div>
     );
   }
@@ -169,8 +182,7 @@ export const NftListRedemption = ({
             previousLabel="<"
           />
         )}
-        <div
-          className="my-5  flex flex-col   items-end  justify-end  w-full gap-8">
+        <div className="my-5  flex flex-col   items-end  justify-end  w-full gap-8">
           <div className="w-full flex flex-row items-start justify-between gap-8 ">
             <div className="flex items-center justify-end gap-2 text-xs  ">
               <input
@@ -180,8 +192,7 @@ export const NftListRedemption = ({
               />
               <label>Select All Unpaid</label>
             </div>
-            <div
-              className="flex items-center justify-end gap-2 text-xs ">
+            <div className="flex items-center justify-end gap-2 text-xs ">
               <div className="flex items-center justify-end gap-2 text-xs ">
                 <input
                   type="checkbox"

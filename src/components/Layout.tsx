@@ -15,12 +15,12 @@ export function Layout() {
       </main>
       <div className="fixed bottom-0  w-full max-w-[425px] mx-auto">
         <Tabs />
-        <div className="flex flex-row items-center justify-center gap-2 text-[8px] font-light py-2 bg-black">
+        {/* <div className="flex flex-row items-center justify-center gap-2 text-[8px] font-light py-2 bg-black">
           <p>Powered by</p>
           <a href="https://builderz.dev" target="_blank" rel="noreferrer">
             <img src="/img/builderz.svg" alt="builderz logo" />
           </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );

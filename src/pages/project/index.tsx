@@ -14,6 +14,9 @@ import { LAMPORTS_PER_SOL, PublicKey } from "@solana/web3.js";
 import { getCheckedNftsForCollection } from "../../utils/nfts";
 import { useWallet } from "../../hooks/useWallet";
 import { SmallLoading } from "../../components/SmallLoading";
+import { repayRoyalties } from "../../utils/repayRoyalties";
+import { useConnection } from "@solana/wallet-adapter-react";
+import { toast } from "react-toastify";
 
 const Blur1 = styled.div`
   background: linear-gradient(180deg, #e6813e 0%, #00b2ff 100%);
@@ -68,6 +71,7 @@ export const ProjectDetails = () => {
   const { id } = useParams();
 
   const wallet = useWallet();
+  const { connection } = useConnection()
 
   // Get Collection
   const { data: collections } = useQuery<Collection[]>({
@@ -82,7 +86,7 @@ export const ProjectDetails = () => {
     }
   }, [collections, id]);
 
-  const { data: checkedNfts, isLoading } = useQuery<any[]>({
+  const { data: checkedNfts, isLoading, refetch } = useQuery<any[]>({
     queryKey: [
       "checkedNfts",
       [pageCollection?.collectionAddress],
@@ -97,8 +101,8 @@ export const ProjectDetails = () => {
     enabled: !!pageCollection && !!wallet.publicKey,
   });
 
-  // Stats
-
+  // States
+  const [loading, setLoading] = useState(false);
   const [outstandingRoyalties, setOutstandingRoyalties] = useState(0);
   const [nftsPaid, setNftsPaid] = useState(0);
   const [royaltiesPaid, setRoyaltiesPaid] = useState(0);
@@ -125,7 +129,26 @@ export const ProjectDetails = () => {
     }
   }, [checkedNfts]);
 
-  console.log(isLoading);
+  // Repay Royalties
+  const handleRepay = async () => {
+    setLoading(true);
+
+    let itemsToRepay = checkedNfts!.filter((nft) => nft.royaltiesToPay > 0);
+
+    try {
+      const res = await repayRoyalties(itemsToRepay, connection, wallet);
+      if (res) {
+        await refetch();
+        toast.success("Royalties Repaid");
+      } else {
+        toast.error("Error Repaying Royalties");
+      }
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  };
 
   return (
     <div>
@@ -259,8 +282,9 @@ export const ProjectDetails = () => {
                     <div className="w-full flex items-start justify-end mx-4">
                       <button
                         disabled={outstandingRoyalties === 0}
+                        onClick={handleRepay}
                         className={
-                          "btn  text-black  pt-0 pb-0 w-full  rounded-[120px] bg-[#ff8a57] border-2 border-gray-900 disabled:bg-[#3f3f3f]  disabled:cursor-not-allowed disabled:text-gray-100 hover:bg-[#ffd19d] break-keep" /* + (loading && " loading") */
+                          "btn  text-black  pt-0 pb-0 w-full  rounded-[120px] bg-[#ff8a57] border-2 border-gray-900 disabled:bg-[#3f3f3f]  disabled:cursor-not-allowed disabled:text-gray-100 hover:bg-[#ffd19d] break-keep" + (loading && " loading")
                         }
                       >
                         Redeem All

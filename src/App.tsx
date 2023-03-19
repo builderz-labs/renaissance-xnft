@@ -9,6 +9,8 @@ import { Layout } from './components/Layout';
 import { queryClient } from './client';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import './App.css';
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from 'react-toastify';
 
 import ErrorPage from './pages/ErrorPage';
 import { HomePage, loader as homeLoader } from './pages/HomePage';
@@ -61,7 +63,19 @@ function App() {
     <ConnectionProvider endpoint={import.meta.env.VITE_HELIUS_RPC_PROXY}>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
-        {/* <ReactQueryDevtools /> */}
+        <ReactQueryDevtools />
+        <ToastContainer
+              position="top-center"
+              autoClose={5000}
+              hideProgressBar
+              newestOnTop
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+            />
       </QueryClientProvider>
     </ConnectionProvider>
   );

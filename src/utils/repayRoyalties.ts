@@ -58,8 +58,6 @@ export const repayRoyalties = async (
       });
     });
 
-    console.log("HERE");
-
     // Program action
     const [metadataAddress] = PublicKey.findProgramAddressSync(
       [
@@ -75,8 +73,6 @@ export const repayRoyalties = async (
       [Buffer.from("nft-state"), new PublicKey(nft.mint).toBuffer()],
       PROGRAM_ID
     );
-
-    console.log("HERE2");
 
     txInstructions.push(
       createRepayRoyaltiesInstruction(
@@ -94,8 +90,6 @@ export const repayRoyalties = async (
       )
     );
   }
-
-  console.log("HERE3");
 
   const batchSize = 4;
   const numTransactions = Math.ceil(txInstructions.length / batchSize); // How many instructions can fit?
@@ -127,13 +121,12 @@ export const repayRoyalties = async (
       tx.recentBlockhash = blockhash.blockhash;
     });
 
-    const transactionsToSend = await wallet.signAllTransactions!(
-      readyTransactions
-    );
+    const transactionsToSend =
+      readyTransactions.length === 1
+        ? [await wallet.signTransaction!(readyTransactions[0])]
+        : await wallet.signAllTransactions!(readyTransactions);
 
     const promises = transactionsToSend.map(async (tx) => {
-      console.log(tx);
-
       return await connection.sendRawTransaction(tx.serialize());
     });
 
