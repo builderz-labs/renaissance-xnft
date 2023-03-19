@@ -45,10 +45,10 @@ export const CollectionsLeaderboard = () => {
                     />
                     <p className="w-full  font-bold text-[18px]">{item.name}</p>
                   </div>
-                  <div className="flex flex-row gap-2 col-span-2 items-center justify-end">
+                  {/* <div className="flex flex-row gap-2 col-span-2 items-center justify-end">
                     <p className=" font-bold text-[18px]">{item.sol}</p>
                     <img src="/img/sol.svg" alt="solana logo" className="w-4" />
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ))}
