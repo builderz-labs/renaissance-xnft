@@ -5,12 +5,14 @@
   "website": "https://builderz.dev",
   "kind": "app",
   "icon": {
-    "md": "./assets/img/renaissance.svg"
+    "md": "./assets/renaissance.png"
   },
   "contact": {
     "repository": "https://github.com/builderz-labs/renaissance-xnft"
   },
-  "screenshots": [
+  "tag": "nfts",
+  "programIds": ["9ZskGH9wtdwM9UXjBq1KDwuaLfrZyPChz41Hx7NWhTFf"],
+    "screenshots": [
     "./assets/screenshot1.png",
     "./assets/screenshot2.png",
     "./assets/screenshot3.png",
