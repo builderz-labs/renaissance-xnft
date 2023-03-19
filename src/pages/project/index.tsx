@@ -37,7 +37,7 @@ export const loader = (queryClient: QueryClient, { params }: any) => {
     collections: queryClient.fetchQuery({
       queryKey: ["collections"],
       queryFn: () =>
-        fetch("/src/data/collections.json").then((res) => res.json()),
+        fetch('https://raw.githubusercontent.com/builderz-labs/renaissance-xnft/main/src/data/collections.json').then(res => res.json()), // /src/data/collections.json
       staleTime: 1000 * 60 * 2,
     }),
   });
