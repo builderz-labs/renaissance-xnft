@@ -501,5 +501,28 @@
     ],
     "helloMoonCollectionId": "12556d60b7fcbd8cac0857f9812ee788",
     "sol": 32.1
+  },
+  {
+    "id": 21,
+    "name": "DeGods",
+    "image": "/img/degods.webp",
+    "collectionAddress": "6XxjKYFbcndh2gDcsUrmZgVEsoDxXMnfsaGY6fpTJzNr",
+    "description": "Liberty Square is not just a PFP project. Liberty Square is a project based in art, lore, and character development with a focus on pushing beyond the walls of web3 and integration into the physical world. #gitrekt anon",
+    "socials": [
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/degodsnft"
+      },
+      {
+        "name": "Discord",
+        "url": "https://discord.com/invite/dedao"
+      },
+      {
+        "name": "Website",
+        "url": "https://degods.com/"
+      }
+    ],
+    "helloMoonCollectionId": "040de757c0d2b75dcee999ddd47689c4",
+    "sol": 32.1
   }
 ]
