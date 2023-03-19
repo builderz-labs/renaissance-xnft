@@ -1,5 +1,6 @@
 import { CircularProgress } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
 import { Collection } from "../../data/types";
 // import { getCollectionLeaderboard } from "../../utils/history";
 
@@ -8,11 +9,13 @@ export const CollectionsLeaderboard = () => {
     queryKey: ["collections"],
   });
 
-  const { data: collectionsLeaderboard, isLoading: isLoadingLeaderboard } = useQuery({
-    queryKey: ["collectionsLeaderboard"],
-    queryFn: () => {} // getCollectionLeaderboard(collections!.map(col => col.collectionAddress)),
-    // enabled: !!collections,
-  });
+  // const { data: collectionsLeaderboard, isLoading: isLoadingLeaderboard } = useQuery({
+  //   queryKey: ["collectionsLeaderboard"],
+  //   queryFn: () => {} // getCollectionLeaderboard(collections!.map(col => col.collectionAddress)),
+  //   // enabled: !!collections,
+  // });
+
+  const navigate = useNavigate()
 
   return (
     <div className="flex flex-col items-between justify-center gap-4  py-5 mb-40 rounded-lg">
@@ -25,8 +28,8 @@ export const CollectionsLeaderboard = () => {
         <div className="bg-lily-black bg-opacity-40 flex flex-col gap-4 rounded-md">
           {collections &&
             collections.map((item, index) => (
-              <a
-                href={`/project/${item.name}`}
+              <div
+                onClick={() => navigate(`/project/${item.name}`)}
                 key={item.id}
                 className="hover:text-renaissance-orange hover:scale-105 transition-all duration-300 ease-in-out"
               >
@@ -47,7 +50,7 @@ export const CollectionsLeaderboard = () => {
                     <img src="/img/sol.svg" alt="solana logo" className="w-4" />
                   </div>
                 </div>
-              </a>
+              </div>
             ))}
         </div>
       )}

@@ -18,36 +18,17 @@ const Blur1 = styled.div`
   height: 260px;
 `;
 
-export const loader = (queryClient: QueryClient) => {
-  return defer({
-    nfts: queryClient.fetchQuery({
-      queryKey: ['nfts'],
-      queryFn: () =>
-        getNfts(
-          window.xnft.solana.publicKey ||
-          new PublicKey('PeRXuY1P4cnzDZEPH1ancRVSyQMDpnTF27BwmQ1kkWq')
-        ), // Hard coded if in localhost
-    }),
-  });
-};
-
 export const NftsPage = () => {
-  const { nfts } = useLoaderData() as any;
-
   return (
     <div className="h-full relative mb-40">
       <Blur1 className="absolute -top-40 -right-40 z-0 opacity-20" />
       <Blur1 className="absolute top-40 right-40 z-0 opacity-10" />
       <Blur1 className="absolute top-80 -right-60 z-0 opacity-20" />
-      <Suspense fallback={<Loading />}>
-        <Await resolve={nfts}>
           <section className="my-5 ">
             <h1 className="text-4xl font-bold mb-16">Your NFTs</h1>
             <NftStats />
             <NftListRedemption />
           </section>
-        </Await>
-      </Suspense>
     </div>
   );
 };

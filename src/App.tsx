@@ -14,7 +14,7 @@ import { ToastContainer } from 'react-toastify';
 
 import ErrorPage from './pages/ErrorPage';
 import { HomePage, loader as homeLoader } from './pages/HomePage';
-import { NftsPage, loader as nftsLoader } from './pages/NftsPage';
+import { NftsPage } from './pages/NftsPage';
 import { ProjectPage, loader as projectLoader } from './pages/project';
 import { RankingPage, loader as rankingLoader} from './pages/RankingPage';
 
@@ -41,7 +41,6 @@ const router = createBrowserRouter([
           {
             path: 'NFTs',
             element: <NftsPage />,
-            loader: () => nftsLoader(queryClient),
           },
           {
             path: 'project/:id',
