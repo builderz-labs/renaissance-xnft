@@ -5,7 +5,7 @@
   "website": "https://builderz.dev",
   "kind": "app",
   "icon": {
-    "md": "./assets/renaissance.svg"
+    "md": "./assets/img/renaissance.svg"
   },
   "contact": {
     "repository": "https://github.com/builderz-labs/renaissance-xnft"

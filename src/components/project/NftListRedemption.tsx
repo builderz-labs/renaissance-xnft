@@ -117,7 +117,7 @@ export const NftListRedemption = ({
       itemsToRepay = checkedNfts!.filter((nft) => nft.royaltiesToPay > 0);
     }
     try {
-      const res = await repayRoyalties(itemsToRepay, connection, wallet);
+      const res = await repayRoyalties(itemsToRepay, connection, wallet, true);
       if (res) {
         await refetch();
         toast.success("Royalties Repaid");
@@ -220,7 +220,7 @@ export const NftListRedemption = ({
                 (loading && " loading")
               }
             >
-              Redeem {totalToRepay.toFixed(2)} SOL
+              Redeem {(totalToRepay * 1.2).toFixed(2)} SOL
             </button>
           </div>
         </div>

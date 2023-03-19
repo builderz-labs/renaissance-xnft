@@ -50,10 +50,9 @@ export const NftStats = ({
       : () =>
           getCheckedNftsForCollection(
             // wallet.publicKey ||
-            new PublicKey("63Kaxzs8BxXh7sPZHDnAy9HwvkeLwJ3mF33EcXKSjpT9"),
-            ),
-    enabled: !!wallet.publicKey,
-  });  
+            new PublicKey("63Kaxzs8BxXh7sPZHDnAy9HwvkeLwJ3mF33EcXKSjpT9")
+          ),
+  });
 
   // States
   const [loading, setLoading] = useState(false);
@@ -90,7 +89,7 @@ export const NftStats = ({
     let itemsToRepay = checkedNfts!.filter((nft) => nft.royaltiesToPay > 0);
 
     try {
-      const res = await repayRoyalties(itemsToRepay, connection, wallet);
+      const res = await repayRoyalties(itemsToRepay, connection, wallet, true);
       if (res) {
         await refetch();
         toast.success("Royalties Repaid");
@@ -118,7 +117,10 @@ export const NftStats = ({
                         <SmallLoading />
                       ) : (
                         <p className="font-light text-xs">
-                          {(outstandingRoyalties / LAMPORTS_PER_SOL).toFixed(2)}
+                          {(
+                            (outstandingRoyalties / LAMPORTS_PER_SOL) *
+                            1.2
+                          ).toFixed(2)}
                         </p>
                       )}
                     </div>

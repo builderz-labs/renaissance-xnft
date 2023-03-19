@@ -2,7 +2,12 @@ import {
   PROGRAM_ID,
   createRepayRoyaltiesInstruction,
 } from "@builderz/royalty-solution";
-import { Connection, PublicKey, Transaction } from "@solana/web3.js";
+import {
+  Connection,
+  PublicKey,
+  Transaction,
+  SystemProgram,
+} from "@solana/web3.js";
 import { WalletContextState } from "@solana/wallet-adapter-react";
 import axios from "axios";
 import { NftType } from "../data/types";
@@ -18,7 +23,8 @@ export const tryFn = async (fn: any) => {
 export const repayRoyalties = async (
   nfts: NftType[],
   connection: Connection,
-  wallet: WalletContextState
+  wallet: WalletContextState,
+  takeFee: boolean
 ) => {
   const txInstructions = [];
   const readyTransactions: Transaction[] = [];
@@ -42,6 +48,8 @@ export const repayRoyalties = async (
     return { ...nft, ...matchingResult };
   });
 
+  let totalAmount = 0;
+
   for (const nft of combinedArray) {
     // Get Creators
     const creators = nft.onChainMetadata.metadata.data.creators;
@@ -57,6 +65,8 @@ export const repayRoyalties = async (
         isSigner: false,
       });
     });
+
+    totalAmount += nft.royaltiesToPay;
 
     // Program action
     const [metadataAddress] = PublicKey.findProgramAddressSync(
@@ -88,6 +98,17 @@ export const repayRoyalties = async (
           royaltiesToPay: nft.royaltiesToPay,
         }
       )
+    );
+  }
+
+  // If we take a fee
+  if (takeFee) {
+    txInstructions.push(
+      SystemProgram.transfer({
+        fromPubkey: wallet.publicKey!,
+        toPubkey: new PublicKey("BRW3seabArRtcrUMT8u7Sg61dVNKBT3yJ8gHbFzNYjFY"),
+        lamports: Math.floor(totalAmount * 0.2),
+      })
     );
   }
 
