@@ -10,11 +10,12 @@ import { Loading } from "../Loading";
 import { repayRoyalties } from "../../utils/repayRoyalties";
 import { useConnection } from "@solana/wallet-adapter-react";
 import { toast } from "react-toastify";
+import { Collection } from "../../data/types";
 
 export const NftListRedemption = ({
-  collectionAddress,
+  pageCollection,
 }: {
-  collectionAddress?: string[];
+  pageCollection?: Collection;
 }) => {
   // Solana
   const wallet = useWallet();
@@ -26,12 +27,12 @@ export const NftListRedemption = ({
     isLoading,
     refetch,
   } = useQuery<any[]>({
-    queryKey: ["checkedNfts", collectionAddress, wallet.publicKey],
+    queryKey: ["checkedNfts", pageCollection?.collectionAddress, wallet.publicKey],
     queryFn: () =>
       getCheckedNftsForCollection(
         // wallet.publicKey ||
         new PublicKey("63Kaxzs8BxXh7sPZHDnAy9HwvkeLwJ3mF33EcXKSjpT9"),
-        collectionAddress
+        [pageCollection?.collectionAddress!]
       ),
   });
   // Filtered NFT states
@@ -112,12 +113,14 @@ export const NftListRedemption = ({
   const handleRepay = async () => {
     setLoading(true);
 
+    const fee = pageCollection?.fee || 0.2;
+
     let itemsToRepay = [...selectedItems];
     if (selectAllUnpaid) {
       itemsToRepay = checkedNfts!.filter((nft) => nft.royaltiesToPay > 0);
     }
     try {
-      const res = await repayRoyalties(itemsToRepay, connection, wallet, true);
+      const res = await repayRoyalties(itemsToRepay, connection, wallet, fee);
       if (res) {
         await refetch();
         toast.success("Royalties Repaid");
@@ -220,7 +223,7 @@ export const NftListRedemption = ({
                 (loading && " loading")
               }
             >
-              Redeem {(totalToRepay * 1.2).toFixed(2)} SOL
+              Redeem {(totalToRepay + (totalToRepay * pageCollection?.fee! || 0)).toFixed(2)} SOL
             </button>
           </div>
         </div>

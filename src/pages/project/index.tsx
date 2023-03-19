@@ -99,15 +99,13 @@ export const ProjectDetails = () => {
                   </p>
                   <div className="border-b border-b-gray-500 w-full"></div>
                   <div className="w-full flex flex-row justify-start gap-4 items-center">
-                    <a href="">
-                      <TwitterIcon />
-                    </a>
-                    <a href="">
-                      <HeadsetMicIcon />
-                    </a>
-                    <a href="">
-                      <LanguageIcon />
-                    </a>
+                    {pageCollection.socials.map((social) => (
+                      <a target="_blank" href={social.url}>
+                        {social.name === "Twitter" && <TwitterIcon />}
+                        {social.name === "Discord" && <HeadsetMicIcon />}
+                        {social.name === "Website" && <LanguageIcon />}
+                      </a>
+                    ))}
                   </div>
                 </div>
               </ItemCard>
@@ -117,7 +115,7 @@ export const ProjectDetails = () => {
             <section className="my-4 text-start px-2 text-2xl font-bold flex flex-col gap-4 mt-10 relative">
               <h1>Your {id} NFTs</h1>
               <NftListRedemption
-                collectionAddress={[pageCollection.collectionAddress]}
+                pageCollection={pageCollection}
               />
             </section>
           </>

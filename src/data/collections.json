@@ -20,7 +20,7 @@
       }
     ],
     "helloMoonCollectionId": "85bb7fdb666a3ac8a899dbd055a013b4",
-    "sol": 40.0
+    "fee": 0.2
   },
   {
     "id": 2,
@@ -42,8 +42,7 @@
         "url": "https://www.y00ts.com/"
       }
     ],
-    "helloMoonCollectionId": "9b4d3907d615294c5d4fdc4edf1e9b1e",
-    "sol": 40.0
+    "helloMoonCollectionId": "9b4d3907d615294c5d4fdc4edf1e9b1e"
   },
   {
     "id": 3,
@@ -65,8 +64,7 @@
         "url": "https://claynosaurz.com/"
       }
     ],
-    "helloMoonCollectionId": "d3a4ebf2ecbabac32a0351de9ef99ace",
-    "sol": 39.2
+    "helloMoonCollectionId": "d3a4ebf2ecbabac32a0351de9ef99ace"
   },
 
   {
@@ -83,11 +81,9 @@
       {
         "name": "Discord",
         "url": "https://t.co/ECEW2u9symbolI"
-      },
-      { "name": "Website", "url": "https://thelotus.io/" }
+      }
     ],
-    "helloMoonCollectionId": "28e60c381cfe1792953a4bce3b271e61",
-    "sol": 34.2
+    "helloMoonCollectionId": "28e60c381cfe1792953a4bce3b271e61"
   },
   {
     "id": 5,
@@ -109,8 +105,7 @@
         "url": "https://smyths.io/"
       }
     ],
-    "helloMoonCollectionId": "63f9514c776fb8aca2b30e9c660f2ddc",
-    "sol": 34.2
+    "helloMoonCollectionId": "63f9514c776fb8aca2b30e9c660f2ddc"
   },
   {
     "id": 6,
@@ -129,11 +124,10 @@
       },
       {
         "name": "Website",
-        "url": "https://thelotus.io/"
+        "url": "https://builderz.dev/"
       }
     ],
-    "helloMoonCollectionId": "9c79e5a87dc6ad970edc886e5609653c",
-    "sol": 32.1
+    "helloMoonCollectionId": "9c79e5a87dc6ad970edc886e5609653c"
   },
   {
     "id": 7,
@@ -155,8 +149,7 @@
         "url": "https://www.thebastards.xyz/"
       }
     ],
-    "helloMoonCollectionId": "bastards",
-    "sol": 32.1
+    "helloMoonCollectionId": "bastards"
   },
   {
     "id": 8,
@@ -178,8 +171,7 @@
         "url": "https://sharky.fi/"
       }
     ],
-    "helloMoonCollectionId": "fb72acc226667963b159323665bea3af",
-    "sol": 32.1
+    "helloMoonCollectionId": "fb72acc226667963b159323665bea3af"
   },
   {
     "id": 9,
@@ -201,8 +193,7 @@
         "url": "https://t.co/XIxqXitOlJ"
       }
     ],
-    "helloMoonCollectionId": "902fbdd2b1df0c4f70b4a5d23525e932",
-    "sol": 36.2
+    "helloMoonCollectionId": "902fbdd2b1df0c4f70b4a5d23525e932"
   },
   {
     "id": 10,
@@ -224,8 +215,7 @@
         "url": "https://taiyorobotics.com/"
       }
     ],
-    "helloMoonCollectionId": "292937bc2e7f52f6fc5946026102c269",
-    "sol": 32.1
+    "helloMoonCollectionId": "292937bc2e7f52f6fc5946026102c269"
   },
   {
     "id": 11,
@@ -247,8 +237,7 @@
         "url": "https://famousfoxes.com/"
       }
     ],
-    "helloMoonCollectionId": "c0e56f7e5e8b0f32b1650499f215d000",
-    "sol": 32.1
+    "helloMoonCollectionId": "c0e56f7e5e8b0f32b1650499f215d000"
   },
   {
     "id": 12,
@@ -270,8 +259,7 @@
         "url": "https://www.oogy.io/"
       }
     ],
-    "helloMoonCollectionId": "oogy",
-    "sol": 32.1
+    "helloMoonCollectionId": "oogy"
   },
   {
     "id": 13,
@@ -293,8 +281,7 @@
         "url": "https://www.elixirnft.io/"
       }
     ],
-    "helloMoonCollectionId": "2abe87eecce396d9e136ee6d657fe51b",
-    "sol": 32.1
+    "helloMoonCollectionId": "2abe87eecce396d9e136ee6d657fe51b"
   },
   {
     "id": 14,
@@ -316,8 +303,7 @@
         "url": "https://www.datboinft.com/"
       }
     ],
-    "helloMoonCollectionId": "778eab992eabfad5e80708b21ba98f07",
-    "sol": 32.1
+    "helloMoonCollectionId": "778eab992eabfad5e80708b21ba98f07"
   },
   {
     "id": 15,
@@ -339,8 +325,7 @@
         "url": "https://www.woofsolana.world/"
       }
     ],
-    "helloMoonCollectionId": "3b8d3cfa6c31f086828e78767f57902a",
-    "sol": 32.1
+    "helloMoonCollectionId": "3b8d3cfa6c31f086828e78767f57902a"
   },
   {
     "id": 16,
@@ -362,8 +347,7 @@
         "url": "https://www.okaybears.com/"
       }
     ],
-    "helloMoonCollectionId": "b39fcb65aae14fc33eefce63af1ead89",
-    "sol": 32.1
+    "helloMoonCollectionId": "b39fcb65aae14fc33eefce63af1ead89"
   },
   {
     "id": 17,
@@ -385,8 +369,7 @@
         "url": "https://cetsoncreck.com/"
       }
     ],
-    "helloMoonCollectionId": "fffdc85d030ddbcbb72919efee14a48b",
-    "sol": 32.1
+    "helloMoonCollectionId": "fffdc85d030ddbcbb72919efee14a48b"
   },
   {
     "id": 18,
@@ -408,8 +391,7 @@
         "url": "https://bet3.games/"
       }
     ],
-    "helloMoonCollectionId": "798a5293d1e15e2c6ac8a030a35cde19",
-    "sol": 32.1
+    "helloMoonCollectionId": "798a5293d1e15e2c6ac8a030a35cde19"
   },
   {
     "id": 19,
@@ -431,8 +413,7 @@
         "url": "https://swap.thugbirdz.com/"
       }
     ],
-    "helloMoonCollectionId": "f31c7e033659971ef602af6f704fb64d",
-    "sol": 32.1
+    "helloMoonCollectionId": "f31c7e033659971ef602af6f704fb64d"
   },
   {
     "id": 20,
@@ -454,8 +435,7 @@
         "url": "https://libertysquare.io/"
       }
     ],
-    "helloMoonCollectionId": "12556d60b7fcbd8cac0857f9812ee788",
-    "sol": 32.1
+    "helloMoonCollectionId": "12556d60b7fcbd8cac0857f9812ee788"
   },
   {
     "id": 21,
@@ -477,7 +457,6 @@
         "url": "https://degods.com/"
       }
     ],
-    "helloMoonCollectionId": "040de757c0d2b75dcee999ddd47689c4",
-    "sol": 32.1
+    "helloMoonCollectionId": "040de757c0d2b75dcee999ddd47689c4"
   }
 ]

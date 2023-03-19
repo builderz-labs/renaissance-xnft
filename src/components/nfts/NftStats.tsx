@@ -86,10 +86,12 @@ export const NftStats = ({
   const handleRepay = async () => {
     setLoading(true);
 
+    const fee = pageCollection?.fee || 0.2;
+
     let itemsToRepay = checkedNfts!.filter((nft) => nft.royaltiesToPay > 0);
 
     try {
-      const res = await repayRoyalties(itemsToRepay, connection, wallet, true);
+      const res = await repayRoyalties(itemsToRepay, connection, wallet, fee);
       if (res) {
         await refetch();
         toast.success("Royalties Repaid");

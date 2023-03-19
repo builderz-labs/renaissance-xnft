@@ -24,7 +24,7 @@ export const repayRoyalties = async (
   nfts: NftType[],
   connection: Connection,
   wallet: WalletContextState,
-  takeFee: boolean
+  fee: number
 ) => {
   const txInstructions = [];
   const readyTransactions: Transaction[] = [];
@@ -102,12 +102,12 @@ export const repayRoyalties = async (
   }
 
   // If we take a fee
-  if (takeFee) {
+  if (fee) {
     txInstructions.push(
       SystemProgram.transfer({
         fromPubkey: wallet.publicKey!,
         toPubkey: new PublicKey("BRW3seabArRtcrUMT8u7Sg61dVNKBT3yJ8gHbFzNYjFY"),
-        lamports: Math.floor(totalAmount * 0.2),
+        lamports: Math.floor(totalAmount * fee),
       })
     );
   }
