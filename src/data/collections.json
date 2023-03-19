@@ -25,7 +25,7 @@
   {
     "id": 2,
     "name": "y00ts",
-    "image": "/img/yoots.webp",
+    "image": "/img/yoots.png",
     "collectionAddress": "4mKSoDDqApmF1DqXvVTSL6tu2zixrSSNjqMxUnwvVzy2",
     "description": "y00ts is a generative art project of 15,000 NFTs. y00topia is a curated community of builders and creators. Each y00t was designed by De Labs in Los Angeles, CA",
     "socials": [
@@ -72,7 +72,7 @@
   {
     "id": 4,
     "name": "Wolf Capital",
-    "image": "/img/lotus.webp",
+    "image": "/img/wolf.webp",
     "collectionAddress": "5ucdKHbPfmsWowXSNfHoiYEJ55kfFmvEdHii5RtjHpiH",
     "description": "Wolf Capital brings elements of capital preservation to ensure longevity, Lending analytics and aggregation, as well as an all star team of pixel artists under one roof.",
     "socials": [
@@ -390,29 +390,6 @@
   },
   {
     "id": 18,
-    "name": "OKay Bears",
-    "image": "/img/okayb.webp",
-    "collectionAddress": "SMBH3wF6baUj6JWtzYvqcKuj2XCKWDqQxzspY12xPND",
-    "description": "SMB is a collection of 5000 unique randomly generated SolanaMonkeys stored on the blockchain. With their accessibility-oriented design, the monkeys' goal is to invade the Solana blockchain with as many individuals as possible, building a large community around them, supported by owner-exclusive advantages, a community wallet and a future voting system. Reject humanity, return to monke.",
-    "socials": [
-      {
-        "name": "Twitter",
-        "url": "https://twitter.com/SolanaMBS"
-      },
-      {
-        "name": "Discord",
-        "url": "https://discord.gg/8rkJVVFNCh"
-      },
-      {
-        "name": "Website",
-        "url": "https://www.okaybears.com/"
-      }
-    ],
-    "helloMoonCollectionId": "okb",
-    "sol": 32.1
-  },
-  {
-    "id": 19,
     "name": "Bet3",
     "image": "/img/bet3.png",
     "collectionAddress": "25jvdnuCAzihgapoVivebhyuxCsYpGmKHKEtY82Qq5xU",
