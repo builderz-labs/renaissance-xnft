@@ -1,29 +1,14 @@
 import { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import { useQuery } from '@tanstack/react-query';
 import { Collection } from '../../data/types';
 import Search from '../Search';
-import { useNavigate } from 'react-router-dom';
-import { Box, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
-import React from 'react';
-
-const ItemCard = styled.div`
-  background: linear-gradient(206.07deg, #050505 30.45%, #101c26 99.29%);
-  border-radius: 12px;
-  border: 0.5px solid;
-  border-image-source: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 138, 87, 0.1) 100%
-  );
-`;
+import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import { AllCollectionsItem } from './AllCollectionsItem';
 
 export const AllCollections = () => {
   const { data } = useQuery<Collection[]>({
     queryKey: ['collections'],
   });
-
-  const navigate = useNavigate();
 
   const [filteredCollections, setFilteredCollections] = useState<Collection[]>(
     []
@@ -56,11 +41,6 @@ export const AllCollections = () => {
     if (data) {
       let sortedCollections = [...data];
       switch (sortOption) {
-        case 'Ranking':
-          sortedCollections = sortedCollections.sort(
-            (a, b) => b.fp - a.fp
-          );
-          break;
         case 'Name':
           sortedCollections = sortedCollections.sort((a, b) =>
             a.name.localeCompare(b.name)
@@ -102,7 +82,6 @@ export const AllCollections = () => {
               <MenuItem value="">
                 <em>None</em>
               </MenuItem>
-              <MenuItem value="Ranking">Top Redeemed</MenuItem>
               <MenuItem value="Name">Name</MenuItem>
             </Select>
           </FormControl>
@@ -112,38 +91,8 @@ export const AllCollections = () => {
       <Search onSearch={handleSearch} />
 
       <div className="w-full grid grid-cols-2 px-2 gap-4 mb-40">
-        {filteredCollections.map((collection: any) => (
-          <div
-            key={collection.id}
-            onClick={() => navigate(`/project/${collection.name}`)}
-            className="hover:text-renaissance-orange"
-          >
-            <ItemCard className="w-full relative flex flex-row items-center justify-between my-2">
-              <div className="w-[69px] h-full object-cover">
-                <img
-                  src={collection.image}
-                  alt={collection.name}
-                  className="h-[69px] w-full object-cover rounded-md"
-                />
-              </div>
-              <div className="flex flex-col gap-2 justify-center items-start text-start flex-grow pl-4">
-                <p className="w-full  font-black truncate max-w-[70px] text-sm">
-                  {collection.name}
-                </p>
-                <div className="flex flex-row gap-1 items-center justify-center">
-                  <p className="w-full  font-light text-[12px]">
-                    {collection.fp}
-                  </p>
-                  <img
-                    src="/img/sol.svg"
-                    alt="solana logo"
-                    className="w-[12px]"
-                  />
-
-                </div>
-              </div>
-            </ItemCard>
-          </div>
+        {filteredCollections.map((collection: Collection) => (
+          <AllCollectionsItem collection={collection} key={collection.id} />
         ))}
       </div>
     </section>

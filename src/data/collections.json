@@ -19,7 +19,7 @@
         "url": "https://thelotus.io/"
       }
     ],
-    "symbol": "lily",
+    "helloMoonCollectionId": "li85bb7fdb666a3ac8a899dbd055a013b4ly",
     "sol": 40.0
   },
   {
@@ -42,7 +42,7 @@
         "url": "https://www.y00ts.com/"
       }
     ],
-    "symbol": "yoots",
+    "helloMoonCollectionId": "040de757c0d2b75dcee999ddd47689c4",
     "sol": 40.0
   },
   {
@@ -50,7 +50,7 @@
     "name": "Claynosaurz",
     "image": "/img/clay.webp",
     "collectionAddress": "3NoPerEGS1JpPA6FGYpPfKJ8QUkBjYPngST2pwpQt7ED",
-        "description": "Travel back to distant lands. Explore the uncharted, discover lost artifacts. Adventure awaits…",
+    "description": "Travel back to distant lands. Explore the uncharted, discover lost artifacts. Adventure awaits…",
     "socials": [
       {
         "name": "Twitter",
@@ -65,15 +65,15 @@
         "url": "https://claynosaurz.com/"
       }
     ],
-    "symbol": "claynosaurz",
+    "helloMoonCollectionId": "d3a4ebf2ecbabac32a0351de9ef99ace",
     "sol": 39.2
   },
   {
-    "id": 3,
+    "id": 20,
     "name": "ABC",
     "image": "/img/abc.gif",
     "collectionAddress": "3NoPerEGS1JpPA6FGYpPfKJ8QUkBjYPngST2pwpQt7ED",
-           "description": "Travel back to distant lands. Explore the uncharted, discover lost artifacts. Adventure awaits…",
+    "description": "Travel back to distant lands. Explore the uncharted, discover lost artifacts. Adventure awaits…",
     "socials": [
       {
         "name": "Twitter",
@@ -88,7 +88,7 @@
         "url": "https://t.co/XIxqXitOlJ"
       }
     ],
-    "symbol": "abc",
+    "helloMoonCollectionId": "902fbdd2b1df0c4f70b4a5d23525e932",
     "sol": 36.2
   },
   {
@@ -96,7 +96,7 @@
     "name": "Wolf Capital",
     "image": "/img/lotus.webp",
     "collectionAddress": "5ucdKHbPfmsWowXSNfHoiYEJ55kfFmvEdHii5RtjHpiH",
-           "description": "Wolf Capital brings elements of capital preservation to ensure longevity, Lending analytics and aggregation, as well as an all star team of pixel artists under one roof.",
+    "description": "Wolf Capital brings elements of capital preservation to ensure longevity, Lending analytics and aggregation, as well as an all star team of pixel artists under one roof.",
     "socials": [
       {
         "name": "Twitter",
@@ -106,10 +106,9 @@
         "name": "Discord",
         "url": "https://t.co/ECEW2u9symbolI"
       },
-      {"name": "Website",
-      "url": "https://thelotus.io/"}
+      { "name": "Website", "url": "https://thelotus.io/" }
     ],
-    "symbol": "",
+    "helloMoonCollectionId": "28e60c381cfe1792953a4bce3b271e61",
     "sol": 34.2
   },
   {
@@ -117,7 +116,7 @@
     "name": "Smyths",
     "image": "/img/smyths.jpg",
     "collectionAddress": "CLBrjmoDCFvrW8ukxXtDrBXWkL7Yx8PKspKaBPFxhpmL",
-           "description": "Smyths is a collection of 4444 noble beings forged through sacred flames. Visit smyths.io to stake and get $FORGE.",
+    "description": "Smyths is a collection of 4444 noble beings forged through sacred flames. Visit smyths.io to stake and get $FORGE.",
     "socials": [
       {
         "name": "Twitter",
@@ -132,7 +131,7 @@
         "url": "https://smyths.io/"
       }
     ],
-    "symbol": "smyths",
+    "helloMoonCollectionId": "63f9514c776fb8aca2b30e9c660f2ddc",
     "sol": 34.2
   },
   {
@@ -140,7 +139,7 @@
     "name": "BLOCKZ",
     "image": "/img/builderz.webp",
     "collectionAddress": "PeRXuY1P4cnzDZEPH1ancRVSyQMDpnTF27BwmQ1kkWq",
-           "description": "Travel back to distant lands. Explore the uncharted, discover lost artifacts. Adventure awaits…",
+    "description": "Travel back to distant lands. Explore the uncharted, discover lost artifacts. Adventure awaits…",
     "socials": [
       {
         "name": "Twitter",
@@ -155,7 +154,7 @@
         "url": "https://thelotus.io/"
       }
     ],
-    "symbol": "blockz",
+    "helloMoonCollectionId": "9c79e5a87dc6ad970edc886e5609653c",
     "sol": 32.1
   },
   {
@@ -163,7 +162,7 @@
     "name": "The Bastards",
     "image": "/img/bastards.png",
     "collectionAddress": "2UN3GTc5rRzfK4ghU6GTgu4i8Ds3GoV9kyxZTAcvJ8iX",
-           "description": "Sensual animation, scuffed storytelling, and deranged universe-building.",
+    "description": "Sensual animation, scuffed storytelling, and deranged universe-building.",
     "socials": [
       {
         "name": "Twitter",
@@ -178,7 +177,7 @@
         "url": "https://www.thebastards.xyz/"
       }
     ],
-    "symbol": "bastards",
+    "helloMoonCollectionId": "bastards",
     "sol": 32.1
   },
   {
@@ -186,7 +185,7 @@
     "name": "SHARX",
     "image": "/img/sharx.webp",
     "collectionAddress": "5f2PvbmKd9pRLjKdMr8nrK8fNisLi7irjB6X5gopnKpB",
-           "description": "Sharx is the official NFT collection of Sharky, the #1 NFT lending platform on Solana. They are your newest frens ready to take over the NFT world. Feed $FISHY → grow into whale sharx. Earn, trade, celebrate! ❤",
+    "description": "Sharx is the official NFT collection of Sharky, the #1 NFT lending platform on Solana. They are your newest frens ready to take over the NFT world. Feed $FISHY → grow into whale sharx. Earn, trade, celebrate! ❤",
     "socials": [
       {
         "name": "Twitter",
@@ -201,15 +200,15 @@
         "url": "https://sharky.fi/"
       }
     ],
-    "symbol": "sharx",
+    "helloMoonCollectionId": "fb72acc226667963b159323665bea3af",
     "sol": 32.1
   },
   {
     "id": 10,
-    "name": "Taiyo Pilots",
+    "name": "Taiyo Robotics",
     "image": "/img/pilots.webp",
     "collectionAddress": "rLNTGqK3VmEapEgcV7qL3oboBzvVTmNehYMXMLYtCRK",
-           "description": "Sharx is the official NFT collection of Sharky, the #1 NFT lending platform on Solana. They are your newest frens ready to take over the NFT world. Feed $FISHY → grow into whale sharx. Earn, trade, celebrate! ❤",
+    "description": "Sharx is the official NFT collection of Sharky, the #1 NFT lending platform on Solana. They are your newest frens ready to take over the NFT world. Feed $FISHY → grow into whale sharx. Earn, trade, celebrate! ❤",
     "socials": [
       {
         "name": "Twitter",
@@ -224,7 +223,7 @@
         "url": "https://taiyorobotics.com/"
       }
     ],
-    "symbol": "taiyopilots",
+    "helloMoonCollectionId": "292937bc2e7f52f6fc5946026102c269",
     "sol": 32.1
   },
   {
@@ -232,7 +231,7 @@
     "name": "Famous Fox Federation",
     "image": "/img/fff.webp",
     "collectionAddress": "BUjZjAS2vbbb65g7Z1Ca9ZRVYoJscURG5L3AkVvHP9ac",
-           "description": "The Famous Fox Federation, an independent organization of the most fabulously famous foxes on the Blockchain.",
+    "description": "The Famous Fox Federation, an independent organization of the most fabulously famous foxes on the Blockchain.",
     "socials": [
       {
         "name": "Twitter",
@@ -247,7 +246,7 @@
         "url": "https://famousfoxes.com/"
       }
     ],
-    "symbol": "fff",
+    "helloMoonCollectionId": "c0e56f7e5e8b0f32b1650499f215d000",
     "sol": 32.1
   },
   {
@@ -255,7 +254,7 @@
     "name": "oogy pods",
     "image": "/img/oogy.png",
     "collectionAddress": "cZ9SPzdWz3f1MC63nyDpoZaS8Kjp3NHuorK3cD6Sb4m",
-           "description": "Each pod is exchangeable for one oogy... or more. Which one is it?",
+    "description": "Each pod is exchangeable for one oogy... or more. Which one is it?",
     "socials": [
       {
         "name": "Twitter",
@@ -270,7 +269,7 @@
         "url": "https://www.oogy.io/"
       }
     ],
-    "symbol": "oogy",
+    "helloMoonCollectionId": "oogy",
     "sol": 32.1
   },
   {
@@ -278,7 +277,7 @@
     "name": "Elixir: Ovols",
     "image": "/img/fff.webp",
     "collectionAddress": "9jnJWH9F9t1xAgw5RGwswVKY4GvY2RXhzLSJgpBAhoaR",
-           "description": "Battle-tested citizens ready to protect and serve the City of Elixir. Ovols sit at the center of the Elixir ecosystem.",
+    "description": "Battle-tested citizens ready to protect and serve the City of Elixir. Ovols sit at the center of the Elixir ecosystem.",
     "socials": [
       {
         "name": "Twitter",
@@ -293,15 +292,15 @@
         "url": "https://www.elixirnft.io/"
       }
     ],
-    "symbol": "ovols",
+    "helloMoonCollectionId": "2abe87eecce396d9e136ee6d657fe51b",
     "sol": 32.1
   },
   {
     "id": 14,
-    "name": "OKay Bears",
+    "name": "Okay Bears",
     "image": "/img/fff.webp",
     "collectionAddress": "SMBH3wF6baUj6JWtzYvqcKuj2XCKWDqQxzspY12xPND",
-           "description": "SMB is a collection of 5000 unique randomly generated SolanaMonkeys stored on the blockchain. With their accessibility-oriented design, the monkeys' goal is to invade the Solana blockchain with as many individuals as possible, building a large community around them, supported by owner-exclusive advantages, a community wallet and a future voting system. Reject humanity, return to monke.",
+    "description": "SMB is a collection of 5000 unique randomly generated SolanaMonkeys stored on the blockchain. With their accessibility-oriented design, the monkeys' goal is to invade the Solana blockchain with as many individuals as possible, building a large community around them, supported by owner-exclusive advantages, a community wallet and a future voting system. Reject humanity, return to monke.",
     "socials": [
       {
         "name": "Twitter",
@@ -316,7 +315,7 @@
         "url": "https://www.okaybears.com/"
       }
     ],
-    "symbol": "okb",
+    "helloMoonCollectionId": "b39fcb65aae14fc33eefce63af1ead89",
     "sol": 32.1
   },
   {
@@ -324,7 +323,7 @@
     "name": "Datbois",
     "image": "/img/datbois.png",
     "collectionAddress": "G8mnvHab1zsHn1aSo59WC4eyno8a35WLVhQ7x7PreUzZ",
-           "description": "the story of the underdogs",
+    "description": "the story of the underdogs",
     "socials": [
       {
         "name": "Twitter",
@@ -339,7 +338,7 @@
         "url": "https://www.datboinft.com/"
       }
     ],
-    "symbol": "datbois",
+    "helloMoonCollectionId": "datbois",
     "sol": 32.1
   },
   {
@@ -347,7 +346,7 @@
     "name": "WOOFers",
     "image": "/img/fff.webp",
     "collectionAddress": "2RGgEVqYWMXCNs2VwXhLYeNr6S76fmDdTv7DcrFYBXVn",
-           "description": "A collection of 5,555 WOOFers woofing on the Solana Blockchain. Each WOOFer NFT gives access to the WOOF DAO which will be used to govern the future of the project.",
+    "description": "A collection of 5,555 WOOFers woofing on the Solana Blockchain. Each WOOFer NFT gives access to the WOOF DAO which will be used to govern the future of the project.",
     "socials": [
       {
         "name": "Twitter",
@@ -362,7 +361,7 @@
         "url": "https://www.woofsolana.world/"
       }
     ],
-    "symbol": "woofers",
+    "helloMoonCollectionId": "3b8d3cfa6c31f086828e78767f57902a",
     "sol": 32.1
   },
   {
@@ -370,7 +369,7 @@
     "name": "OKay Bears",
     "image": "/img/fff.webp",
     "collectionAddress": "SMBH3wF6baUj6JWtzYvqcKuj2XCKWDqQxzspY12xPND",
-           "description": "SMB is a collection of 5000 unique randomly generated SolanaMonkeys stored on the blockchain. With their accessibility-oriented design, the monkeys' goal is to invade the Solana blockchain with as many individuals as possible, building a large community around them, supported by owner-exclusive advantages, a community wallet and a future voting system. Reject humanity, return to monke.",
+    "description": "SMB is a collection of 5000 unique randomly generated SolanaMonkeys stored on the blockchain. With their accessibility-oriented design, the monkeys' goal is to invade the Solana blockchain with as many individuals as possible, building a large community around them, supported by owner-exclusive advantages, a community wallet and a future voting system. Reject humanity, return to monke.",
     "socials": [
       {
         "name": "Twitter",
@@ -385,7 +384,7 @@
         "url": "https://www.okaybears.com/"
       }
     ],
-    "symbol": "okb",
+    "helloMoonCollectionId": "okb",
     "sol": 32.1
   },
   {
@@ -393,7 +392,7 @@
     "name": "OKay Bears",
     "image": "/img/fff.webp",
     "collectionAddress": "SMBH3wF6baUj6JWtzYvqcKuj2XCKWDqQxzspY12xPND",
-           "description": "SMB is a collection of 5000 unique randomly generated SolanaMonkeys stored on the blockchain. With their accessibility-oriented design, the monkeys' goal is to invade the Solana blockchain with as many individuals as possible, building a large community around them, supported by owner-exclusive advantages, a community wallet and a future voting system. Reject humanity, return to monke.",
+    "description": "SMB is a collection of 5000 unique randomly generated SolanaMonkeys stored on the blockchain. With their accessibility-oriented design, the monkeys' goal is to invade the Solana blockchain with as many individuals as possible, building a large community around them, supported by owner-exclusive advantages, a community wallet and a future voting system. Reject humanity, return to monke.",
     "socials": [
       {
         "name": "Twitter",
@@ -408,7 +407,7 @@
         "url": "https://www.okaybears.com/"
       }
     ],
-    "symbol": "okb",
+    "helloMoonCollectionId": "okb",
     "sol": 32.1
   },
   {
@@ -416,7 +415,7 @@
     "name": "OKay Bears",
     "image": "/img/fff.webp",
     "collectionAddress": "SMBH3wF6baUj6JWtzYvqcKuj2XCKWDqQxzspY12xPND",
-           "description": "SMB is a collection of 5000 unique randomly generated SolanaMonkeys stored on the blockchain. With their accessibility-oriented design, the monkeys' goal is to invade the Solana blockchain with as many individuals as possible, building a large community around them, supported by owner-exclusive advantages, a community wallet and a future voting system. Reject humanity, return to monke.",
+    "description": "SMB is a collection of 5000 unique randomly generated SolanaMonkeys stored on the blockchain. With their accessibility-oriented design, the monkeys' goal is to invade the Solana blockchain with as many individuals as possible, building a large community around them, supported by owner-exclusive advantages, a community wallet and a future voting system. Reject humanity, return to monke.",
     "socials": [
       {
         "name": "Twitter",
@@ -431,15 +430,15 @@
         "url": "https://www.okaybears.com/"
       }
     ],
-    "symbol": "okb",
+    "helloMoonCollectionId": "okb",
     "sol": 32.1
   },
   {
-    "id": 19,
+    "id": 20,
     "name": "OKay Bears",
     "image": "/img/fff.webp",
     "collectionAddress": "SMBH3wF6baUj6JWtzYvqcKuj2XCKWDqQxzspY12xPND",
-           "description": "SMB is a collection of 5000 unique randomly generated SolanaMonkeys stored on the blockchain. With their accessibility-oriented design, the monkeys' goal is to invade the Solana blockchain with as many individuals as possible, building a large community around them, supported by owner-exclusive advantages, a community wallet and a future voting system. Reject humanity, return to monke.",
+    "description": "SMB is a collection of 5000 unique randomly generated SolanaMonkeys stored on the blockchain. With their accessibility-oriented design, the monkeys' goal is to invade the Solana blockchain with as many individuals as possible, building a large community around them, supported by owner-exclusive advantages, a community wallet and a future voting system. Reject humanity, return to monke.",
     "socials": [
       {
         "name": "Twitter",
@@ -454,8 +453,7 @@
         "url": "https://www.okaybears.com/"
       }
     ],
-    "symbol": "okb",
+    "helloMoonCollectionId": "okb",
     "sol": 32.1
   }
-
 ]

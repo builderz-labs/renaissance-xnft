@@ -4,7 +4,7 @@ export type Collection = {
   name: string;
   image: string;
   collectionAddress: string;
-  fp: number;
+  helloMoonCollectionId: string;
   sol: number;
 };
 
