@@ -1,5 +1,5 @@
-import { PublicKey } from '@solana/web3.js';
-import axios from 'axios';
+import { PublicKey } from "@solana/web3.js";
+import axios from "axios";
 
 export type checkNftRes = {
   mint: string;
@@ -39,11 +39,11 @@ export const checkNfts = async (mintList: string[]) => {
   try {
     const res: checkNftRes[] = await (
       await fetch(
-        'https://renaissance-api.builderzlabs.workers.dev/api/check-nfts',
+        "https://renaissance-api.builderzlabs.workers.dev/api/check-nfts",
         {
-          method: 'POST',
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({
             mints: mintList,
@@ -60,20 +60,20 @@ export const checkNfts = async (mintList: string[]) => {
 
 export const getCheckedNftsForCollection = async (
   owner: PublicKey,
-  allowedCollections: string[]
+  allowedCollections?: string[]
 ) => {
   let nfts = [];
 
   try {
     nfts = await getNfts(owner);
 
-    if (allowedCollections.length) {
-      nfts = nfts.filter(nft =>
+    if (allowedCollections && allowedCollections.length) {
+      nfts = nfts.filter((nft) =>
         allowedCollections.includes(nft.collectionAddress)
       );
     }
 
-    const checkedNfts = await checkNfts(nfts.map(nft => nft.tokenAddress));
+    const checkedNfts = await checkNfts(nfts.map((nft) => nft.tokenAddress));
 
     const combinedArray = nfts.map((nft: any) => {
       const matchingResult = checkedNfts.find(

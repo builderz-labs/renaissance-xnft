@@ -14,7 +14,7 @@ import { toast } from "react-toastify";
 export const NftListRedemption = ({
   collectionAddress,
 }: {
-  collectionAddress: string[];
+  collectionAddress?: string[];
 }) => {
   // Solana
   const wallet = useWallet();
@@ -29,7 +29,7 @@ export const NftListRedemption = ({
     queryKey: ["checkedNfts", collectionAddress, wallet.publicKey],
     queryFn: () =>
       getCheckedNftsForCollection(
-        /*         wallet.publicKey || */
+        // wallet.publicKey ||
         new PublicKey("63Kaxzs8BxXh7sPZHDnAy9HwvkeLwJ3mF33EcXKSjpT9"),
         collectionAddress
       ),
