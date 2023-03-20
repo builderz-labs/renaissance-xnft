@@ -100,7 +100,7 @@ export const ProjectDetails = () => {
                   <div className="border-b border-b-gray-500 w-full"></div>
                   <div className="w-full flex flex-row justify-start gap-4 items-center">
                     {pageCollection.socials.map((social) => (
-                      <a target="_blank" href={social.url}>
+                      <a target="_blank" href={social.url} key={social.name}>
                         {social.name === "Twitter" && <TwitterIcon />}
                         {social.name === "Discord" && <HeadsetMicIcon />}
                         {social.name === "Website" && <LanguageIcon />}
