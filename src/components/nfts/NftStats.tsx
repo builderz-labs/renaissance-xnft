@@ -123,7 +123,7 @@ export const NftStats = ({
                         <SmallLoading />
                       ) : (
                         <p className="font-light text-xs">
-                          {((outstandingRoyalties + (outstandingRoyalties * pageCollection?.fee! || 0)) / LAMPORTS_PER_SOL).toFixed(2)}
+                          {((outstandingRoyalties + (outstandingRoyalties * (pageCollection?.fee! || 0.2))) / LAMPORTS_PER_SOL).toFixed(2)}
                         </p>
                       )}
                     </div>

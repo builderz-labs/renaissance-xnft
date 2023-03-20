@@ -28,12 +28,18 @@ export const NftListRedemption = ({
     refetch,
   } = useQuery<any[]>({
     queryKey: ["checkedNfts", pageCollection?.collectionAddress, wallet.publicKey],
-    queryFn: () =>
-      getCheckedNftsForCollection(
-        // wallet.publicKey ||
-        new PublicKey("63Kaxzs8BxXh7sPZHDnAy9HwvkeLwJ3mF33EcXKSjpT9"),
-        [pageCollection?.collectionAddress!]
-      ),
+    queryFn: pageCollection
+      ? () =>
+        getCheckedNftsForCollection(
+          // wallet.publicKey ||
+          new PublicKey("63Kaxzs8BxXh7sPZHDnAy9HwvkeLwJ3mF33EcXKSjpT9"),
+          [pageCollection?.collectionAddress!]
+        )
+      : () =>
+        getCheckedNftsForCollection(
+          // wallet.publicKey ||
+          new PublicKey("63Kaxzs8BxXh7sPZHDnAy9HwvkeLwJ3mF33EcXKSjpT9")
+        ),
   });
   // Filtered NFT states
   const [filteredNfts, setFilteredNfts] = useState<any[]>([]);
@@ -160,7 +166,7 @@ export const NftListRedemption = ({
               nft={nft}
               selectedItems={selectedItems}
               setSelectedItems={(items: any) => setSelectedItems(items)}
-              fee={pageCollection?.fee}
+              fee={pageCollection?.fee || 0.2}
             />
           );
         })}
@@ -224,7 +230,7 @@ export const NftListRedemption = ({
                 (loading && " loading")
               }
             >
-              Redeem {(totalToRepay + (totalToRepay * pageCollection?.fee! || 0)).toFixed(2)} SOL
+              Redeem {(totalToRepay + (totalToRepay * (pageCollection?.fee! || 0.2))).toFixed(2)} SOL
             </button>
           </div>
         </div>
