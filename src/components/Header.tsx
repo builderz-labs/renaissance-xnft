@@ -15,7 +15,7 @@ export function Header() {
   const title = useMemo(() => {
     if (pathname !== '/') {
       const segments = pathname.split('/');
-      return pathname.split('/')[segments.length - 1];
+      return pathname.split('/')[segments.length - 1].replace('%20', " ");
     }
     return (
       <p>

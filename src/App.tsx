@@ -63,8 +63,8 @@ function App() {
     <ConnectionProvider endpoint={import.meta.env.VITE_HELIUS_RPC_PROXY}>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
-        {/*         <ReactQueryDevtools />
- */}        <ToastContainer
+          <ReactQueryDevtools />       
+          <ToastContainer
           position="top-center"
           autoClose={5000}
           hideProgressBar

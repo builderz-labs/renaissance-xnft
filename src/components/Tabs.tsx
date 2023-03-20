@@ -12,7 +12,7 @@ const tabs = [
 
 export function Tabs() {
   return (
-    <nav className="w-full max-w-md mx-auto p-0 fixed bottom-0 left-0 z-[999] h-fit bg-black ">
+    <nav className="w-full max-w-md mx-auto p-0 fixed bottom-0 z-[999] h-fit bg-black ">
       <div role="tablist" className="flex flex-row justify-center">
         {tabs.map(tab => {
           return (
