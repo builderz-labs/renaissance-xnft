@@ -478,5 +478,28 @@
     ],
     "helloMoonCollectionId": "040de757c0d2b75dcee999ddd47689c4",
     "fee": 0.2
+  },
+  {
+    "id": 22,
+    "name": "Primates",
+    "image": "https://pbs.twimg.com/profile_images/1599619403074633729/xSdsmLt7_400x400.jpg",
+    "collectionAddress": "CvZY2tZhWEwYnuSoNAjGekmt9Sb5Crhq9DMYTtyup7s4",
+    "description": "Primates is a project built for the community, by the community. The goal of Primates is to create a brand that facilitates a seamless adoption of the web3 space through our community fueled ventures and collaborations.",
+    "socials": [
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/Primatesnft"
+      },
+      {
+        "name": "Discord",
+        "url": "https://discord.com/invite/theprimates"
+      },
+      {
+        "name": "Website",
+        "url": "https://primatesmap.com/"
+      }
+    ],
+    "helloMoonCollectionId": "04b4f823aedd5190523916182b47d4c7",
+    "fee": 0.2
   }
 ]
