@@ -31,13 +31,13 @@ export const NftListRedemption = ({
     queryFn: pageCollection
       ? () =>
         getCheckedNftsForCollection(
-          // wallet.publicKey ||
+          wallet.publicKey ||
           new PublicKey("An6dBVbuvWUFagdgmo4doa2UyetGCnL7vTzXmfgWUvpR"),
           [pageCollection?.collectionAddress!]
         )
       : () =>
         getCheckedNftsForCollection(
-          // wallet.publicKey ||
+          wallet.publicKey ||
           new PublicKey("An6dBVbuvWUFagdgmo4doa2UyetGCnL7vTzXmfgWUvpR")
         ),
   });
