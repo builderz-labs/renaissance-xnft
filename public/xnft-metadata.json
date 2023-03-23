@@ -1,0 +1,43 @@
+{
+  "name": "Re:naissance",
+  "description": "NFT Royalty Redeem Solution for Creators and Communities",
+  "external_url": "https://builderz.dev",
+  "image": "https://xnfts.s3.us-west-2.amazonaws.com/2394APCiqS2Q6iqsGiqN769QVJw8EooFWtRiVNK8TEsY/manifest/4a6114949b/assets/renaissance.png",
+  "properties": {},
+  "xnft": {
+    "version": "0.0.2",
+    "manifest": {
+      "entrypoints": {
+        "default": {
+          "web": "https://renaissance-xnft-release.vercel.app/"
+        }
+      },
+      "icon": {
+        "md": "https://xnfts.s3.us-west-2.amazonaws.com/2394APCiqS2Q6iqsGiqN769QVJw8EooFWtRiVNK8TEsY/manifest/4a6114949b/assets/renaissance.png"
+      },
+      "screenshots": [
+        {
+          "uri": "https://xnfts.s3.us-west-2.amazonaws.com/2394APCiqS2Q6iqsGiqN769QVJw8EooFWtRiVNK8TEsY/manifest/4a6114949b/assets/screenshot1.png",
+          "type": "image/png"
+        },
+        {
+          "uri": "https://xnfts.s3.us-west-2.amazonaws.com/2394APCiqS2Q6iqsGiqN769QVJw8EooFWtRiVNK8TEsY/manifest/4a6114949b/assets/screenshot2.png",
+          "type": "image/png"
+        },
+        {
+          "uri": "https://xnfts.s3.us-west-2.amazonaws.com/2394APCiqS2Q6iqsGiqN769QVJw8EooFWtRiVNK8TEsY/manifest/4a6114949b/assets/screenshot3.png",
+          "type": "image/png"
+        },
+        {
+          "uri": "https://xnfts.s3.us-west-2.amazonaws.com/2394APCiqS2Q6iqsGiqN769QVJw8EooFWtRiVNK8TEsY/manifest/4a6114949b/assets/screenshot4.png",
+          "type": "image/png"
+        }
+      ]
+    },
+    "contact": {
+      "repository": "https://github.com/builderz-labs/renaissance-xnft"
+    },
+    "programIds": ["9ZskGH9wtdwM9UXjBq1KDwuaLfrZyPChz41Hx7NWhTFf"],
+    "history": []
+  }
+}
