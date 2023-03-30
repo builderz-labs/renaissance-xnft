@@ -1,18 +1,17 @@
 {
   "name": "Re:naissance",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "NFT Royalty Redeem Solution for Creators and Communities",
-  "website": "https://builderz.dev",
+  "website": "https://twitter.com/renaissance_xyz",
   "kind": "app",
+  "storage": "arweave",
   "icon": {
     "md": "./assets/renaissance.png"
   },
-  "contact": {
-    "repository": "https://github.com/builderz-labs/renaissance-xnft"
-  },
+  "contact": "https://twitter.com/renaissance_xyz",
   "tag": "nfts",
   "programIds": ["9ZskGH9wtdwM9UXjBq1KDwuaLfrZyPChz41Hx7NWhTFf"],
-    "screenshots": [
+  "screenshots": [
     "./assets/screenshot1.png",
     "./assets/screenshot2.png",
     "./assets/screenshot3.png",

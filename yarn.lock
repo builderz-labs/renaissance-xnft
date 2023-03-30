@@ -341,12 +341,12 @@
     bn.js "^5.1.2"
     buffer-layout "^1.2.0"
 
-"@coral-xyz/xnft-cli@^0.5.2-latest.4143":
-  version "0.5.2-latest.4228"
-  resolved "https://registry.yarnpkg.com/@coral-xyz/xnft-cli/-/xnft-cli-0.5.2-latest.4228.tgz#49c11696a93523c6f6848be0d2ec57d52094b47e"
-  integrity sha512-PqnDOvpzld+KdeX4BMumpbKYUS/MIvgnwfmzs6HPs88b30sltxAZ1ioXimXrx/94uXpVtBOxeV98fGyDO+ZHIQ==
+"@coral-xyz/xnft-cli@latest":
+  version "0.5.2-latest.4364"
+  resolved "https://registry.yarnpkg.com/@coral-xyz/xnft-cli/-/xnft-cli-0.5.2-latest.4364.tgz#01a41f2501766c4e4355345367dd5a7b36b48fd9"
+  integrity sha512-DLDfzaghqymajBPI0hvRLlw7VfxST5XekYqjHB36sQqd6m05E0GdW49ee8US4+V5aE7zGTtEUgfE6J4Fwk593g==
   dependencies:
-    "@coral-xyz/xnft" "^0.2.37"
+    "@coral-xyz/xnft" "^0.2.43"
     "@esbuild-plugins/node-globals-polyfill" "^0.2.3"
     chokidar "^3.5.3"
     commander "^10.0.0"
@@ -359,17 +359,17 @@
     jszip "^3.10.1"
     node-stdlib-browser "^1.2.0"
 
-"@coral-xyz/xnft@^0.2.37":
-  version "0.2.41"
-  resolved "https://registry.yarnpkg.com/@coral-xyz/xnft/-/xnft-0.2.41.tgz#89536ced58e37f04059bc60e61037088725334bb"
-  integrity sha512-Fdtsmds3UKt8BE4+dmHaR1HB6kR1UrRNMBROTpT6TSXWrAOPU36IStXxU1sL828HHwqQ61CXGrP3L+YtqesVhA==
+"@coral-xyz/xnft@^0.2.43":
+  version "0.2.47"
+  resolved "https://registry.yarnpkg.com/@coral-xyz/xnft/-/xnft-0.2.47.tgz#9c8ed7565eaf046b5eb5078ac4eb84ca16bef45a"
+  integrity sha512-V3FFc+OCR8vyg7fKVSrY31a/cIzUIhQjZORt+QbYluhNd+NQ/hB3i6+CoB8BO192Lm0M4Mi4sd+fmnjyvo8BvQ==
   dependencies:
     "@coral-xyz/anchor" "^0.27.0"
     "@metaplex-foundation/js" "^0.17.12"
     "@solana/spl-token" "^0.3.7"
-    "@solana/web3.js" "^1.73.0"
+    "@solana/web3.js" "^1.74.0"
     semver "^7.3.8"
-    zod "^3.20.2"
+    zod "^3.21.4"
 
 "@cspotcode/source-map-support@^0.8.0":
   version "0.8.1"
@@ -1570,7 +1570,7 @@
     "@wallet-standard/app" "^1.0.1"
     "@wallet-standard/base" "^1.0.1"
 
-"@solana/web3.js@^1.32.0", "@solana/web3.js@^1.36.0", "@solana/web3.js@^1.56.2", "@solana/web3.js@^1.63.1", "@solana/web3.js@^1.66.2", "@solana/web3.js@^1.68.0", "@solana/web3.js@^1.73.0", "@solana/web3.js@^1.73.2", "@solana/web3.js@^1.73.3":
+"@solana/web3.js@^1.32.0", "@solana/web3.js@^1.36.0", "@solana/web3.js@^1.56.2", "@solana/web3.js@^1.63.1", "@solana/web3.js@^1.66.2", "@solana/web3.js@^1.68.0", "@solana/web3.js@^1.73.2", "@solana/web3.js@^1.73.3", "@solana/web3.js@^1.74.0":
   version "1.74.0"
   resolved "https://registry.yarnpkg.com/@solana/web3.js/-/web3.js-1.74.0.tgz#dbcbeabb830dd7cbbcf5e31404ca79c9785cbf2d"
   integrity sha512-RKZyPqizPCxmpMGfpu4fuplNZEWCrhRBjjVstv5QnAJvgln1jgOfgui+rjl1ExnqDnWKg9uaZ5jtGROH/cwabg==
@@ -7516,7 +7516,7 @@ yocto-queue@^0.1.0:
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
-zod@^3.20.2:
+zod@^3.21.4:
   version "3.21.4"
   resolved "https://registry.yarnpkg.com/zod/-/zod-3.21.4.tgz#10882231d992519f0a10b5dd58a38c9dabbb64db"
   integrity sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==
