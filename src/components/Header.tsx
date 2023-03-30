@@ -18,16 +18,19 @@ export function Header() {
       return pathname.split('/')[segments.length - 1].replace('%20', " ");
     }
     return (
+      <div className="flex items-center">
+      <img className="mr-2" src='/renaissance-logo-no-padding.svg' height={28} width={28} />
       <p>
         re<span className="text-[#FF8A57]">:</span>
         <span className="lowercase">naissance</span>
       </p>
+      </div>
     );
   }, [pathname]);
   return (
     <MyHeader className="w-full h-fit ">
       <div className="h-14 flex justify-between items-center gap-1 p-2">
-        <div className="flex items-center ml-2 gap-4">
+        <div className="flex items-center gap-4">
           {!basePaths.some(base => pathname === base) && (
             <button onClick={() => navigate(-1)}>
               <FaChevronLeft />

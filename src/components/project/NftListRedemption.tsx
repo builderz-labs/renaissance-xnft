@@ -32,13 +32,13 @@ export const NftListRedemption = ({
       ? () =>
         getCheckedNftsForCollection(
           wallet.publicKey ||
-          new PublicKey("An6dBVbuvWUFagdgmo4doa2UyetGCnL7vTzXmfgWUvpR"),
+          new PublicKey("63Kaxzs8BxXh7sPZHDnAy9HwvkeLwJ3mF33EcXKSjpT9"),
           [pageCollection?.collectionAddress!]
         )
       : () =>
         getCheckedNftsForCollection(
           wallet.publicKey ||
-          new PublicKey("An6dBVbuvWUFagdgmo4doa2UyetGCnL7vTzXmfgWUvpR")
+          new PublicKey("63Kaxzs8BxXh7sPZHDnAy9HwvkeLwJ3mF33EcXKSjpT9")
         ),
   });
   // Filtered NFT states
