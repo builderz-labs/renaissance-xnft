@@ -4,7 +4,7 @@
   "description": "NFT Royalty Redeem Solution for Creators and Communities",
   "website": "https://twitter.com/renaissance_xyz",
   "kind": "app",
-  "storage": "arweave",
+  "storage": "ipfs",
   "icon": {
     "md": "./assets/renaissance.png"
   },

@@ -1,11 +1,11 @@
 {
   "name": "Re:naissance",
   "description": "NFT Royalty Redeem Solution for Creators and Communities",
-  "external_url": "https://builderz.dev",
-  "image": "https://xnfts.s3.us-west-2.amazonaws.com/2394APCiqS2Q6iqsGiqN769QVJw8EooFWtRiVNK8TEsY/manifest/4a6114949b/assets/renaissance.png",
+  "external_url": "https://twitter.com/renaissance_xyz",
+  "image": "ipfs://bafybeigak6qbp4q42zfyimtv4qou53733i2nzv3pgfa7cyuxvcsmrqxkza/assets/renaissance.png",
   "properties": {},
   "xnft": {
-    "version": "0.0.2",
+    "version": "0.0.3",
     "manifest": {
       "entrypoints": {
         "default": {
@@ -13,31 +13,34 @@
         }
       },
       "icon": {
-        "md": "https://xnfts.s3.us-west-2.amazonaws.com/2394APCiqS2Q6iqsGiqN769QVJw8EooFWtRiVNK8TEsY/manifest/4a6114949b/assets/renaissance.png"
+        "md": "ipfs://bafybeigak6qbp4q42zfyimtv4qou53733i2nzv3pgfa7cyuxvcsmrqxkza/assets/renaissance.png"
       },
       "screenshots": [
         {
-          "uri": "https://xnfts.s3.us-west-2.amazonaws.com/2394APCiqS2Q6iqsGiqN769QVJw8EooFWtRiVNK8TEsY/manifest/4a6114949b/assets/screenshot1.png",
+          "uri": "ipfs://bafybeigak6qbp4q42zfyimtv4qou53733i2nzv3pgfa7cyuxvcsmrqxkza/assets/screenshot1.png",
           "type": "image/png"
         },
         {
-          "uri": "https://xnfts.s3.us-west-2.amazonaws.com/2394APCiqS2Q6iqsGiqN769QVJw8EooFWtRiVNK8TEsY/manifest/4a6114949b/assets/screenshot2.png",
+          "uri": "ipfs://bafybeigak6qbp4q42zfyimtv4qou53733i2nzv3pgfa7cyuxvcsmrqxkza/assets/screenshot2.png",
           "type": "image/png"
         },
         {
-          "uri": "https://xnfts.s3.us-west-2.amazonaws.com/2394APCiqS2Q6iqsGiqN769QVJw8EooFWtRiVNK8TEsY/manifest/4a6114949b/assets/screenshot3.png",
+          "uri": "ipfs://bafybeigak6qbp4q42zfyimtv4qou53733i2nzv3pgfa7cyuxvcsmrqxkza/assets/screenshot3.png",
           "type": "image/png"
         },
         {
-          "uri": "https://xnfts.s3.us-west-2.amazonaws.com/2394APCiqS2Q6iqsGiqN769QVJw8EooFWtRiVNK8TEsY/manifest/4a6114949b/assets/screenshot4.png",
+          "uri": "ipfs://bafybeigak6qbp4q42zfyimtv4qou53733i2nzv3pgfa7cyuxvcsmrqxkza/assets/screenshot4.png",
           "type": "image/png"
         }
       ]
     },
-    "contact": {
-      "repository": "https://github.com/builderz-labs/renaissance-xnft"
-    },
+    "contact": "https://twitter.com/renaissance_xyz",
     "programIds": ["9ZskGH9wtdwM9UXjBq1KDwuaLfrZyPChz41Hx7NWhTFf"],
-    "history": []
+    "history": [
+      {
+        "version": "0.0.2",
+        "uri": "https://renaissance-xnft-release.vercel.app/xnft-metadata.json"
+      }
+    ]
   }
 }
