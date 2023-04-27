@@ -364,3 +364,13 @@ body {
     color: #ff8a57;
   }
 }
+
+
+
+.renaissance-text {
+  background: linear-gradient(180deg, #FC9F62 0%, #FF7A00 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+color: transparent;
+}

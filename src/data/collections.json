@@ -501,5 +501,28 @@
     ],
     "helloMoonCollectionId": "04b4f823aedd5190523916182b47d4c7",
     "fee": 0.2
+  },
+  {
+    "id": 23,
+    "name": "Satori",
+    "image": "https://img-cdn.magiceden.dev/rs:fill:400:400:0:0/plain/https://bafkreieavkjl5rchszvydi7asd3e7jzms5cw6ggixjfto6euuxd3ido7ui.ipfs.nftstorage.link/",
+    "collectionAddress": "9e93bK2A6aQ47HRyevLtuJq8EgTaMhwiHuA81A9uybyY",
+    "description": "A collection of 5000 anime-style characters, providing access to Satori Education and Satori Labs, It's a powerful set of trading and analytical tools. It's the first project that allows holders to order the utility they want to have. Join Satori to get access to our Vision bot, Insight analytics platform, Satori Boxes and platform for collaborations. Our second focus is on mental health. All members have the opportunity to attend live meditation sessions, allowing them to be a web3 force to be reckoned with. Our goal is for our holders to embody freedom both in the NFT market and mentally.",
+    "socials": [
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/nft_satori"
+      },
+      {
+        "name": "Discord",
+        "url": "https://discord.gg/besatori"
+      },
+      {
+        "name": "Website",
+        "url": "https://satori-nft.io/"
+      }
+    ],
+    "helloMoonCollectionId": "701cc9a49e30d35bebb81fbafc3c9bea",
+    "fee": 0.2
   }
 ]

@@ -19,6 +19,7 @@ module.exports = {
         'lily-black': '#222222',
         'lily-red': '#FF9596',
         'renaissance-orange': '#FF8A57',
+        'renaissance-orange-gradient': '#FFD462',
       },
       animation: {
         'spin-slow': 'spin 5s linear infinite',
