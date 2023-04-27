@@ -24,25 +24,25 @@
   },
   {
     "id": 2,
-    "name": "y00ts",
-    "image": "/img/yoots.png",
-    "collectionAddress": "4mKSoDDqApmF1DqXvVTSL6tu2zixrSSNjqMxUnwvVzy2",
-    "description": "y00ts is a generative art project of 15,000 NFTs. y00topia is a curated community of builders and creators. Each y00t was designed by De Labs in Los Angeles, CA",
+    "name": "Liberty Square",
+    "image": "/img/liberty.webp",
+    "collectionAddress": "8d8CYjuy79LUtUow8UeToUs4Xo35LokYRkeukhJ6uriA",
+    "description": "Liberty Square is not just a PFP project. Liberty Square is a project based in art, lore, and character development with a focus on pushing beyond the walls of web3 and integration into the physical world. #gitrekt anon",
     "socials": [
       {
         "name": "Twitter",
-        "url": "https://twitter.com/y00tsNFT"
+        "url": "https://twitter.com/LibertySquareHQ"
       },
       {
         "name": "Discord",
-        "url": "https://discord.gg/2Z7Y4Y2"
+        "url": "https://discord.com/invite/libertysquare"
       },
       {
         "name": "Website",
-        "url": "https://www.y00ts.com/"
+        "url": "https://libertysquare.io/"
       }
     ],
-    "helloMoonCollectionId": "9b4d3907d615294c5d4fdc4edf1e9b1e",
+    "helloMoonCollectionId": "12556d60b7fcbd8cac0857f9812ee788",
     "fee": 0.2
   },
   {
@@ -435,52 +435,6 @@
   },
   {
     "id": 20,
-    "name": "Liberty Square",
-    "image": "/img/liberty.webp",
-    "collectionAddress": "8d8CYjuy79LUtUow8UeToUs4Xo35LokYRkeukhJ6uriA",
-    "description": "Liberty Square is not just a PFP project. Liberty Square is a project based in art, lore, and character development with a focus on pushing beyond the walls of web3 and integration into the physical world. #gitrekt anon",
-    "socials": [
-      {
-        "name": "Twitter",
-        "url": "https://twitter.com/LibertySquareHQ"
-      },
-      {
-        "name": "Discord",
-        "url": "https://discord.com/invite/libertysquare"
-      },
-      {
-        "name": "Website",
-        "url": "https://libertysquare.io/"
-      }
-    ],
-    "helloMoonCollectionId": "12556d60b7fcbd8cac0857f9812ee788",
-    "fee": 0.2
-  },
-  {
-    "id": 21,
-    "name": "DeGods",
-    "image": "/img/degods.webp",
-    "collectionAddress": "6XxjKYFbcndh2gDcsUrmZgVEsoDxXMnfsaGY6fpTJzNr",
-    "description": "Liberty Square is not just a PFP project. Liberty Square is a project based in art, lore, and character development with a focus on pushing beyond the walls of web3 and integration into the physical world. #gitrekt anon",
-    "socials": [
-      {
-        "name": "Twitter",
-        "url": "https://twitter.com/degodsnft"
-      },
-      {
-        "name": "Discord",
-        "url": "https://discord.com/invite/dedao"
-      },
-      {
-        "name": "Website",
-        "url": "https://degods.com/"
-      }
-    ],
-    "helloMoonCollectionId": "040de757c0d2b75dcee999ddd47689c4",
-    "fee": 0.2
-  },
-  {
-    "id": 22,
     "name": "Primates",
     "image": "https://pbs.twimg.com/profile_images/1599619403074633729/xSdsmLt7_400x400.jpg",
     "collectionAddress": "CvZY2tZhWEwYnuSoNAjGekmt9Sb5Crhq9DMYTtyup7s4",
@@ -503,7 +457,7 @@
     "fee": 0.2
   },
   {
-    "id": 23,
+    "id": 21,
     "name": "Satori",
     "image": "https://img-cdn.magiceden.dev/rs:fill:400:400:0:0/plain/https://bafkreieavkjl5rchszvydi7asd3e7jzms5cw6ggixjfto6euuxd3ido7ui.ipfs.nftstorage.link/",
     "collectionAddress": "9e93bK2A6aQ47HRyevLtuJq8EgTaMhwiHuA81A9uybyY",
